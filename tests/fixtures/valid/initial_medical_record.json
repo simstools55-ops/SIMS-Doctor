@@ -1,0 +1,38 @@
+{
+  "contract_name": "SIMS_DOCTOR_MEDICAL_RECORD_V1",
+  "contract_version": "1.0",
+  "medical_record_id": "MR-CASE-20260804-000001",
+  "case_id": "CASE-20260804-000001",
+  "case_status": "READY_FOR_OBSERVATION",
+  "patient": {
+    "site_id": "tonbos55",
+    "site_name": "ガジェット探検記",
+    "blog_url": "https://tonbos55.hatenablog.com/",
+    "article_id": "A000001",
+    "article_url": "https://tonbos55.hatenablog.com/entry/example",
+    "article_title": "テスト記事"
+  },
+  "requests": [
+    {
+      "request_id": "DREQ-20260804-190025-A7F31C",
+      "requested_at": "2026-08-04T19:00:00+09:00",
+      "received_at": "2026-08-04T19:00:25+09:00",
+      "request_source": "SIMS_BLOG_MANAGER",
+      "request_type": "SINGLE_CASE_DIAGNOSIS"
+    }
+  ],
+  "observations": [],
+  "diagnoses": [],
+  "referrals": [],
+  "follow_ups": [],
+  "counters": {
+    "request_count": 1,
+    "observation_count": 0,
+    "diagnosis_count": 0,
+    "referral_count": 0,
+    "follow_up_count": 0
+  },
+  "previous_case": null,
+  "created_at": "2026-08-04T19:00:25+09:00",
+  "updated_at": "2026-08-04T19:00:25+09:00"
+}

@@ -1,0 +1,55 @@
+from pathlib import Path
+import json
+import sys
+
+try:
+    from jsonschema import Draft202012Validator, FormatChecker
+except ImportError:
+    print("Install dependency: pip install jsonschema")
+    raise
+
+ROOT = Path(__file__).resolve().parents[2]
+CONTRACTS = ROOT / "contracts"
+FIXTURES = ROOT / "tests" / "fixtures"
+
+CASES = [
+    (
+        CONTRACTS / "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1.schema.json",
+        FIXTURES / "valid" / "single_case_request.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_DOCTOR_MEDICAL_RECORD_V1.schema.json",
+        FIXTURES / "valid" / "initial_medical_record.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1.schema.json",
+        FIXTURES / "invalid" / "missing_article_id.json",
+        False,
+    ),
+    (
+        CONTRACTS / "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1.schema.json",
+        FIXTURES / "invalid" / "unsupported_version.json",
+        False,
+    ),
+]
+
+failed = 0
+for schema_path, fixture_path, should_pass in CASES:
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+    errors = list(
+        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(fixture)
+    )
+    passed = not errors
+    expected = "PASS" if should_pass else "FAIL"
+    actual = "PASS" if passed else "FAIL"
+    ok = passed == should_pass
+    print(f"[{'OK' if ok else 'NG'}] {fixture_path.name}: expected={expected}, actual={actual}")
+    if not ok:
+        failed += 1
+        for error in errors[:5]:
+            print("  -", error.message)
+
+sys.exit(1 if failed else 0)

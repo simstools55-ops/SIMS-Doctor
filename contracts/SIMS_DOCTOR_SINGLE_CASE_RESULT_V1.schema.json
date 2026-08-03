@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_SINGLE_CASE_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "status",
+    "completed_at"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACCEPTED",
+        "EXISTING_CASE_REUSED",
+        "REJECTED"
+      ]
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "request_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "case_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "medical_record_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "case_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "OPEN",
+        "REQUEST_VALIDATED",
+        "RECORD_CREATED",
+        "READY_FOR_OBSERVATION",
+        "ERROR",
+        null
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "error": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "INVALID_JSON",
+            "UNSUPPORTED_CONTRACT",
+            "UNSUPPORTED_VERSION",
+            "MISSING_REQUIRED_FIELD",
+            "INVALID_FIELD_TYPE",
+            "INVALID_FIELD_VALUE",
+            "INVALID_URL",
+            "INVALID_DATETIME",
+            "DUPLICATE_REQUEST",
+            "CASE_REGISTRY_FAILURE",
+            "MEDICAL_RECORD_CREATION_FAILURE",
+            "INTERNAL_ERROR"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "field": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

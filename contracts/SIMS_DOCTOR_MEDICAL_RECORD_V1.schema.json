@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_MEDICAL_RECORD_V1.schema.json",
+  "title": "SIMS_DOCTOR_MEDICAL_RECORD_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "medical_record_id",
+    "case_id",
+    "case_status",
+    "patient",
+    "requests",
+    "observations",
+    "diagnoses",
+    "referrals",
+    "follow_ups",
+    "counters",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_MEDICAL_RECORD_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "medical_record_id": {
+      "type": "string",
+      "pattern": "^MR-CASE-[0-9]{8}-[0-9]{6}$"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^CASE-[0-9]{8}-[0-9]{6}$"
+    },
+    "case_status": {
+      "type": "string",
+      "enum": [
+        "OPEN",
+        "REQUEST_VALIDATED",
+        "RECORD_CREATED",
+        "READY_FOR_OBSERVATION",
+        "OBSERVING",
+        "DIAGNOSING",
+        "DIAGNOSED",
+        "REFERRED",
+        "UNDER_TREATMENT",
+        "FOLLOW_UP",
+        "CLOSED",
+        "ERROR"
+      ]
+    },
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url",
+        "article_id",
+        "article_url",
+        "article_title"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "article_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "article_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "article_title": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "diagnoses": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "referrals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "follow_ups": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "counters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_count",
+        "observation_count",
+        "diagnosis_count",
+        "referral_count",
+        "follow_up_count"
+      ],
+      "properties": {
+        "request_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "observation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "diagnosis_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "referral_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "follow_up_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "previous_case": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "previous_case_id",
+        "relationship"
+      ],
+      "properties": {
+        "previous_case_id": {
+          "type": "string"
+        },
+        "relationship": {
+          "const": "REOPENED_AS_NEW_CASE"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
