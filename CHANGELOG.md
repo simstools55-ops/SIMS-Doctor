@@ -1,3 +1,16 @@
+## 1.0.0-sprint7.4-longitudinal-medical-record — 2026-08-04
+
+- Added Longitudinal Medical Record Analysis
+- Added repeated diagnosis, dominant diagnosis, and recurrence counting
+- Added chronic-case detection
+- Added treatment responsiveness and resistance analysis
+- Added repeated defer-pattern and recent-recurrence detection
+- Added follow-up priority
+- Added SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1
+- Added LONGITUDINAL_PROFILE_UPDATED event and Medical Record profile history
+- Added contract, unit, integration, and regression tests
+- Did not add batch diagnosis, scheduling, cross-site aggregation, or automatic treatment
+
 ## 1.0.0-sprint7.3-improvement-history — 2026-08-04
 
 - Added Improvement History Comparison

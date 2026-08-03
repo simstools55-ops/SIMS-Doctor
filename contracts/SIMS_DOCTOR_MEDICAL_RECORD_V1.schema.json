@@ -27,7 +27,8 @@
     "final_diagnoses",
     "treatment_recommendations",
     "pipeline_runs",
-    "outputs"
+    "outputs",
+    "longitudinal_profiles"
   ],
   "properties": {
     "contract_name": {
@@ -176,7 +177,8 @@
         "final_diagnosis_count",
         "treatment_recommendation_count",
         "pipeline_run_count",
-        "output_count"
+        "output_count",
+        "longitudinal_profile_count"
       ],
       "properties": {
         "request_count": {
@@ -228,6 +230,10 @@
           "minimum": 0
         },
         "output_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "longitudinal_profile_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -859,6 +865,12 @@
       }
     },
     "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "longitudinal_profiles": {
       "type": "array",
       "items": {
         "type": "object"

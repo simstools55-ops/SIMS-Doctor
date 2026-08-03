@@ -255,3 +255,11 @@ Doctor now compares pre-treatment metrics with 7, 14, and 28-day checkpoints and
 - Follow-Up Required
 
 Worsening and ineffective treatment route to Writer. Doctor never rolls back an article automatically.
+
+
+## Sprint7.4 Longitudinal Medical Record
+
+Doctor now analyzes repeated diagnoses and treatment responses for the same article.
+
+It can identify recurrent or chronic problems, treatment responsiveness or resistance,
+recovery patterns, and follow-up priority.
