@@ -1,0 +1,76 @@
+{
+  "registry_name": "EVIDENCE_CODE_REGISTRY",
+  "version": "1.0",
+  "items": [
+    {
+      "code": "CTR_BELOW_POSITION_EXPECTATION",
+      "source": "SEARCH_CONSOLE",
+      "description": "掲載順位帯に対してCTRが期待値を下回る",
+      "required_inputs": [
+        "position",
+        "ctr",
+        "impressions"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "POSITION_DECLINE_OBSERVED",
+      "source": "SEARCH_CONSOLE",
+      "description": "比較期間において平均順位の下落が観察された",
+      "required_inputs": [
+        "baseline_position",
+        "current_position"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "VISIBILITY_DECLINE_OBSERVED",
+      "source": "SEARCH_CONSOLE",
+      "description": "比較期間において表示回数の減少が観察された",
+      "required_inputs": [
+        "baseline_impressions",
+        "current_impressions"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "LONG_TIME_SINCE_UPDATE",
+      "source": "METADATA",
+      "description": "最終更新から長期間経過している",
+      "required_inputs": [
+        "last_modified_at",
+        "observed_at"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    },
+    {
+      "code": "QUERY_DISTRIBUTION_CHANGED",
+      "source": "SEARCH_CONSOLE",
+      "description": "流入クエリ構成が過去期間から変化した",
+      "required_inputs": [
+        "baseline_queries",
+        "current_queries"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "SERP_INTENT_CHANGED",
+      "source": "SERP",
+      "description": "検索結果上位の主要検索意図が以前から変化した",
+      "required_inputs": [
+        "baseline_intent",
+        "current_intent"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    },
+    {
+      "code": "INTERNAL_LINK_SUPPORT_WEAK",
+      "source": "INTERNAL_LINKS",
+      "description": "記事への内部リンク支援が弱い",
+      "required_inputs": [
+        "incoming"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    }
+  ]
+}

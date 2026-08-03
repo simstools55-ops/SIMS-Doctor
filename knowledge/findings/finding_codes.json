@@ -1,0 +1,125 @@
+{
+  "registry_name": "FINDING_CODE_REGISTRY",
+  "version": "1.0",
+  "severity_levels": [
+    "INFO",
+    "MILD",
+    "MODERATE",
+    "SEVERE",
+    "CRITICAL"
+  ],
+  "items": [
+    {
+      "code": "CTR_UNDERPERFORMING",
+      "category": "CTR",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "TITLE_ATTRACTION_LOW",
+      "category": "SNIPPET",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "POSITION_DECLINING",
+      "category": "RANKING",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "POSITION_STABLE",
+      "category": "RANKING",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "LOW_VISIBILITY",
+      "category": "VISIBILITY",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "HIGH_VISIBILITY_LOW_CLICK",
+      "category": "CTR",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "QUERY_SHIFT",
+      "category": "QUERY",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "INTENT_DRIFT",
+      "category": "INTENT",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "CONTENT_OUTDATED",
+      "category": "FRESHNESS",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "SERP_COMPETITION_HIGH",
+      "category": "COMPETITION",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "INTERNAL_LINKS_WEAK",
+      "category": "LINKS",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "FAQ_COVERAGE_WEAK",
+      "category": "CONTENT",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "INSUFFICIENT_EVIDENCE",
+      "category": "QUALITY",
+      "allowed_severity": [
+        "INFO"
+      ]
+    }
+  ]
+}

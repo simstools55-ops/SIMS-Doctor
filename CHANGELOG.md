@@ -1,3 +1,14 @@
+## 1.0.0-sprint3.1-ckb — 2026-08-04
+
+- Added Clinical Knowledge Base v1.0
+- Added Observation, Evidence, Vital Signs, Findings, and event registries
+- Standardized all Vital Signs as “higher is healthier”
+- Added normal-range classifications from NORMAL to SEVERE
+- Added CKB loader and structural validation
+- Added immutable clinical data model foundations
+- Added CKB and observation model tests
+- Kept diagnosis, scoring formulas, and referrals out of Sprint3.1
+
 # Changelog
 
 ## 1.0.0-sprint2.2-foundation — 2026-08-04

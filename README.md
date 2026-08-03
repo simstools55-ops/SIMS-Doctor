@@ -51,3 +51,17 @@ The single-case schemas remain provisional until compared with one real JSON cop
 - User-facing messages and system-facing contracts are separated.
 - Diagnosis and referral are separate artifacts.
 - Observation and diagnosis do not read the raw SBM request directly.
+
+
+## Sprint3.1 Clinical Knowledge Base
+
+Doctor now includes a declarative Clinical Knowledge Base for:
+
+- Observation types
+- Evidence codes
+- Vital Signs and normal ranges
+- Findings and severity
+- Medical-record event types
+
+Runtime loading is implemented in `src/doctor/knowledge/`.
+Scoring, diagnosis, and referral decisions remain intentionally unimplemented.

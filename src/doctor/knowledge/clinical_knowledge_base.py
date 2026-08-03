@@ -1,0 +1,114 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+import json
+from pathlib import Path
+from typing import Any
+
+
+class KnowledgeValidationError(ValueError):
+    pass
+
+
+@dataclass(frozen=True)
+class RegistryItem:
+    code: str
+    raw: dict[str, Any]
+
+
+class ClinicalKnowledgeBase:
+    REQUIRED_FILES = {
+        "manifest": "registry/CKB_MANIFEST.json",
+        "observation": "observation/observation_types.json",
+        "evidence": "evidence/evidence_codes.json",
+        "vital_signs": "vital_signs/vital_signs.json",
+        "findings": "findings/finding_codes.json",
+        "events": "workflow/medical_record_events.json",
+    }
+
+    def __init__(self, knowledge_root: Path) -> None:
+        self.knowledge_root = Path(knowledge_root)
+        self._documents: dict[str, dict[str, Any]] = {}
+
+    def load(self) -> "ClinicalKnowledgeBase":
+        documents: dict[str, dict[str, Any]] = {}
+        for key, relative_path in self.REQUIRED_FILES.items():
+            path = self.knowledge_root / relative_path
+            if not path.is_file():
+                raise KnowledgeValidationError(f"Missing knowledge file: {relative_path}")
+            try:
+                documents[key] = json.loads(path.read_text(encoding="utf-8"))
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                raise KnowledgeValidationError(
+                    f"Invalid UTF-8 or JSON in {relative_path}: {exc}"
+                ) from exc
+
+        self._documents = documents
+        self.validate()
+        return self
+
+    def validate(self) -> None:
+        if not self._documents:
+            raise KnowledgeValidationError("Knowledge base has not been loaded")
+
+        manifest = self._documents["manifest"]
+        if manifest.get("knowledge_base") != "SIMS_DOCTOR_CLINICAL_KNOWLEDGE_BASE_V1":
+            raise KnowledgeValidationError("Unsupported clinical knowledge base")
+        if manifest.get("version") != "1.0":
+            raise KnowledgeValidationError("Unsupported CKB version")
+
+        self._validate_unique_codes("observation", "items")
+        self._validate_unique_codes("evidence", "items")
+        self._validate_unique_codes("vital_signs", "items")
+        self._validate_unique_codes("findings", "items")
+
+        vital = self._documents["vital_signs"]
+        ranges = vital.get("normal_ranges", [])
+        if not ranges:
+            raise KnowledgeValidationError("Vital sign normal ranges are missing")
+        covered = set()
+        for item in ranges:
+            minimum = item.get("minimum")
+            maximum = item.get("maximum")
+            if not isinstance(minimum, int) or not isinstance(maximum, int) or minimum > maximum:
+                raise KnowledgeValidationError("Invalid vital sign normal range")
+            covered.update(range(minimum, maximum + 1))
+        if covered != set(range(0, 101)):
+            raise KnowledgeValidationError("Vital sign ranges must cover 0 through 100 exactly")
+
+        finding = self._documents["findings"]
+        allowed_levels = set(finding.get("severity_levels", []))
+        for item in finding.get("items", []):
+            item_levels = set(item.get("allowed_severity", []))
+            if not item_levels or not item_levels.issubset(allowed_levels):
+                raise KnowledgeValidationError(
+                    f"Invalid severity declaration for finding {item.get('code')}"
+                )
+
+        events = self._documents["events"].get("items", [])
+        if len(events) != len(set(events)):
+            raise KnowledgeValidationError("Duplicate medical record event code")
+
+    def _validate_unique_codes(self, document_key: str, item_key: str) -> None:
+        items = self._documents[document_key].get(item_key, [])
+        codes = [item.get("code") for item in items]
+        if not items or any(not isinstance(code, str) or not code for code in codes):
+            raise KnowledgeValidationError(f"Missing code in {document_key} registry")
+        if len(codes) != len(set(codes)):
+            raise KnowledgeValidationError(f"Duplicate code in {document_key} registry")
+
+    def codes(self, registry: str) -> set[str]:
+        if registry not in {"observation", "evidence", "vital_signs", "findings"}:
+            raise KeyError(registry)
+        return {item["code"] for item in self._documents[registry]["items"]}
+
+    def is_known_code(self, registry: str, code: str) -> bool:
+        return code in self.codes(registry)
+
+    def classify_vital_score(self, score: int) -> str:
+        if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
+            raise ValueError("Vital score must be an integer from 0 to 100")
+        for item in self._documents["vital_signs"]["normal_ranges"]:
+            if item["minimum"] <= score <= item["maximum"]:
+                return item["classification"]
+        raise KnowledgeValidationError("No classification found for score")
