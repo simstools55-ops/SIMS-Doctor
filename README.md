@@ -230,3 +230,15 @@ Doctor can now compare articles within the same site and diagnose:
 - New Article Needed
 
 This activates Creator and Merge as real referral targets.
+
+
+## Sprint7.2 Long-Term Decline Diagnosis
+
+Doctor now analyzes repeated 28-day windows over 365 days and distinguishes:
+
+- Long-Term Decay
+- Seasonal Decline
+- Recovery in Progress
+
+Confirmed long-term decay routes to Writer.
+Seasonal and recovery cases route to Observation.

@@ -11,6 +11,9 @@ DIAGNOSIS_LABELS = {
     "CANNIBALIZATION": "同じ検索需要を複数記事が取り合っている可能性があります",
     "ARTICLE_MERGE_REQUIRED": "内容が重複する記事の統合を検討すべき状態です",
     "NEW_ARTICLE_NEEDED": "既存記事とは異なる検索意図の記事が必要です",
+    "LONG_TERM_DECAY": "記事の検索パフォーマンスが長期的に低下しています",
+    "SEASONAL_DECLINE": "季節性による変動の可能性があります",
+    "RECOVERY_IN_PROGRESS": "記事は回復傾向にあります",
 }
 
 DEFER_LABELS = {
@@ -38,6 +41,9 @@ TREATMENT_LABELS = {
     "REVIEW_QUERY_CONFLICT": "Mergeでクエリ競合と統合可否を確認します",
     "MERGE_OVERLAPPING_ARTICLES": "Mergeで重複記事の統合設計を行います",
     "CREATE_DISTINCT_INTENT_ARTICLE": "Creatorで別の検索意図に対応する新記事を作成します",
+    "REWRITE_LONG_TERM_RECOVERY": "Writerで長期低下の原因を確認し、回復を目的とした改善を行います",
+    "SEASONAL_OBSERVATION": "記事を変更せず、季節要因を確認しながら経過観察します",
+    "CONTINUE_OBSERVATION": "回復傾向を維持するため、現状を保って経過観察します",
 }
 
 
@@ -120,5 +126,10 @@ class DiagnosisReportBuilder:
             "QUERY_OVERLAP_HIGH": "複数記事で同じクエリの重複が確認されました。",
             "MERGE_SUITABILITY_HIGH": "記事内容と検索意図の重複度が高い状態です。",
             "DISTINCT_INTENT_OPPORTUNITY": "既存記事と異なる検索意図が確認されました。",
+            "LONG_TERM_VISIBILITY_DECAY": "表示回数が長期的に減少しています。",
+            "LONG_TERM_CTR_DECAY": "クリック率が長期的に低下しています。",
+            "LONG_TERM_POSITION_DECAY": "平均順位が長期的に低下しています。",
+            "SEASONALITY_DETECTED": "過去期間と似た季節変動が確認されました。",
+            "RECOVERY_TREND": "直近期間で回復傾向が確認されました。",
         }
         return labels.get(finding["finding_code"], "診断に関連する所見が確認されました。")

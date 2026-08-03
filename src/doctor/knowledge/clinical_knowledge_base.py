@@ -36,6 +36,7 @@ class ClinicalKnowledgeBase:
         "output_policy": "workflow/output_policy_v1.json",
         "cross_article_policy": "observation/cross_article/cross_article_policy_v1.json",
         "cross_article_finding_rules": "findings/rules/cross_article_finding_rules_v1.json",
+        "long_term_policy": "observation/long_term/long_term_analysis_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -230,6 +231,9 @@ class ClinicalKnowledgeBase:
 
     def cross_article_finding_rules(self) -> dict[str, Any]:
         return dict(self._documents["cross_article_finding_rules"])
+
+    def long_term_policy(self) -> dict[str, Any]:
+        return dict(self._documents["long_term_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

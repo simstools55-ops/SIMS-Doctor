@@ -50,6 +50,27 @@
       "target": "CREATOR",
       "priority": "MEDIUM",
       "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "treatment_code": "REWRITE_LONG_TERM_RECOVERY",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "treatment_code": "SEASONAL_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "treatment_code": "CONTINUE_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
     }
   ],
   "deferred_rules": [

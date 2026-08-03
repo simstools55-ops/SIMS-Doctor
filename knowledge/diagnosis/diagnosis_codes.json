@@ -41,6 +41,18 @@
     {
       "code": "NEW_ARTICLE_NEEDED",
       "category": "CREATOR"
+    },
+    {
+      "code": "LONG_TERM_DECAY",
+      "category": "LONG_TERM"
+    },
+    {
+      "code": "SEASONAL_DECLINE",
+      "category": "SEASONAL"
+    },
+    {
+      "code": "RECOVERY_IN_PROGRESS",
+      "category": "RECOVERY"
     }
   ]
 }

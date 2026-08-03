@@ -121,6 +121,41 @@
       "severity_source": [
         "DISTINCT_INTENT_OPPORTUNITY"
       ]
+    },
+    {
+      "candidate_code": "LONG_TERM_DECAY",
+      "final_diagnosis_code": "LONG_TERM_DECAY",
+      "required_evidence": [],
+      "required_findings": [
+        "LONG_TERM_VISIBILITY_DECAY"
+      ],
+      "severity_source": [
+        "LONG_TERM_VISIBILITY_DECAY",
+        "LONG_TERM_CTR_DECAY",
+        "LONG_TERM_POSITION_DECAY"
+      ]
+    },
+    {
+      "candidate_code": "SEASONAL_DECLINE",
+      "final_diagnosis_code": "SEASONAL_DECLINE",
+      "required_evidence": [],
+      "required_findings": [
+        "SEASONALITY_DETECTED"
+      ],
+      "severity_source": [
+        "SEASONALITY_DETECTED"
+      ]
+    },
+    {
+      "candidate_code": "RECOVERY_IN_PROGRESS",
+      "final_diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "required_evidence": [],
+      "required_findings": [
+        "RECOVERY_TREND"
+      ],
+      "severity_source": [
+        "RECOVERY_TREND"
+      ]
     }
   ]
 }

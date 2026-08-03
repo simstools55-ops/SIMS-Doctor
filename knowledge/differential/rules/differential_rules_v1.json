@@ -152,6 +152,63 @@
       "contradicting_findings": [],
       "base_confidence": 20,
       "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "priority": 92,
+      "supporting_findings": [
+        {
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "weight": 50
+        },
+        {
+          "code": "LONG_TERM_CTR_DECAY",
+          "weight": 25
+        },
+        {
+          "code": "LONG_TERM_POSITION_DECAY",
+          "weight": 30
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "RECOVERY_TREND",
+          "weight": 40
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "priority": 65,
+      "supporting_findings": [
+        {
+          "code": "SEASONALITY_DETECTED",
+          "weight": 65
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "priority": 85,
+      "supporting_findings": [
+        {
+          "code": "RECOVERY_TREND",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "weight": 30
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1
     }
   ]
 }

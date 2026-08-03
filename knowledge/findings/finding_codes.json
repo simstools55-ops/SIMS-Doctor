@@ -153,6 +153,49 @@
         "INFO",
         "MILD"
       ]
+    },
+    {
+      "code": "LONG_TERM_VISIBILITY_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "LONG_TERM_CTR_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "LONG_TERM_POSITION_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "SEASONALITY_DETECTED",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "RECOVERY_TREND",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "INFO",
+        "MILD"
+      ]
     }
   ]
 }

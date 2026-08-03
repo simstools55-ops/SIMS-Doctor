@@ -1,3 +1,14 @@
+## 1.0.0-sprint7.2-long-term-decline — 2026-08-04
+
+- Added long-term 365-day window analysis
+- Added gradual decline, sharp decline, CTR decay, position decay, seasonality, and recovery classification
+- Added Long-Term Observation contract
+- Added long-term Evidence and Findings engines
+- Added LONG_TERM_DECAY, SEASONAL_DECLINE, and RECOVERY_IN_PROGRESS diagnoses
+- Added Writer and Observation routing
+- Added contract, unit, integration, and regression tests
+- Did not add core-update calendar correlation, external seasonality data, or batch diagnosis
+
 ## 1.0.0-sprint7.1-cross-article-cannibalization — 2026-08-04
 
 - Added Cross-Article Observation contract and analyzer
