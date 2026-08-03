@@ -1,3 +1,17 @@
+## 1.0.0-sprint3.4-vital-signs-profile — 2026-08-04
+
+- Added Vital Signs Engine
+- Added seven-sign Vital Profile
+- Added versioned formula registry to CKB
+- Implemented Visibility, Traffic, CTR Health, Ranking Stability, and Freshness
+- Marked Competition Resilience and Content Integrity as UNAVAILABLE pending observations
+- Added normal-range classification and overall profile score
+- Added LOW_SAMPLE confidence and score adjustments
+- Added idempotent VITAL_SIGNS_CALCULATED event
+- Extended Medical Record schema and counters
+- Added unit and integration tests
+- Did not add Findings or Diagnosis
+
 ## 1.0.0-sprint3.3-evidence-engine — 2026-08-04
 
 - Added Evidence Engine foundation

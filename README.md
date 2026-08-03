@@ -91,3 +91,21 @@ Initial Evidence codes:
 
 Thresholds remain versioned in the Clinical Knowledge Base.
 LOW_SAMPLE Evidence is retained and flagged.
+
+
+## Sprint3.4 Vital Signs and Vital Profile
+
+Doctor now creates a seven-sign Vital Profile.
+
+Available now:
+
+- Visibility
+- Traffic
+- CTR Health
+- Ranking Stability
+- Freshness
+
+Unavailable until later Observation layers:
+
+- Competition Resilience
+- Content Integrity

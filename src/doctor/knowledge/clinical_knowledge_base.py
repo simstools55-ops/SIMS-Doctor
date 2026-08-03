@@ -25,6 +25,7 @@ class ClinicalKnowledgeBase:
         "findings": "findings/finding_codes.json",
         "events": "workflow/medical_record_events.json",
         "evidence_rules": "evidence/rules/evidence_rules_v1.json",
+        "vital_formulas": "vital_signs/formulas/vital_sign_formulas_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -94,6 +95,11 @@ class ClinicalKnowledgeBase:
         if len(rule_codes) != len(set(rule_codes)):
             raise KnowledgeValidationError("Duplicate evidence rule code")
 
+        vital_formula_codes = [item.get("code") for item in self._documents["vital_formulas"].get("formulas", [])]
+        known_vitals = self.codes("vital_signs")
+        if set(vital_formula_codes) != known_vitals:
+            raise KnowledgeValidationError("Vital formula registry must match Vital Sign registry")
+
         events = self._documents["events"].get("items", [])
         if len(events) != len(set(events)):
             raise KnowledgeValidationError("Duplicate medical record event code")
@@ -122,6 +128,15 @@ class ClinicalKnowledgeBase:
 
     def sample_policy(self) -> dict[str, Any]:
         return dict(self._documents["evidence_rules"]["sample_policy"])
+
+    def vital_formulas(self) -> dict[str, dict[str, Any]]:
+        return {
+            item["code"]: item
+            for item in self._documents["vital_formulas"]["formulas"]
+        }
+
+    def vital_global_policy(self) -> dict[str, Any]:
+        return dict(self._documents["vital_formulas"]["global_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

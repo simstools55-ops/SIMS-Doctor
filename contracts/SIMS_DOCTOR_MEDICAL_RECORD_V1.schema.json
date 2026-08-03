@@ -20,7 +20,8 @@
     "created_at",
     "updated_at",
     "events",
-    "evidence"
+    "evidence",
+    "vital_profiles"
   ],
   "properties": {
     "contract_name": {
@@ -162,7 +163,8 @@
         "diagnosis_count",
         "referral_count",
         "follow_up_count",
-        "evidence_count"
+        "evidence_count",
+        "vital_profile_count"
       ],
       "properties": {
         "request_count": {
@@ -186,6 +188,10 @@
           "minimum": 0
         },
         "evidence_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "vital_profile_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -322,6 +328,163 @@
           "fingerprint": {
             "type": "string",
             "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "vital_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "profile_id",
+          "calculated_at",
+          "source_observation_ids",
+          "evidence_ids",
+          "signs",
+          "overall_score",
+          "overall_classification",
+          "available_count",
+          "unavailable_count",
+          "formula_set_version"
+        ],
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "pattern": "^VPR-[0-9]{8}-[0-9]{6}-[A-F0-9]{6}$"
+          },
+          "calculated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_observation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "signs": {
+            "type": "array",
+            "minItems": 7,
+            "maxItems": 7,
+            "items": {
+              "type": "object",
+              "required": [
+                "code",
+                "status",
+                "score",
+                "classification",
+                "confidence",
+                "calculated_at",
+                "evidence_ids",
+                "source_observation_ids",
+                "formula_version",
+                "details"
+              ],
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "AVAILABLE",
+                    "UNAVAILABLE"
+                  ]
+                },
+                "score": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "classification": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "NORMAL",
+                    "MILD_ATTENTION",
+                    "OBSERVATION_REQUIRED",
+                    "TREATMENT_REQUIRED",
+                    "SEVERE",
+                    null
+                  ]
+                },
+                "confidence": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "calculated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "source_observation_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "formula_version": {
+                  "type": "string"
+                },
+                "details": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "overall_score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "overall_classification": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "NORMAL",
+              "MILD_ATTENTION",
+              "OBSERVATION_REQUIRED",
+              "TREATMENT_REQUIRED",
+              "SEVERE",
+              null
+            ]
+          },
+          "available_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 7
+          },
+          "unavailable_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 7
+          },
+          "formula_set_version": {
+            "type": "string"
           }
         }
       }
