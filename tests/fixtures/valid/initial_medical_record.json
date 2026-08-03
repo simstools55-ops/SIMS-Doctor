@@ -32,12 +32,14 @@
     "referral_count": 0,
     "follow_up_count": 0,
     "evidence_count": 0,
-    "vital_profile_count": 0
+    "vital_profile_count": 0,
+    "finding_count": 0
   },
   "previous_case": null,
   "created_at": "2026-08-04T19:00:25+09:00",
   "updated_at": "2026-08-04T19:00:25+09:00",
   "events": [],
   "evidence": [],
-  "vital_profiles": []
+  "vital_profiles": [],
+  "findings": []
 }

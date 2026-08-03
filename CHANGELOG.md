@@ -1,3 +1,16 @@
+## 1.0.0-sprint4.1-findings-engine — 2026-08-04
+
+- Added Findings Engine foundation
+- Added versioned Finding rules to CKB
+- Added severity and confidence calculation
+- Linked every Finding to Evidence and Vital Profile
+- Added LOW_SAMPLE confidence penalty
+- Added deterministic Finding fingerprint and duplicate prevention
+- Added FINDING_RECORDED event
+- Extended Medical Record schema and counters
+- Added unit and integration tests
+- Did not add Differential or Final Diagnosis
+
 ## 1.0.0-sprint3.4-vital-signs-profile — 2026-08-04
 
 - Added Vital Signs Engine

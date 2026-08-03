@@ -109,3 +109,19 @@ Unavailable until later Observation layers:
 
 - Competition Resilience
 - Content Integrity
+
+
+## Sprint4.1 Findings Engine
+
+Doctor now creates severity-bearing Findings from Evidence and the latest Vital Profile.
+
+Initial Findings:
+
+- CTR_UNDERPERFORMING
+- POSITION_DECLINING
+- LOW_VISIBILITY
+- CONTENT_OUTDATED
+- HIGH_VISIBILITY_LOW_CLICK
+- INSUFFICIENT_EVIDENCE
+
+Findings remain distinct from Diagnosis.
