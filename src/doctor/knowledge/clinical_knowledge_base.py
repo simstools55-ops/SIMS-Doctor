@@ -30,6 +30,8 @@ class ClinicalKnowledgeBase:
         "diagnosis_codes": "diagnosis/diagnosis_codes.json",
         "differential_rules": "differential/rules/differential_rules_v1.json",
         "final_diagnosis_rules": "diagnosis/rules/final_diagnosis_rules_v1.json",
+        "treatment_rules": "treatment/rules/treatment_rules_v1.json",
+        "referral_rules": "referral/rules/referral_rules_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -129,6 +131,13 @@ class ClinicalKnowledgeBase:
         if any(code not in diagnosis_codes for code in final_codes):
             raise KnowledgeValidationError("Final diagnosis rule references unknown diagnosis code")
 
+        treatment_codes = [item.get("diagnosis_code") for item in self._documents["treatment_rules"].get("rules", [])]
+        if any(code not in diagnosis_codes for code in treatment_codes):
+            raise KnowledgeValidationError("Treatment rule references unknown diagnosis code")
+        referral_targets = self._documents["referral_rules"].get("targets", [])
+        if not referral_targets or len(referral_targets) != len(set(referral_targets)):
+            raise KnowledgeValidationError("Invalid referral target registry")
+
         events = self._documents["events"].get("items", [])
         if len(events) != len(set(events)):
             raise KnowledgeValidationError("Duplicate medical record event code")
@@ -193,6 +202,18 @@ class ClinicalKnowledgeBase:
 
     def final_diagnosis_global_policy(self) -> dict[str, Any]:
         return dict(self._documents["final_diagnosis_rules"]["global_policy"])
+
+    def treatment_rules(self) -> list[dict[str, Any]]:
+        return list(self._documents["treatment_rules"]["rules"])
+
+    def deferred_treatment_rules(self) -> list[dict[str, Any]]:
+        return list(self._documents["treatment_rules"]["deferred_rules"])
+
+    def referral_targets(self) -> set[str]:
+        return set(self._documents["referral_rules"]["targets"])
+
+    def referral_policies(self) -> dict[str, Any]:
+        return dict(self._documents["referral_rules"]["policies"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

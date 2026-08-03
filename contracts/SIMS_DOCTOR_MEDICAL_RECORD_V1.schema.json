@@ -24,7 +24,8 @@
     "vital_profiles",
     "findings",
     "differential_assessments",
-    "final_diagnoses"
+    "final_diagnoses",
+    "treatment_recommendations"
   ],
   "properties": {
     "contract_name": {
@@ -170,7 +171,8 @@
         "vital_profile_count",
         "finding_count",
         "differential_count",
-        "final_diagnosis_count"
+        "final_diagnosis_count",
+        "treatment_recommendation_count"
       ],
       "properties": {
         "request_count": {
@@ -210,6 +212,10 @@
           "minimum": 0
         },
         "final_diagnosis_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "treatment_recommendation_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -826,6 +832,12 @@
             "type": "string"
           }
         }
+      }
+    },
+    "treatment_recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object"
       }
     }
   }

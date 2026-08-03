@@ -146,3 +146,15 @@ These candidates are not yet Final Diagnoses.
 ## Sprint4.3 Final Diagnosis
 
 Doctor now records CONFIRMED or DEFERRED final diagnosis outcomes.
+
+
+## Sprint5.1 Treatment Recommendation and Referral
+
+Doctor now converts the latest Final Diagnosis into a separate treatment direction and referral.
+
+Active routing:
+
+- confirmed CTR, decline, stale-content, and update-failure diagnoses → Writer
+- deferred diagnoses → Observation / follow-up
+
+Creator, Merge, noindex, and delete routing remain reserved for later diagnosis expansion.

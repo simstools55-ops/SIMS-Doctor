@@ -1,3 +1,16 @@
+## 1.0.0-sprint5.1-treatment-referral — 2026-08-04
+
+- Added Treatment Recommendation Engine
+- Added Referral Routing Engine
+- Preserved separation between diagnosis, treatment recommendation, and referral
+- Added Writer routing for confirmed diagnoses
+- Added Observation routing for deferred diagnoses
+- Added TREATMENT_RECOMMENDED and REFERRAL_ISSUED events
+- Added SIMS_DOCTOR_REFERRAL_V1 schema
+- Extended Medical Record counters
+- Added unit and integration tests
+- Reserved Creator, Merge, noindex, and delete routing for later diagnosis expansion
+
 ## 1.0.0-sprint4.3-final-diagnosis — 2026-08-04
 
 - Added Diagnosis Validation and Final Diagnosis Engine
