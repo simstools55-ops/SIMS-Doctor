@@ -76,3 +76,18 @@ Scoring, diagnosis, and referral decisions remain intentionally unimplemented.
 - Search Console Observation recording into the medical record
 
 Live Search Console retrieval remains outside this release.
+
+
+## Sprint3.3 Evidence Engine
+
+Doctor can now extract and store traceable Evidence from Observation data.
+
+Initial Evidence codes:
+
+- CTR_BELOW_POSITION_EXPECTATION
+- POSITION_DECLINE_OBSERVED
+- VISIBILITY_DECLINE_OBSERVED
+- LONG_TIME_SINCE_UPDATE
+
+Thresholds remain versioned in the Clinical Knowledge Base.
+LOW_SAMPLE Evidence is retained and flagged.

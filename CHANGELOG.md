@@ -1,3 +1,16 @@
+## 1.0.0-sprint3.3-evidence-engine — 2026-08-04
+
+- Added Evidence Engine foundation
+- Added four initial Evidence extraction rules
+- Added versioned Evidence thresholds and sample policy to CKB
+- Added LOW_SAMPLE retention and flagging
+- Added Evidence IDs, Observation linkage, measured values, and comparison basis
+- Added deterministic Evidence fingerprint and duplicate prevention
+- Added EVIDENCE_RECORDED Medical Record events
+- Extended Medical Record schema and counters
+- Added unit and integration tests
+- Did not add Vital Signs, Findings, or Diagnosis
+
 ## 1.0.0-sprint3.2-observation-event-log — 2026-08-04
 
 - Added append-only Medical Record Event Log

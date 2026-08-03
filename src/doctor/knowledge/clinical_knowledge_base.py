@@ -24,6 +24,7 @@ class ClinicalKnowledgeBase:
         "vital_signs": "vital_signs/vital_signs.json",
         "findings": "findings/finding_codes.json",
         "events": "workflow/medical_record_events.json",
+        "evidence_rules": "evidence/rules/evidence_rules_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -85,6 +86,14 @@ class ClinicalKnowledgeBase:
                     f"Invalid severity declaration for finding {item.get('code')}"
                 )
 
+        rules_doc = self._documents["evidence_rules"]
+        rule_codes = [item.get("evidence_code") for item in rules_doc.get("rules", [])]
+        known_evidence = self.codes("evidence")
+        if not rule_codes or any(code not in known_evidence for code in rule_codes):
+            raise KnowledgeValidationError("Evidence rule references unknown evidence code")
+        if len(rule_codes) != len(set(rule_codes)):
+            raise KnowledgeValidationError("Duplicate evidence rule code")
+
         events = self._documents["events"].get("items", [])
         if len(events) != len(set(events)):
             raise KnowledgeValidationError("Duplicate medical record event code")
@@ -104,6 +113,15 @@ class ClinicalKnowledgeBase:
 
     def is_known_code(self, registry: str, code: str) -> bool:
         return code in self.codes(registry)
+
+    def evidence_rules(self) -> dict[str, dict[str, Any]]:
+        return {
+            item["evidence_code"]: item
+            for item in self._documents["evidence_rules"]["rules"]
+        }
+
+    def sample_policy(self) -> dict[str, Any]:
+        return dict(self._documents["evidence_rules"]["sample_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
