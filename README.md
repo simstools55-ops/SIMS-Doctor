@@ -187,3 +187,14 @@ Recorded data includes:
 - changes from the previous SERP snapshot
 
 SERP data now enables the Competition Resilience Vital Sign.
+
+
+## Sprint6.3 Article Snapshot Observation
+
+Doctor now records article structure and content metadata as an immutable snapshot.
+
+This enables the final previously unavailable Vital Sign:
+
+- Content Integrity
+
+All seven Vital Signs can now be represented when the required observations exist.

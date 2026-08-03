@@ -102,8 +102,9 @@
         "internal_links",
         "serp.intent_match"
       ],
-      "method": "PLACEHOLDER_UNAVAILABLE",
-      "notes": "Article Snapshot and SERP integration are not implemented yet."
+      "method": "ARTICLE_STRUCTURE_AND_INTENT",
+      "notes": "Calculated from Article Snapshot structure and intent-alignment data.",
+      "status": "INITIAL_UNCALIBRATED"
     }
   ]
 }

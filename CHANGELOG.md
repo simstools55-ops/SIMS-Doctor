@@ -1,3 +1,14 @@
+## 1.0.0-sprint6.3-article-snapshot — 2026-08-04
+
+- Added SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1
+- Added Article Snapshot models and Medical Record integration
+- Added title, headings, FAQ, internal links, metrics, and freshness observations
+- Added previous-snapshot structural comparison
+- Enabled Content Integrity Vital Sign
+- Completed availability path for all seven Vital Signs
+- Added contract, unit, integration, and regression tests
+- Did not add live crawling, CMS-specific parsing, or content editing
+
 ## 1.0.0-sprint6.2-serp-observation — 2026-08-04
 
 - Added provider-neutral SERP acquisition interface

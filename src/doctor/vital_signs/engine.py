@@ -53,7 +53,7 @@ class VitalSignsEngine:
             self._ranking_stability(search, evidence, now),
             self._freshness(metadata, evidence, now),
             self._competition_resilience(self._latest_observation(observations, "SERP"), evidence, now),
-            self._unavailable("CONTENT_INTEGRITY", now, "Article Snapshot and SERP observation are not available"),
+            self._content_integrity(self._latest_observation(observations, "ARTICLE_SNAPSHOT"), self._latest_observation(observations, "SERP"), evidence, now),
         )
 
         available_scores = [item.score for item in signs if item.score is not None]
@@ -240,6 +240,61 @@ class VitalSignsEngine:
             base_confidence=75,
         )
 
+
+
+    def _content_integrity(
+        self,
+        article: dict[str, Any] | None,
+        serp: dict[str, Any] | None,
+        evidence: list[dict[str, Any]],
+        now: datetime,
+    ) -> VitalSignResult:
+        if article is None:
+            return self._unavailable("CONTENT_INTEGRITY", now, "Article Snapshot observation is not available")
+        facts = article.get("facts", {})
+        metrics = facts.get("metrics", {})
+        title_score = 100 if facts.get("title") else 0
+        heading_score = min(100, metrics.get("heading_count", 0) / 3 * 100)
+        faq_score = min(100, metrics.get("faq_count", 0) * 100)
+        link_score = min(100, metrics.get("internal_link_count", 0) / 2 * 100)
+        intent_score = facts.get("intent_alignment", {}).get("score", 0)
+        freshness_score = 100 if facts.get("freshness_markers") else 50
+
+        weights = {
+            "title": 0.10,
+            "heading": 0.20,
+            "faq": 0.15,
+            "links": 0.15,
+            "intent": 0.25,
+            "freshness": 0.15,
+        }
+        score = (
+            title_score * weights["title"]
+            + heading_score * weights["heading"]
+            + faq_score * weights["faq"]
+            + link_score * weights["links"]
+            + intent_score * weights["intent"]
+            + freshness_score * weights["freshness"]
+        )
+
+        observation_ids = [article["observation_id"]]
+        if serp is not None:
+            observation_ids.append(serp["observation_id"])
+
+        return self._result(
+            "CONTENT_INTEGRITY", score, now,
+            observation_ids=tuple(observation_ids),
+            evidence_items=[],
+            details={
+                "title_score": title_score,
+                "heading_score": round(heading_score),
+                "faq_score": round(faq_score),
+                "internal_link_score": round(link_score),
+                "intent_alignment_score": intent_score,
+                "freshness_marker_score": freshness_score,
+            },
+            base_confidence=80 if serp is not None else 70,
+        )
 
     def _freshness(self, metadata: dict[str, Any] | None, evidence: list[dict[str, Any]], now: datetime) -> VitalSignResult:
         if metadata is None:
