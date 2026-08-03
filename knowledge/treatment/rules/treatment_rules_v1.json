@@ -29,6 +29,27 @@
       "target": "WRITER",
       "priority": "HIGH",
       "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "CANNIBALIZATION",
+      "treatment_code": "REVIEW_QUERY_CONFLICT",
+      "target": "MERGE",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "treatment_code": "MERGE_OVERLAPPING_ARTICLES",
+      "target": "MERGE",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "treatment_code": "CREATE_DISTINCT_INTENT_ARTICLE",
+      "target": "CREATOR",
+      "priority": "MEDIUM",
+      "required_status": "CONFIRMED"
     }
   ],
   "deferred_rules": [

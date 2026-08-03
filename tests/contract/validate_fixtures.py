@@ -15,6 +15,12 @@ FIXTURES = ROOT / "tests" / "fixtures"
 CASES = [
 
     (
+        CONTRACTS / "SIMS_DOCTOR_CROSS_ARTICLE_OBSERVATION_INPUT_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "cross_article" / "merge_candidate.json",
+        True,
+    ),
+
+    (
         CONTRACTS / "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1.schema.json",
         ROOT / "tests" / "fixtures" / "output" / "single_case_result.json",
         True,

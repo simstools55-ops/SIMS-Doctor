@@ -219,3 +219,14 @@ Doctor now produces:
 - `SIMS_DOCTOR_WRITER_REQUEST_V1` for confirmed Writer referrals
 
 The Medical Record, diagnosis report, and referral request remain separate artifacts.
+
+
+## Sprint7.1 Cross-Article Diagnosis
+
+Doctor can now compare articles within the same site and diagnose:
+
+- Cannibalization
+- Article Merge Required
+- New Article Needed
+
+This activates Creator and Merge as real referral targets.

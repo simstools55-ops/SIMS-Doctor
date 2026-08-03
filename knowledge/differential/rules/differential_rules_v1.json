@@ -113,6 +113,45 @@
       "contradicting_findings": [],
       "base_confidence": 20,
       "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "CANNIBALIZATION",
+      "priority": 95,
+      "supporting_findings": [
+        {
+          "code": "QUERY_OVERLAP_HIGH",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "priority": 98,
+      "supporting_findings": [
+        {
+          "code": "MERGE_SUITABILITY_HIGH",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "priority": 70,
+      "supporting_findings": [
+        {
+          "code": "DISTINCT_INTENT_OPPORTUNITY",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
     }
   ]
 }

@@ -29,6 +29,18 @@
     {
       "code": "POSITION_DECLINE",
       "category": "FINAL_DECLINE"
+    },
+    {
+      "code": "CANNIBALIZATION",
+      "category": "CROSS_ARTICLE"
+    },
+    {
+      "code": "ARTICLE_MERGE_REQUIRED",
+      "category": "MERGE"
+    },
+    {
+      "code": "NEW_ARTICLE_NEEDED",
+      "category": "CREATOR"
     }
   ]
 }

@@ -34,6 +34,8 @@ class ClinicalKnowledgeBase:
         "referral_rules": "referral/rules/referral_rules_v1.json",
         "pipeline_policy": "workflow/clinical_pipeline_policy_v1.json",
         "output_policy": "workflow/output_policy_v1.json",
+        "cross_article_policy": "observation/cross_article/cross_article_policy_v1.json",
+        "cross_article_finding_rules": "findings/rules/cross_article_finding_rules_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -222,6 +224,12 @@ class ClinicalKnowledgeBase:
 
     def output_policy(self) -> dict[str, Any]:
         return dict(self._documents["output_policy"])
+
+    def cross_article_policy(self) -> dict[str, Any]:
+        return dict(self._documents["cross_article_policy"])
+
+    def cross_article_finding_rules(self) -> dict[str, Any]:
+        return dict(self._documents["cross_article_finding_rules"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

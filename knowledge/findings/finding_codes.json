@@ -120,6 +120,39 @@
       "allowed_severity": [
         "INFO"
       ]
+    },
+    {
+      "code": "QUERY_OVERLAP_HIGH",
+      "category": "CANNIBALIZATION",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "ARTICLE_INTENT_OVERLAP",
+      "category": "CANNIBALIZATION",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "MERGE_SUITABILITY_HIGH",
+      "category": "MERGE",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "DISTINCT_INTENT_OPPORTUNITY",
+      "category": "CREATOR",
+      "allowed_severity": [
+        "INFO",
+        "MILD"
+      ]
     }
   ]
 }

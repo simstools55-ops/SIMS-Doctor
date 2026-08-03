@@ -1,3 +1,14 @@
+## 1.0.0-sprint7.1-cross-article-cannibalization — 2026-08-04
+
+- Added Cross-Article Observation contract and analyzer
+- Added shared-query, title-similarity, and intent-similarity evaluation
+- Added Cannibalization, Merge Candidate, and New Article Opportunity findings
+- Added CANNIBALIZATION, ARTICLE_MERGE_REQUIRED, and NEW_ARTICLE_NEEDED diagnoses
+- Activated Merge and Creator routing
+- Added Cross-Article Findings Engine
+- Added contract, unit, integration, and regression tests
+- Did not add actual merge, creation, deletion, noindex, or batch diagnosis execution
+
 ## 1.0.0-sprint6.5-diagnosis-report-output — 2026-08-04
 
 - Added user-facing Japanese Diagnosis Report

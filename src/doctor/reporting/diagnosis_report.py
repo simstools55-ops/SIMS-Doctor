@@ -8,6 +8,9 @@ DIAGNOSIS_LABELS = {
     "POSITION_DECLINE": "検索順位と表示機会が低下しています",
     "CONTENT_STALE": "記事情報の鮮度不足が確認されました",
     "UPDATE_FAILURE": "前回の改善後も回復が確認できません",
+    "CANNIBALIZATION": "同じ検索需要を複数記事が取り合っている可能性があります",
+    "ARTICLE_MERGE_REQUIRED": "内容が重複する記事の統合を検討すべき状態です",
+    "NEW_ARTICLE_NEEDED": "既存記事とは異なる検索意図の記事が必要です",
 }
 
 DEFER_LABELS = {
@@ -32,6 +35,9 @@ TREATMENT_LABELS = {
     "COLLECT_MISSING_EVIDENCE": "不足している診断材料を収集します",
     "COLLECT_TREATMENT_HISTORY": "過去の改善履歴を確認して再診します",
     "MANUAL_REVIEW": "矛盾する情報を確認してから再診します",
+    "REVIEW_QUERY_CONFLICT": "Mergeでクエリ競合と統合可否を確認します",
+    "MERGE_OVERLAPPING_ARTICLES": "Mergeで重複記事の統合設計を行います",
+    "CREATE_DISTINCT_INTENT_ARTICLE": "Creatorで別の検索意図に対応する新記事を作成します",
 }
 
 
@@ -111,5 +117,8 @@ class DiagnosisReportBuilder:
             "LOW_VISIBILITY": "表示回数の減少が確認されました。",
             "CONTENT_OUTDATED": "最終更新から長期間が経過しています。",
             "INSUFFICIENT_EVIDENCE": "利用できるデータ量が不足しています。",
+            "QUERY_OVERLAP_HIGH": "複数記事で同じクエリの重複が確認されました。",
+            "MERGE_SUITABILITY_HIGH": "記事内容と検索意図の重複度が高い状態です。",
+            "DISTINCT_INTENT_OPPORTUNITY": "既存記事と異なる検索意図が確認されました。",
         }
         return labels.get(finding["finding_code"], "診断に関連する所見が確認されました。")

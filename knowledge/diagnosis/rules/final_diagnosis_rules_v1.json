@@ -88,6 +88,39 @@
         "INSUFFICIENT_EVIDENCE"
       ],
       "force_status": "DEFERRED"
+    },
+    {
+      "candidate_code": "CANNIBALIZATION",
+      "final_diagnosis_code": "CANNIBALIZATION",
+      "required_evidence": [],
+      "required_findings": [
+        "QUERY_OVERLAP_HIGH"
+      ],
+      "severity_source": [
+        "QUERY_OVERLAP_HIGH"
+      ]
+    },
+    {
+      "candidate_code": "ARTICLE_MERGE_REQUIRED",
+      "final_diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "required_evidence": [],
+      "required_findings": [
+        "MERGE_SUITABILITY_HIGH"
+      ],
+      "severity_source": [
+        "MERGE_SUITABILITY_HIGH"
+      ]
+    },
+    {
+      "candidate_code": "NEW_ARTICLE_NEEDED",
+      "final_diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "required_evidence": [],
+      "required_findings": [
+        "DISTINCT_INTENT_OPPORTUNITY"
+      ],
+      "severity_source": [
+        "DISTINCT_INTENT_OPPORTUNITY"
+      ]
     }
   ]
 }
