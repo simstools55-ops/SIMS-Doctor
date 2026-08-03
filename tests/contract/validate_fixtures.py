@@ -13,6 +13,12 @@ CONTRACTS = ROOT / "contracts"
 FIXTURES = ROOT / "tests" / "fixtures"
 
 CASES = [
+
+    (
+        CONTRACTS / "SIMS_DOCTOR_SEARCH_CONSOLE_OBSERVATION_INPUT_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "search_console" / "complete_365_days.json",
+        True,
+    ),
     (
         CONTRACTS / "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1.schema.json",
         FIXTURES / "valid" / "single_case_request.json",

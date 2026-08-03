@@ -1,3 +1,14 @@
+## 1.0.0-sprint3.2-observation-event-log — 2026-08-04
+
+- Added append-only Medical Record Event Log
+- Added sequence, idempotency, and SHA-256 payload integrity checks
+- Added Search Console 28/90/365-day Observation input contract
+- Added retrieval states COMPLETE, PARTIAL, FAILED, and NO_DATA
+- Added Search Console domain models and Observation recording service
+- Added Medical Record schema support for events and typed observations
+- Added unit, integration, and contract tests
+- Did not add live Search Console API retrieval or diagnostic evaluation
+
 ## 1.0.0-sprint3.1-ckb — 2026-08-04
 
 - Added Clinical Knowledge Base v1.0

@@ -18,7 +18,8 @@
     "follow_ups",
     "counters",
     "created_at",
-    "updated_at"
+    "updated_at",
+    "events"
   ],
   "properties": {
     "contract_name": {
@@ -99,7 +100,38 @@
     "observations": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation_id",
+          "observation_type",
+          "observed_at",
+          "source",
+          "facts",
+          "schema_version"
+        ],
+        "properties": {
+          "observation_id": {
+            "type": "string",
+            "pattern": "^OBS-[0-9]{8}-[0-9]{6}-[A-F0-9]{6}$"
+          },
+          "observation_type": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source": {
+            "type": "string"
+          },
+          "facts": {
+            "type": "object"
+          },
+          "schema_version": {
+            "type": "string"
+          }
+        }
       }
     },
     "diagnoses": {
@@ -179,6 +211,60 @@
     "updated_at": {
       "type": "string",
       "format": "date-time"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "event_type",
+          "occurred_at",
+          "case_id",
+          "medical_record_id",
+          "sequence",
+          "payload_hash",
+          "payload"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "pattern": "^EVT-[0-9]{8}-[0-9]{6}-[A-F0-9]{6}$"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "case_id": {
+            "type": "string"
+          },
+          "medical_record_id": {
+            "type": "string"
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "idempotency_key": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 200
+          },
+          "payload_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "payload": {
+            "type": "object"
+          }
+        }
+      }
     }
   }
 }

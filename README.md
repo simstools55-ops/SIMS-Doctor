@@ -65,3 +65,14 @@ Doctor now includes a declarative Clinical Knowledge Base for:
 
 Runtime loading is implemented in `src/doctor/knowledge/`.
 Scoring, diagnosis, and referral decisions remain intentionally unimplemented.
+
+
+## Sprint3.2 Observation Event Log
+
+- Append-only Medical Record event log
+- Event sequencing and payload-integrity verification
+- Idempotent Observation replay
+- 28/90/365-day Search Console input contract
+- Search Console Observation recording into the medical record
+
+Live Search Console retrieval remains outside this release.
