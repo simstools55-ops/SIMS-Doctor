@@ -1,3 +1,9 @@
+## 1.0.0-sprint4.3-final-diagnosis — 2026-08-04
+
+- Added Diagnosis Validation and Final Diagnosis Engine
+- Added CONFIRMED and DEFERRED outcomes
+- Added review dates and event logging
+
 ## 1.0.0-sprint4.2-differential-diagnosis — 2026-08-04
 
 - Added Differential Diagnosis Engine

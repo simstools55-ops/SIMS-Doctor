@@ -29,6 +29,7 @@ class ClinicalKnowledgeBase:
         "finding_rules": "findings/rules/finding_rules_v1.json",
         "diagnosis_codes": "diagnosis/diagnosis_codes.json",
         "differential_rules": "differential/rules/differential_rules_v1.json",
+        "final_diagnosis_rules": "diagnosis/rules/final_diagnosis_rules_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -119,6 +120,15 @@ class ClinicalKnowledgeBase:
         if len(differential_codes) != len(set(differential_codes)):
             raise KnowledgeValidationError("Duplicate differential diagnosis rule")
 
+        final_rules = self._documents["final_diagnosis_rules"].get("diagnoses", [])
+        final_candidate_codes = {item.get("candidate_code") for item in final_rules}
+        differential_codes_set = set(differential_codes)
+        if any(code not in differential_codes_set for code in final_candidate_codes):
+            raise KnowledgeValidationError("Final diagnosis rule references unknown candidate code")
+        final_codes = {item.get("final_diagnosis_code") for item in final_rules}
+        if any(code not in diagnosis_codes for code in final_codes):
+            raise KnowledgeValidationError("Final diagnosis rule references unknown diagnosis code")
+
         events = self._documents["events"].get("items", [])
         if len(events) != len(set(events)):
             raise KnowledgeValidationError("Duplicate medical record event code")
@@ -177,6 +187,12 @@ class ClinicalKnowledgeBase:
 
     def differential_global_policy(self) -> dict[str, Any]:
         return dict(self._documents["differential_rules"]["global_policy"])
+
+    def final_diagnosis_rules(self) -> dict[str, dict[str, Any]]:
+        return {item["candidate_code"]: item for item in self._documents["final_diagnosis_rules"]["diagnoses"]}
+
+    def final_diagnosis_global_policy(self) -> dict[str, Any]:
+        return dict(self._documents["final_diagnosis_rules"]["global_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

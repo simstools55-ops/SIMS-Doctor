@@ -1,0 +1,93 @@
+{
+  "rule_set": "SIMS_DOCTOR_FINAL_DIAGNOSIS_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "minimum_confirmation_confidence": 70,
+    "minimum_margin_to_second_candidate": 15,
+    "low_sample_only_behavior": "DEFER",
+    "contradiction_behavior": "DEFER_IF_PRESENT_AND_TOP_CONFIDENCE_BELOW_90",
+    "no_candidate_behavior": "DEFER",
+    "review_days": {
+      "CONFIRMED_DEFAULT": 28,
+      "DEFERRED_LOW_SAMPLE": 14,
+      "DEFERRED_CLOSE_CANDIDATES": 14,
+      "DEFERRED_LOW_CONFIDENCE": 28,
+      "DEFERRED_MISSING_EVIDENCE": 14,
+      "DEFERRED_CONTRADICTION": 14,
+      "DEFERRED_NO_CANDIDATE": 30
+    }
+  },
+  "diagnoses": [
+    {
+      "candidate_code": "LOW_CTR_WITH_STRONG_POSITION",
+      "final_diagnosis_code": "CTR_PROBLEM",
+      "required_evidence": [
+        "CTR_BELOW_POSITION_EXPECTATION"
+      ],
+      "required_findings": [
+        "CTR_UNDERPERFORMING"
+      ],
+      "severity_source": [
+        "HIGH_VISIBILITY_LOW_CLICK",
+        "CTR_UNDERPERFORMING"
+      ]
+    },
+    {
+      "candidate_code": "LONG_TERM_DECLINE",
+      "final_diagnosis_code": "POSITION_DECLINE",
+      "required_evidence": [
+        "POSITION_DECLINE_OBSERVED",
+        "VISIBILITY_DECLINE_OBSERVED"
+      ],
+      "required_findings": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY"
+      ],
+      "severity_source": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY"
+      ]
+    },
+    {
+      "candidate_code": "CONTENT_STALE",
+      "final_diagnosis_code": "CONTENT_STALE",
+      "required_evidence": [
+        "LONG_TIME_SINCE_UPDATE"
+      ],
+      "required_findings": [
+        "CONTENT_OUTDATED"
+      ],
+      "severity_source": [
+        "CONTENT_OUTDATED"
+      ]
+    },
+    {
+      "candidate_code": "UPDATE_FAILURE",
+      "final_diagnosis_code": "UPDATE_FAILURE",
+      "required_evidence": [
+        "POSITION_DECLINE_OBSERVED"
+      ],
+      "required_findings": [
+        "POSITION_DECLINING"
+      ],
+      "required_context": [
+        "history.improvement_event_exists"
+      ],
+      "severity_source": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY",
+        "CTR_UNDERPERFORMING"
+      ]
+    },
+    {
+      "candidate_code": "INSUFFICIENT_DATA",
+      "final_diagnosis_code": "INSUFFICIENT_DATA",
+      "required_evidence": [],
+      "required_findings": [
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "force_status": "DEFERRED"
+    }
+  ]
+}

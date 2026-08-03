@@ -21,6 +21,14 @@
     {
       "code": "INSUFFICIENT_DATA",
       "category": "QUALITY"
+    },
+    {
+      "code": "CTR_PROBLEM",
+      "category": "FINAL_CTR"
+    },
+    {
+      "code": "POSITION_DECLINE",
+      "category": "FINAL_DECLINE"
     }
   ]
 }

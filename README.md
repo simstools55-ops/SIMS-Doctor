@@ -141,3 +141,8 @@ Initial candidates:
 - INSUFFICIENT_DATA
 
 These candidates are not yet Final Diagnoses.
+
+
+## Sprint4.3 Final Diagnosis
+
+Doctor now records CONFIRMED or DEFERRED final diagnosis outcomes.
