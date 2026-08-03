@@ -208,3 +208,14 @@ Observation → Evidence → Vital Signs → Findings → Differential Diagnosis
 Final Diagnosis → Treatment Recommendation → Referral.
 
 Each component remains independent and idempotent.
+
+
+## Sprint6.5 Diagnosis Report and Output
+
+Doctor now produces:
+
+- a plain-language user diagnosis report
+- `SIMS_DOCTOR_SINGLE_CASE_RESULT_V1`
+- `SIMS_DOCTOR_WRITER_REQUEST_V1` for confirmed Writer referrals
+
+The Medical Record, diagnosis report, and referral request remain separate artifacts.

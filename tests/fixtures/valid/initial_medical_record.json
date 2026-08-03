@@ -37,7 +37,8 @@
     "differential_count": 0,
     "final_diagnosis_count": 0,
     "treatment_recommendation_count": 0,
-    "pipeline_run_count": 0
+    "pipeline_run_count": 0,
+    "output_count": 0
   },
   "previous_case": null,
   "created_at": "2026-08-04T19:00:25+09:00",
@@ -49,5 +50,6 @@
   "differential_assessments": [],
   "final_diagnoses": [],
   "treatment_recommendations": [],
-  "pipeline_runs": []
+  "pipeline_runs": [],
+  "outputs": []
 }

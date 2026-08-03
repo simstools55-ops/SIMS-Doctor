@@ -1,3 +1,15 @@
+## 1.0.0-sprint6.5-diagnosis-report-output — 2026-08-04
+
+- Added user-facing Japanese Diagnosis Report
+- Added SIMS_DOCTOR_SINGLE_CASE_RESULT_V1
+- Added SIMS_DOCTOR_WRITER_REQUEST_V1
+- Added Writer treatment goals and preservation constraints
+- Added confirmed and deferred output handling
+- Added OUTPUT_GENERATED event
+- Added Medical Record output history and counters
+- Added contract, unit, integration, and regression tests
+- Did not add Creator, Merge, SBM import, or graphical UI implementations
+
 ## 1.0.0-sprint6.4-clinical-pipeline — 2026-08-04
 
 - Added Clinical Pipeline Orchestrator

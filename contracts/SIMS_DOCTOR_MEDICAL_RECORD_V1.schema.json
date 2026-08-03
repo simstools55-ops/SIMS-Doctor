@@ -26,7 +26,8 @@
     "differential_assessments",
     "final_diagnoses",
     "treatment_recommendations",
-    "pipeline_runs"
+    "pipeline_runs",
+    "outputs"
   ],
   "properties": {
     "contract_name": {
@@ -174,7 +175,8 @@
         "differential_count",
         "final_diagnosis_count",
         "treatment_recommendation_count",
-        "pipeline_run_count"
+        "pipeline_run_count",
+        "output_count"
       ],
       "properties": {
         "request_count": {
@@ -222,6 +224,10 @@
           "minimum": 0
         },
         "pipeline_run_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -847,6 +853,12 @@
       }
     },
     "pipeline_runs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "outputs": {
       "type": "array",
       "items": {
         "type": "object"
