@@ -156,6 +156,61 @@
       "severity_source": [
         "RECOVERY_TREND"
       ]
+    },
+    {
+      "candidate_code": "TREATMENT_SUCCESS",
+      "final_diagnosis_code": "TREATMENT_SUCCESS",
+      "required_evidence": [],
+      "required_findings": [
+        "IMPROVEMENT_CONFIRMED"
+      ],
+      "severity_source": [
+        "IMPROVEMENT_CONFIRMED"
+      ]
+    },
+    {
+      "candidate_code": "IMPROVEMENT_FAILURE",
+      "final_diagnosis_code": "IMPROVEMENT_FAILURE",
+      "required_evidence": [],
+      "required_findings": [
+        "TREATMENT_INEFFECTIVE"
+      ],
+      "severity_source": [
+        "TREATMENT_INEFFECTIVE"
+      ]
+    },
+    {
+      "candidate_code": "POST_IMPROVEMENT_WORSENING",
+      "final_diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "required_evidence": [],
+      "required_findings": [
+        "POST_TREATMENT_WORSENING"
+      ],
+      "severity_source": [
+        "POST_TREATMENT_WORSENING"
+      ]
+    },
+    {
+      "candidate_code": "MIXED_TREATMENT_RESPONSE",
+      "final_diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "required_evidence": [],
+      "required_findings": [
+        "MIXED_TREATMENT_RESPONSE"
+      ],
+      "severity_source": [
+        "MIXED_TREATMENT_RESPONSE"
+      ]
+    },
+    {
+      "candidate_code": "FOLLOW_UP_REQUIRED",
+      "final_diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "required_evidence": [],
+      "required_findings": [
+        "FOLLOW_UP_INSUFFICIENT"
+      ],
+      "severity_source": [
+        "FOLLOW_UP_INSUFFICIENT"
+      ]
     }
   ]
 }

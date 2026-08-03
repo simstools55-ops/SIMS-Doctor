@@ -56,6 +56,11 @@
         "captured_at"
       ],
       "evaluation_allowed": false
+    },
+    {
+      "code": "TREATMENT_HISTORY",
+      "description": "改善前後の効果測定履歴",
+      "source": "SBM_IMPROVEMENT_HISTORY"
     }
   ]
 }

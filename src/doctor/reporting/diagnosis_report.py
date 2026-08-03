@@ -14,6 +14,11 @@ DIAGNOSIS_LABELS = {
     "LONG_TERM_DECAY": "記事の検索パフォーマンスが長期的に低下しています",
     "SEASONAL_DECLINE": "季節性による変動の可能性があります",
     "RECOVERY_IN_PROGRESS": "記事は回復傾向にあります",
+    "TREATMENT_SUCCESS": "前回の改善効果が確認されました",
+    "IMPROVEMENT_FAILURE": "前回の改善で明確な効果を確認できません",
+    "POST_IMPROVEMENT_WORSENING": "前回の改善後に検索パフォーマンスが悪化しています",
+    "MIXED_TREATMENT_RESPONSE": "改善後の指標が改善と悪化に分かれています",
+    "FOLLOW_UP_REQUIRED": "改善効果の判定には追加の測定期間が必要です",
 }
 
 DEFER_LABELS = {
@@ -44,6 +49,11 @@ TREATMENT_LABELS = {
     "REWRITE_LONG_TERM_RECOVERY": "Writerで長期低下の原因を確認し、回復を目的とした改善を行います",
     "SEASONAL_OBSERVATION": "記事を変更せず、季節要因を確認しながら経過観察します",
     "CONTINUE_OBSERVATION": "回復傾向を維持するため、現状を保って経過観察します",
+    "CONTINUE_EFFECT_MONITORING": "現状を維持し、改善効果を継続測定します",
+    "REASSESS_INEFFECTIVE_IMPROVEMENT": "Writerで前回の改善内容を再評価し、別の治療方針を検討します",
+    "REVIEW_AND_ROLLBACK_WORSENING": "Writerで悪化原因を確認し、前回変更の修正または復元を検討します",
+    "ADDITIONAL_EFFECT_MEASUREMENT": "記事を大きく変更せず、追加測定後に再診します",
+    "WAIT_FOR_EFFECT_MEASUREMENT": "十分な測定期間が経過するまで経過観察します",
 }
 
 
@@ -131,5 +141,10 @@ class DiagnosisReportBuilder:
             "LONG_TERM_POSITION_DECAY": "平均順位が長期的に低下しています。",
             "SEASONALITY_DETECTED": "過去期間と似た季節変動が確認されました。",
             "RECOVERY_TREND": "直近期間で回復傾向が確認されました。",
+            "IMPROVEMENT_CONFIRMED": "改善前と比べて主要指標の改善が確認されました。",
+            "TREATMENT_INEFFECTIVE": "改善前と比べて明確な効果が確認できません。",
+            "POST_TREATMENT_WORSENING": "改善前と比べて主要指標が悪化しています。",
+            "MIXED_TREATMENT_RESPONSE": "改善した指標と悪化した指標が混在しています。",
+            "FOLLOW_UP_INSUFFICIENT": "改善効果を判断するための期間またはデータが不足しています。",
         }
         return labels.get(finding["finding_code"], "診断に関連する所見が確認されました。")

@@ -242,3 +242,16 @@ Doctor now analyzes repeated 28-day windows over 365 days and distinguishes:
 
 Confirmed long-term decay routes to Writer.
 Seasonal and recovery cases route to Observation.
+
+
+## Sprint7.3 Improvement History Comparison
+
+Doctor now compares pre-treatment metrics with 7, 14, and 28-day checkpoints and distinguishes:
+
+- Treatment Success
+- Improvement Failure
+- Post-Improvement Worsening
+- Mixed Treatment Response
+- Follow-Up Required
+
+Worsening and ineffective treatment route to Writer. Doctor never rolls back an article automatically.

@@ -196,6 +196,42 @@
         "INFO",
         "MILD"
       ]
+    },
+    {
+      "code": "IMPROVEMENT_CONFIRMED",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "TREATMENT_INEFFECTIVE",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "POST_TREATMENT_WORSENING",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "MIXED_TREATMENT_RESPONSE",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "MILD"
+      ]
+    },
+    {
+      "code": "FOLLOW_UP_INSUFFICIENT",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "INFO"
+      ]
     }
   ]
 }

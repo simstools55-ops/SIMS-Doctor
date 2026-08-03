@@ -71,6 +71,41 @@
       "target": "OBSERVATION",
       "priority": "LOW",
       "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "TREATMENT_SUCCESS",
+      "treatment_code": "CONTINUE_EFFECT_MONITORING",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "treatment_code": "REASSESS_INEFFECTIVE_IMPROVEMENT",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "treatment_code": "REVIEW_AND_ROLLBACK_WORSENING",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "treatment_code": "ADDITIONAL_EFFECT_MEASUREMENT",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "treatment_code": "WAIT_FOR_EFFECT_MEASUREMENT",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
     }
   ],
   "deferred_rules": [

@@ -1,3 +1,16 @@
+## 1.0.0-sprint7.3-improvement-history — 2026-08-04
+
+- Added Improvement History Comparison
+- Added baseline and post-treatment checkpoint analysis
+- Added weighted clicks, impressions, CTR, and position effect score
+- Added improvement, no-effect, worsening, mixed-response, and insufficient-follow-up classifications
+- Added treatment-response Evidence and Findings
+- Added TREATMENT_SUCCESS, IMPROVEMENT_FAILURE, POST_IMPROVEMENT_WORSENING, MIXED_TREATMENT_RESPONSE, and FOLLOW_UP_REQUIRED diagnoses
+- Added Writer review for ineffective or worsening treatment
+- Added Observation routing for success and follow-up cases
+- Added contract, unit, integration, and regression tests
+- Did not add automatic rollback or article restoration
+
 ## 1.0.0-sprint7.2-long-term-decline — 2026-08-04
 
 - Added long-term 365-day window analysis

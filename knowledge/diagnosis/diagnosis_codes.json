@@ -53,6 +53,26 @@
     {
       "code": "RECOVERY_IN_PROGRESS",
       "category": "RECOVERY"
+    },
+    {
+      "code": "TREATMENT_SUCCESS",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "IMPROVEMENT_FAILURE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "POST_IMPROVEMENT_WORSENING",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "MIXED_TREATMENT_RESPONSE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "FOLLOW_UP_REQUIRED",
+      "category": "TREATMENT_RESPONSE"
     }
   ]
 }

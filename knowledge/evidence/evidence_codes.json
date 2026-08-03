@@ -121,6 +121,52 @@
         "trend.visibility_change_ratio"
       ],
       "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_EFFECT_POSITIVE",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に総合的な改善効果が観察された",
+      "required_inputs": [
+        "assessment.effect_score"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_NO_EFFECT",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に有意な効果が観察されない",
+      "required_inputs": [
+        "assessment.effect_score"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "POST_TREATMENT_WORSENING",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に主要指標の悪化が観察された",
+      "required_inputs": [
+        "assessment.effect_score",
+        "assessment.metric_changes"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_MIXED_RESPONSE",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後の指標が改善と悪化に分かれた",
+      "required_inputs": [
+        "assessment.metric_changes"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_FOLLOW_UP_INSUFFICIENT",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後の測定期間またはデータ量が不足している",
+      "required_inputs": [
+        "assessment.selected_checkpoint_days"
+      ],
+      "minimum_sample_policy": "ALWAYS"
     }
   ]
 }

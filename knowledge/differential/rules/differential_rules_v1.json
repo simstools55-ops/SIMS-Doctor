@@ -209,6 +209,71 @@
       ],
       "base_confidence": 20,
       "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "TREATMENT_SUCCESS",
+      "priority": 75,
+      "supporting_findings": [
+        {
+          "code": "IMPROVEMENT_CONFIRMED",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "priority": 94,
+      "supporting_findings": [
+        {
+          "code": "TREATMENT_INEFFECTIVE",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "priority": 99,
+      "supporting_findings": [
+        {
+          "code": "POST_TREATMENT_WORSENING",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "priority": 80,
+      "supporting_findings": [
+        {
+          "code": "MIXED_TREATMENT_RESPONSE",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "priority": 90,
+      "supporting_findings": [
+        {
+          "code": "FOLLOW_UP_INSUFFICIENT",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
     }
   ]
 }
