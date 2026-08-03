@@ -52,7 +52,7 @@ class VitalSignsEngine:
             self._ctr_health(search, evidence, now),
             self._ranking_stability(search, evidence, now),
             self._freshness(metadata, evidence, now),
-            self._unavailable("COMPETITION_RESILIENCE", now, "SERP observation is not available"),
+            self._competition_resilience(self._latest_observation(observations, "SERP"), evidence, now),
             self._unavailable("CONTENT_INTEGRITY", now, "Article Snapshot and SERP observation are not available"),
         )
 
@@ -217,6 +217,29 @@ class VitalSignsEngine:
             evidence_items=related,
             details={"positions": positions, "spread": spread}
         )
+
+
+
+    def _competition_resilience(self, serp: dict[str, Any] | None, evidence: list[dict[str, Any]], now: datetime) -> VitalSignResult:
+        if serp is None:
+            return self._unavailable("COMPETITION_RESILIENCE", now, "SERP observation is not available")
+        competition = serp.get("facts", {}).get("competition", {})
+        strength = competition.get("strength_score")
+        intent_match = competition.get("intent_match_score")
+        if strength is None or intent_match is None:
+            return self._unavailable("COMPETITION_RESILIENCE", now, "SERP competition metrics are unavailable")
+        score = 100 - strength * 0.7 + intent_match * 0.3
+        return self._result(
+            "COMPETITION_RESILIENCE", score, now,
+            observation_ids=(serp["observation_id"],),
+            evidence_items=[],
+            details={
+                "competition_strength": strength,
+                "serp_intent_match": intent_match,
+            },
+            base_confidence=75,
+        )
+
 
     def _freshness(self, metadata: dict[str, Any] | None, evidence: list[dict[str, Any]], now: datetime) -> VitalSignResult:
         if metadata is None:

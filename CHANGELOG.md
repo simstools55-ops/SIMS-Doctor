@@ -1,3 +1,15 @@
+## 1.0.0-sprint6.2-serp-observation — 2026-08-04
+
+- Added provider-neutral SERP acquisition interface
+- Added SIMS_DOCTOR_SERP_OBSERVATION_INPUT_V1
+- Added intent inference and SERP feature recording
+- Added normalized competition metrics
+- Added previous SERP comparison
+- Added SERP Medical Record Observation integration
+- Enabled Competition Resilience Vital Sign
+- Added contract, unit, and integration tests
+- Did not add provider credentials, browser scraping, or Article Snapshot Observation
+
 ## 1.0.0-sprint6.1-search-console-acquisition — 2026-08-04
 
 - Added provider-neutral Search Console acquisition interface

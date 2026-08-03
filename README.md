@@ -172,3 +172,18 @@ Doctor now contains a provider-neutral acquisition service and Google API adapte
 - conversion into the existing Search Console Observation contract
 
 Credentials and OAuth UI are intentionally excluded.
+
+
+## Sprint6.2 SERP Observation
+
+Doctor now supports provider-neutral SERP acquisition and Medical Record snapshots.
+
+Recorded data includes:
+
+- top results
+- search intent
+- SERP features
+- competition strength
+- changes from the previous SERP snapshot
+
+SERP data now enables the Competition Resilience Vital Sign.

@@ -90,8 +90,9 @@
         "serp.intent_match",
         "serp.content_gap"
       ],
-      "method": "PLACEHOLDER_UNAVAILABLE",
-      "notes": "SERP Observation is not implemented yet."
+      "method": "SERP_COMPETITION_INVERSION",
+      "notes": "Calculated from normalized SERP competition strength and intent match.",
+      "status": "INITIAL_UNCALIBRATED"
     },
     {
       "code": "CONTENT_INTEGRITY",
