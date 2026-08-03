@@ -1,3 +1,16 @@
+## 1.0.0-sprint6.4-clinical-pipeline — 2026-08-04
+
+- Added Clinical Pipeline Orchestrator
+- Added end-to-end coordination from Observation through Referral
+- Added partial Observation failure tolerance
+- Added stop-on-clinical-step failure
+- Added idempotent replay and resume foundation
+- Added CLINICAL_PIPELINE_COMPLETED event
+- Added SIMS_DOCTOR_CLINICAL_PIPELINE_RESULT_V1
+- Added Medical Record pipeline history and counters
+- Added unit and integration tests
+- Did not add persistent queueing, scheduling, credentials, or user-facing report rendering
+
 ## 1.0.0-sprint6.3-article-snapshot — 2026-08-04
 
 - Added SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1

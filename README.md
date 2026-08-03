@@ -198,3 +198,13 @@ This enables the final previously unavailable Vital Sign:
 - Content Integrity
 
 All seven Vital Signs can now be represented when the required observations exist.
+
+
+## Sprint6.4 Clinical Pipeline
+
+Doctor now includes an end-to-end orchestrator that coordinates:
+
+Observation → Evidence → Vital Signs → Findings → Differential Diagnosis →
+Final Diagnosis → Treatment Recommendation → Referral.
+
+Each component remains independent and idempotent.
