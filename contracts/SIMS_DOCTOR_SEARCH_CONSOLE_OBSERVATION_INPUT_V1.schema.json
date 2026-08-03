@@ -100,6 +100,34 @@
             "string",
             "null"
           ]
+        },
+        "component_errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "component",
+              "code",
+              "message"
+            ],
+            "properties": {
+              "component": {
+                "type": "string"
+              },
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "message": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       }
     },

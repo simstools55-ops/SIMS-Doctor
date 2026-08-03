@@ -158,3 +158,17 @@ Active routing:
 - deferred diagnoses → Observation / follow-up
 
 Creator, Merge, noindex, and delete routing remain reserved for later diagnosis expansion.
+
+
+## Sprint6.1 Search Console 365-Day Acquisition
+
+Doctor now contains a provider-neutral acquisition service and Google API adapter for:
+
+- 28-day aggregate metrics
+- 90-day aggregate metrics
+- 365-day aggregate metrics
+- paged query-level metrics
+- retry and partial-failure reporting
+- conversion into the existing Search Console Observation contract
+
+Credentials and OAuth UI are intentionally excluded.

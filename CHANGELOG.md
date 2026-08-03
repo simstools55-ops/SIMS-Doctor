@@ -1,3 +1,15 @@
+## 1.0.0-sprint6.1-search-console-acquisition — 2026-08-04
+
+- Added provider-neutral Search Console acquisition interface
+- Added Google Search Console API adapter
+- Added 28, 90, and 365-day aggregate retrieval
+- Added query-level paging and policy limits
+- Added retry for transient provider errors
+- Added COMPLETE, PARTIAL, FAILED, and NO_DATA acquisition states
+- Added conversion to SIMS_DOCTOR_SEARCH_CONSOLE_OBSERVATION_INPUT_V1
+- Added unit and end-to-end Observation integration tests
+- Did not add credential storage, OAuth UI, scheduling, or SERP acquisition
+
 ## 1.0.0-sprint5.1-treatment-referral — 2026-08-04
 
 - Added Treatment Recommendation Engine
