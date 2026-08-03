@@ -1,3 +1,15 @@
+## 1.0.0-sprint4.2-differential-diagnosis — 2026-08-04
+
+- Added Differential Diagnosis Engine
+- Added versioned Diagnosis Code Registry
+- Added supporting and contradicting Finding rules
+- Added confidence scoring, ranking, and low-sample penalty
+- Added context-sensitive UPDATE_FAILURE candidate
+- Added idempotent DIFFERENTIAL_UPDATED event
+- Extended Medical Record schema and counters
+- Added unit and integration tests
+- Did not add Final Diagnosis, treatment, or referral generation
+
 ## 1.0.0-sprint4.1-findings-engine — 2026-08-04
 
 - Added Findings Engine foundation

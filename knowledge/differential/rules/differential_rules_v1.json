@@ -1,0 +1,118 @@
+{
+  "rule_set": "SIMS_DOCTOR_DIFFERENTIAL_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "candidate_limit": 5,
+    "minimum_candidate_confidence": 20,
+    "low_sample_penalty": 20,
+    "contradiction_penalty": 15,
+    "duplicate_behavior": "SKIP_IDENTICAL_FINGERPRINT",
+    "ranking": "CONFIDENCE_DESC_THEN_PRIORITY_DESC"
+  },
+  "candidates": [
+    {
+      "diagnosis_code": "LOW_CTR_WITH_STRONG_POSITION",
+      "priority": 90,
+      "supporting_findings": [
+        {
+          "code": "CTR_UNDERPERFORMING",
+          "weight": 45
+        },
+        {
+          "code": "HIGH_VISIBILITY_LOW_CLICK",
+          "weight": 40
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 20
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1,
+      "notes": "Strong when CTR is weak while visibility remains healthy."
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECLINE",
+      "priority": 80,
+      "supporting_findings": [
+        {
+          "code": "POSITION_DECLINING",
+          "weight": 40
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 35
+        },
+        {
+          "code": "CONTENT_OUTDATED",
+          "weight": 20
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "POSITION_STABLE",
+          "weight": 30
+        }
+      ],
+      "base_confidence": 15,
+      "minimum_support_count": 2
+    },
+    {
+      "diagnosis_code": "CONTENT_STALE",
+      "priority": 70,
+      "supporting_findings": [
+        {
+          "code": "CONTENT_OUTDATED",
+          "weight": 60
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 20
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "UPDATE_FAILURE",
+      "priority": 75,
+      "supporting_findings": [
+        {
+          "code": "POSITION_DECLINING",
+          "weight": 35
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 30
+        },
+        {
+          "code": "CTR_UNDERPERFORMING",
+          "weight": 15
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 10,
+      "minimum_support_count": 2,
+      "required_context": [
+        "history.improvement_event_exists"
+      ]
+    },
+    {
+      "diagnosis_code": "INSUFFICIENT_DATA",
+      "priority": 100,
+      "supporting_findings": [
+        {
+          "code": "INSUFFICIENT_EVIDENCE",
+          "weight": 80
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    }
+  ]
+}

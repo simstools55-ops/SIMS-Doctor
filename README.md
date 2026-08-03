@@ -125,3 +125,19 @@ Initial Findings:
 - INSUFFICIENT_EVIDENCE
 
 Findings remain distinct from Diagnosis.
+
+
+## Sprint4.2 Differential Diagnosis
+
+Doctor now produces ranked diagnostic hypotheses with confidence, support, contradiction,
+and full traceability.
+
+Initial candidates:
+
+- LOW_CTR_WITH_STRONG_POSITION
+- LONG_TERM_DECLINE
+- CONTENT_STALE
+- UPDATE_FAILURE
+- INSUFFICIENT_DATA
+
+These candidates are not yet Final Diagnoses.

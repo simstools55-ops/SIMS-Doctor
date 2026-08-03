@@ -27,6 +27,8 @@ class ClinicalKnowledgeBase:
         "evidence_rules": "evidence/rules/evidence_rules_v1.json",
         "vital_formulas": "vital_signs/formulas/vital_sign_formulas_v1.json",
         "finding_rules": "findings/rules/finding_rules_v1.json",
+        "diagnosis_codes": "diagnosis/diagnosis_codes.json",
+        "differential_rules": "differential/rules/differential_rules_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -108,6 +110,15 @@ class ClinicalKnowledgeBase:
         if len(finding_rule_codes) != len(set(finding_rule_codes)):
             raise KnowledgeValidationError("Duplicate finding rule code")
 
+        diagnosis_codes = [item.get("code") for item in self._documents["diagnosis_codes"].get("items", [])]
+        if not diagnosis_codes or len(diagnosis_codes) != len(set(diagnosis_codes)):
+            raise KnowledgeValidationError("Invalid diagnosis code registry")
+        differential_codes = [item.get("diagnosis_code") for item in self._documents["differential_rules"].get("candidates", [])]
+        if any(code not in diagnosis_codes for code in differential_codes):
+            raise KnowledgeValidationError("Differential rule references unknown diagnosis code")
+        if len(differential_codes) != len(set(differential_codes)):
+            raise KnowledgeValidationError("Duplicate differential diagnosis rule")
+
         events = self._documents["events"].get("items", [])
         if len(events) != len(set(events)):
             raise KnowledgeValidationError("Duplicate medical record event code")
@@ -154,6 +165,18 @@ class ClinicalKnowledgeBase:
 
     def finding_global_policy(self) -> dict[str, Any]:
         return dict(self._documents["finding_rules"]["global_policy"])
+
+    def diagnosis_codes(self) -> set[str]:
+        return {item["code"] for item in self._documents["diagnosis_codes"]["items"]}
+
+    def differential_rules(self) -> dict[str, dict[str, Any]]:
+        return {
+            item["diagnosis_code"]: item
+            for item in self._documents["differential_rules"]["candidates"]
+        }
+
+    def differential_global_policy(self) -> dict[str, Any]:
+        return dict(self._documents["differential_rules"]["global_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

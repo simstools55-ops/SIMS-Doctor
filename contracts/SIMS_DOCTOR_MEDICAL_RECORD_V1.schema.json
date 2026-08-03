@@ -22,7 +22,8 @@
     "events",
     "evidence",
     "vital_profiles",
-    "findings"
+    "findings",
+    "differential_assessments"
   ],
   "properties": {
     "contract_name": {
@@ -166,7 +167,8 @@
         "follow_up_count",
         "evidence_count",
         "vital_profile_count",
-        "finding_count"
+        "finding_count",
+        "differential_count"
       ],
       "properties": {
         "request_count": {
@@ -198,6 +200,10 @@
           "minimum": 0
         },
         "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "differential_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -577,6 +583,119 @@
           },
           "rationale": {
             "type": "object"
+          },
+          "fingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "differential_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "differential_id",
+          "created_at",
+          "candidates",
+          "finding_ids",
+          "top_candidate",
+          "top_confidence",
+          "rule_set_version",
+          "fingerprint"
+        ],
+        "properties": {
+          "differential_id": {
+            "type": "string",
+            "pattern": "^DIF-[0-9]{8}-[0-9]{6}-[A-F0-9]{6}$"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "candidates": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "required": [
+                "diagnosis_code",
+                "rank",
+                "confidence",
+                "priority",
+                "supporting_finding_ids",
+                "contradicting_finding_ids",
+                "evidence_ids",
+                "rule_version",
+                "rationale"
+              ],
+              "properties": {
+                "diagnosis_code": {
+                  "type": "string"
+                },
+                "rank": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "confidence": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "supporting_finding_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "contradicting_finding_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rule_version": {
+                  "type": "string"
+                },
+                "rationale": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "top_candidate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "top_confidence": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "rule_set_version": {
+            "type": "string"
           },
           "fingerprint": {
             "type": "string",

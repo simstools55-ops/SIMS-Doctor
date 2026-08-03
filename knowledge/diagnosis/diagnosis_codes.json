@@ -1,0 +1,26 @@
+{
+  "registry_name": "DIAGNOSIS_CODE_REGISTRY",
+  "version": "1.0",
+  "items": [
+    {
+      "code": "LOW_CTR_WITH_STRONG_POSITION",
+      "category": "CTR"
+    },
+    {
+      "code": "LONG_TERM_DECLINE",
+      "category": "DECLINE"
+    },
+    {
+      "code": "CONTENT_STALE",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "UPDATE_FAILURE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "INSUFFICIENT_DATA",
+      "category": "QUALITY"
+    }
+  ]
+}
