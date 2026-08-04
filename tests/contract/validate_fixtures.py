@@ -15,6 +15,32 @@ FIXTURES = ROOT / "tests" / "fixtures"
 CASES = [
 
     (
+        CONTRACTS / "SIMS_SBM_DOCTOR_BATCH_REQUEST_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "sbm_batch" / "request.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_SBM_DOCTOR_BATCH_ACCEPTED_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "sbm_batch" / "accepted.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_SBM_DOCTOR_BATCH_STATUS_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "sbm_batch" / "status.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_SBM_DOCTOR_BATCH_RESULT_PACKAGE_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "sbm_batch" / "result_package.json",
+        True,
+    ),
+    (
+        CONTRACTS / "SIMS_SBM_DOCTOR_BATCH_IMPORT_ACK_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "sbm_batch" / "import_ack.json",
+        True,
+    ),
+
+    (
         CONTRACTS / "SIMS_DOCTOR_BATCH_QUEUE_RECORD_V1.schema.json",
         ROOT / "tests" / "fixtures" / "batch_queue" / "queue_record.json",
         True,

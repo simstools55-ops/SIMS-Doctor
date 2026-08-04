@@ -285,3 +285,11 @@ and completion events. Production database and scheduler adapters remain deploym
 
 Doctor now includes a durable SQLite queue adapter and an automation-friendly scheduler CLI.
 A paused batch can survive process restart and resume from its saved checkpoint.
+
+
+## Sprint8.4 SBM Batch Integration
+
+Doctor now defines the complete JSON-contract flow for SBM batch submission, acceptance,
+progress polling, terminal result export, and idempotent result import acknowledgement.
+
+The integration does not expose Doctor Medical Records or internal diagnosis rules.

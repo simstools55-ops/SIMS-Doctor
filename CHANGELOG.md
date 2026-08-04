@@ -1,3 +1,18 @@
+## 1.0.0-sprint8.4-sbm-batch-integration — 2026-08-04
+
+- Added SBM-to-Doctor batch request contract
+- Added accepted and progress status contracts
+- Added terminal result package contract
+- Added idempotent import acknowledgement contract
+- Added SBM Batch Gateway
+- Added duplicate batch submission detection
+- Added safe status projection without internal request payloads or error messages
+- Added result fingerprinting
+- Added SQLite SBM import ledger and duplicate import prevention
+- Added Apps Script lightweight contract validators
+- Added contract, unit, integration, and regression tests
+- Did not add SBM UI, HTTP transport, authentication, automatic polling, or Medical Record export
+
 ## 1.0.0-sprint8.3-production-queue-scheduler — 2026-08-04
 
 - Added SQLite durable Batch Queue adapter
