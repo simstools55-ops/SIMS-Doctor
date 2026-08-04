@@ -3,20 +3,14 @@
   "$id": "https://sims.local/contracts/SIMS_DOCTOR_WRITER_REQUEST_V1.schema.json",
   "title": "SIMS_DOCTOR_WRITER_REQUEST_V1",
   "type": "object",
-  "additionalProperties": false,
   "required": [
     "contract_name",
     "contract_version",
     "request_id",
     "case_id",
-    "medical_record_id",
-    "referral_id",
     "article",
     "diagnosis",
-    "treatment_directive",
-    "preservation",
-    "trace",
-    "created_at"
+    "treatment"
   ],
   "properties": {
     "contract_name": {
@@ -31,135 +25,14 @@
     "case_id": {
       "type": "string"
     },
-    "medical_record_id": {
-      "type": "string"
-    },
-    "referral_id": {
-      "type": "string"
-    },
     "article": {
-      "type": "object",
-      "required": [
-        "site_id",
-        "article_id",
-        "url",
-        "title"
-      ],
-      "properties": {
-        "site_id": {
-          "type": "string"
-        },
-        "article_id": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "title": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     },
     "diagnosis": {
-      "type": "object",
-      "required": [
-        "code",
-        "confidence",
-        "severity"
-      ],
-      "properties": {
-        "code": {
-          "type": "string"
-        },
-        "confidence": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 100
-        },
-        "severity": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
+      "type": "object"
     },
-    "treatment_directive": {
-      "type": "object",
-      "required": [
-        "code",
-        "priority",
-        "goals",
-        "prohibited_actions"
-      ],
-      "properties": {
-        "code": {
-          "type": "string"
-        },
-        "priority": {
-          "type": "string"
-        },
-        "goals": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "prohibited_actions": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "preservation": {
-      "type": "object",
-      "required": [
-        "preserve_existing_strengths",
-        "preserve_ads_and_links"
-      ],
-      "properties": {
-        "preserve_existing_strengths": {
-          "const": true
-        },
-        "preserve_ads_and_links": {
-          "const": true
-        }
-      }
-    },
-    "trace": {
-      "type": "object",
-      "required": [
-        "finding_ids",
-        "evidence_ids",
-        "vital_profile_id"
-      ],
-      "properties": {
-        "finding_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "evidence_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "vital_profile_id": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
+    "treatment": {
+      "type": "object"
     }
   }
 }

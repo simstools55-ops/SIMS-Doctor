@@ -1,3 +1,17 @@
+## 1.0.0-sprint10.1-treatment-recommendation — 2026-08-04
+
+- Added Treatment Recommendation Engine
+- Added SIMS_DOCTOR_TREATMENT_RECOMMENDATION_V1
+- Added Writer, Creator, Merge, Observe, Follow-Up, and None routing
+- Added treatment scope, prohibited actions, priority, and monitoring
+- Added Winner Query, full-rewrite, new-article, and Merge safeguards
+- Added Referral Factory
+- Added Writer request contract fixture
+- Added Medical Record recommendation history
+- Added TREATMENT_RECOMMENDATION_CREATED event
+- Added contract, unit, integration, and regression tests
+- Did not add treatment execution, publication, redirect, delete, or noindex
+
 ## 1.0.0-sprint10.0-composite-diagnosis — 2026-08-04
 
 - Added Composite Diagnosis Engine

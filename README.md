@@ -378,3 +378,9 @@ Doctor now integrates all specialist assessments into one final diagnosis.
 
 Safety rules for LOW_SAMPLE, recent changes, Winner Queries, Merge candidates, and role
 separation take precedence over weighted scoring.
+
+
+## Sprint10.1 Treatment Recommendation
+
+Doctor now converts Composite Diagnosis into target-specific referrals for Writer, Creator,
+Merge, observation, or follow-up while preserving treatment safety boundaries.
