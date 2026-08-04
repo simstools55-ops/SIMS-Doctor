@@ -282,6 +282,90 @@
         "LONG_TERM",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-CTR-OPPORTUNITY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 93,
+      "diagnosis_code": "CTR_OPPORTUNITY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "CTR_OPPORTUNITY",
+            "HIGH_CTR_OPPORTUNITY"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 94,
+      "explanation_template": "現在順位に対してCTRが期待値を下回っています。",
+      "tags": [
+        "CTR",
+        "OPPORTUNITY"
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "CTR_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを保護しながら限定的なCTR改善を検討します。",
+      "tags": [
+        "CTR",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 86,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "RECENT_CHANGE_OBSERVATION",
+            "INSUFFICIENT_DATA"
+          ]
+        }
+      ],
+      "base_confidence": 74,
+      "severity": "INFO",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 84,
+      "explanation_template": "CTR改善判断には追加測定が必要です。",
+      "tags": [
+        "CTR",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

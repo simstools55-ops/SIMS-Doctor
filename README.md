@@ -341,3 +341,8 @@ wrong treatment direction, recurrent failure, and insufficient follow-up.
 Doctor now integrates 365-day trend data, Vital Score changes, recurrence, seasonality,
 recovery, and LOW_SAMPLE safeguards to distinguish chronic degradation, sharp degradation,
 CTR degradation, position degradation, seasonal variation, and recovery.
+
+
+## Sprint9.5 CTR Opportunity Diagnosis
+
+順位別期待CTR、Winner Query保護、直近タイトル変更、LOW_SAMPLEを統合しました。

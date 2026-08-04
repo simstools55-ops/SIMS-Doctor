@@ -13,6 +13,11 @@ CONTRACTS = ROOT / "contracts"
 FIXTURES = ROOT / "tests" / "fixtures"
 
 CASES = [
+    (
+        CONTRACTS / "SIMS_DOCTOR_CTR_OPPORTUNITY_ASSESSMENT_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "ctr_opportunity" / "result.json",
+        True,
+    ),
 
     (
         CONTRACTS / "SIMS_DOCTOR_LONG_TERM_DEGRADATION_ASSESSMENT_V1.schema.json",

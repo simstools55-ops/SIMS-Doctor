@@ -43,7 +43,8 @@
     "rule_evaluation_count": 0,
     "vital_score_count": 0,
     "improvement_failure_assessment_count": 0,
-    "long_term_degradation_assessment_count": 0
+    "long_term_degradation_assessment_count": 0,
+    "ctr_opportunity_assessment_count": 0
   },
   "previous_case": null,
   "created_at": "2026-08-04T19:00:25+09:00",
@@ -61,5 +62,6 @@
   "rule_evaluations": [],
   "vital_scores": [],
   "improvement_failure_assessments": [],
-  "long_term_degradation_assessments": []
+  "long_term_degradation_assessments": [],
+  "ctr_opportunity_assessments": []
 }

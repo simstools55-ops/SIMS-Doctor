@@ -32,7 +32,8 @@
     "rule_evaluations",
     "vital_scores",
     "improvement_failure_assessments",
-    "long_term_degradation_assessments"
+    "long_term_degradation_assessments",
+    "ctr_opportunity_assessments"
   ],
   "properties": {
     "contract_name": {
@@ -186,7 +187,8 @@
         "rule_evaluation_count",
         "vital_score_count",
         "improvement_failure_assessment_count",
-        "long_term_degradation_assessment_count"
+        "long_term_degradation_assessment_count",
+        "ctr_opportunity_assessment_count"
       ],
       "properties": {
         "request_count": {
@@ -258,6 +260,10 @@
           "minimum": 0
         },
         "long_term_degradation_assessment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ctr_opportunity_assessment_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -919,6 +925,12 @@
       }
     },
     "long_term_degradation_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ctr_opportunity_assessments": {
       "type": "array",
       "items": {
         "type": "object"

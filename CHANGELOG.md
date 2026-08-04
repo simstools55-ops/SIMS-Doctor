@@ -1,3 +1,10 @@
+## 1.0.0-sprint9.5-ctr-opportunity-diagnosis — 2026-08-04
+
+- Added CTR Opportunity Diagnosis
+- Added Winner Query and recent-title-change safeguards
+- Added Diagnostic Rule integration
+- Added tests
+
 ## 1.0.0-sprint9.4-long-term-degradation-diagnosis — 2026-08-04
 
 - Added Long-Term Degradation Diagnosis
