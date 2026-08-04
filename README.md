@@ -263,3 +263,11 @@ Doctor now analyzes repeated diagnoses and treatment responses for the same arti
 
 It can identify recurrent or chronic problems, treatment responsiveness or resistance,
 recovery patterns, and follow-up priority.
+
+
+## Sprint8.1 Batch Doctor Foundation
+
+Doctor can now accept many articles in one request, prioritize them, execute each article
+as an isolated Case, continue after individual failures, and resume a previous batch.
+
+Persistent scheduling and worker infrastructure are not included yet.

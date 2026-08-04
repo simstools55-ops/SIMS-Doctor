@@ -39,6 +39,7 @@ class ClinicalKnowledgeBase:
         "long_term_policy": "observation/long_term/long_term_analysis_policy_v1.json",
         "treatment_history_policy": "observation/treatment_history/treatment_history_policy_v1.json",
         "longitudinal_policy": "longitudinal/longitudinal_profile_policy_v1.json",
+        "batch_policy": "batch/batch_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -242,6 +243,9 @@ class ClinicalKnowledgeBase:
 
     def longitudinal_policy(self) -> dict[str, Any]:
         return dict(self._documents["longitudinal_policy"])
+
+    def batch_policy(self) -> dict[str, Any]:
+        return dict(self._documents["batch_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

@@ -1,3 +1,15 @@
+## 1.0.0-sprint8.1-batch-doctor-foundation — 2026-08-04
+
+- Added Batch Doctor request and result contracts
+- Added per-article Case isolation
+- Added longitudinal, severity, recurrence, and traffic-opportunity priority scoring
+- Added priority-ordered batch execution
+- Added continue-after-case-failure behavior
+- Added resume and retry-limit foundation
+- Added aggregate Writer, Creator, Merge, and follow-up counts
+- Added contract, unit, integration, and regression tests
+- Did not add persistent queues, scheduling, parallel workers, or SBM batch UI
+
 ## 1.0.0-sprint7.4-longitudinal-medical-record — 2026-08-04
 
 - Added Longitudinal Medical Record Analysis
