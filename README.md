@@ -319,3 +319,11 @@ Doctor now supports declarative, explainable diagnostic rules.
 Rules can evaluate Evidence, Findings, Vital Signs, Observations, Longitudinal Profiles,
 Treatment History, and case context, then produce prioritized diagnosis candidates without
 directly creating treatment or referral instructions.
+
+
+## Sprint9.2 Vital Score Engine
+
+Doctor now calculates a 0–100 article health score from the seven Vital Signs.
+
+The score supports missing-sign reweighting, LOW_SAMPLE and serious-Finding adjustments,
+health bands, and explainable positive and negative factors.

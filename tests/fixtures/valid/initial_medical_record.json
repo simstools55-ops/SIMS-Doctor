@@ -40,7 +40,8 @@
     "pipeline_run_count": 0,
     "output_count": 0,
     "longitudinal_profile_count": 0,
-    "rule_evaluation_count": 0
+    "rule_evaluation_count": 0,
+    "vital_score_count": 0
   },
   "previous_case": null,
   "created_at": "2026-08-04T19:00:25+09:00",
@@ -55,5 +56,6 @@
   "pipeline_runs": [],
   "outputs": [],
   "longitudinal_profiles": [],
-  "rule_evaluations": []
+  "rule_evaluations": [],
+  "vital_scores": []
 }

@@ -1,3 +1,17 @@
+## 1.0.0-sprint9.2-vital-score-engine — 2026-08-04
+
+- Added Vital Score Engine
+- Added SIMS_DOCTOR_VITAL_SCORE_RESULT_V1
+- Added weighted seven-sign article health score
+- Added missing-sign reweighting and insufficient-data handling
+- Added LOW_SAMPLE, severe-Finding, and critical-Finding penalties
+- Added recovery bonus
+- Added health bands and explainable positive and negative factors
+- Added Medical Record Vital Score history
+- Added VITAL_SCORE_CALCULATED event
+- Added contract, unit, integration, and regression tests
+- Did not replace individual Vital Signs or generate diagnosis and treatment directly
+
 ## 1.0.0-sprint9.1-diagnostic-rule-engine — 2026-08-04
 
 - Added declarative Diagnostic Rule Engine

@@ -29,7 +29,8 @@
     "pipeline_runs",
     "outputs",
     "longitudinal_profiles",
-    "rule_evaluations"
+    "rule_evaluations",
+    "vital_scores"
   ],
   "properties": {
     "contract_name": {
@@ -180,7 +181,8 @@
         "pipeline_run_count",
         "output_count",
         "longitudinal_profile_count",
-        "rule_evaluation_count"
+        "rule_evaluation_count",
+        "vital_score_count"
       ],
       "properties": {
         "request_count": {
@@ -240,6 +242,10 @@
           "minimum": 0
         },
         "rule_evaluation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "vital_score_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -883,6 +889,12 @@
       }
     },
     "rule_evaluations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "vital_scores": {
       "type": "array",
       "items": {
         "type": "object"
