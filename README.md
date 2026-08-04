@@ -365,3 +365,8 @@ intent shares, entropy, title overlap, emerging-intent growth, and Winner Query 
 
 Doctor now distinguishes local factual decay from severe article-wide freshness decay,
 while protecting Winner Queries and recently updated articles.
+
+
+## Sprint9.9 Cannibalization Diagnosis
+
+記事間の共通クエリ、SERP、検索意図、流入差から統合候補と役割分担を診断します。

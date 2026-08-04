@@ -47,7 +47,8 @@
     "ctr_opportunity_assessment_count": 0,
     "position_opportunity_assessment_count": 0,
     "intent_drift_assessment_count": 0,
-    "freshness_decay_assessment_count": 0
+    "freshness_decay_assessment_count": 0,
+    "cannibalization_assessment_count": 0
   },
   "previous_case": null,
   "created_at": "2026-08-04T19:00:25+09:00",
@@ -69,5 +70,6 @@
   "ctr_opportunity_assessments": [],
   "position_opportunity_assessments": [],
   "intent_drift_assessments": [],
-  "freshness_decay_assessments": []
+  "freshness_decay_assessments": [],
+  "cannibalization_assessments": []
 }

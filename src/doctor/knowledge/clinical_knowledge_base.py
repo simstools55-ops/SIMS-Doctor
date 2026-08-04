@@ -53,6 +53,7 @@ class ClinicalKnowledgeBase:
         "position_opportunity_policy": "position_opportunity/position_opportunity_policy_v1.json",
         "intent_drift_policy": "intent_drift/intent_drift_policy_v1.json",
         "freshness_decay_policy": "freshness_decay/freshness_decay_policy_v1.json",
+        "cannibalization_policy": "cannibalization/cannibalization_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -298,6 +299,9 @@ class ClinicalKnowledgeBase:
 
     def freshness_decay_policy(self) -> dict[str, Any]:
         return dict(self._documents["freshness_decay_policy"])
+
+    def cannibalization_policy(self) -> dict[str, Any]:
+        return dict(self._documents["cannibalization_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

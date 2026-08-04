@@ -711,6 +711,112 @@
         "FRESHNESS",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-CANNIBAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "CANNIBALIZATION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POSSIBLE_CANNIBALIZATION",
+            "CONFIRMED_CANNIBALIZATION"
+          ]
+        }
+      ],
+      "base_confidence": 86,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 96,
+      "explanation_template": "サイト内の記事間競合が確認されました。",
+      "tags": [
+        "CANNIBALIZATION"
+      ]
+    },
+    {
+      "rule_id": "DR-MERGE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 100,
+      "diagnosis_code": "MERGE_CANDIDATE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "MERGE_CANDIDATE"
+        }
+      ],
+      "base_confidence": 90,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 100,
+      "explanation_template": "同一意図の記事を統合候補としてMergeへ紹介します。",
+      "tags": [
+        "CANNIBALIZATION",
+        "MERGE"
+      ]
+    },
+    {
+      "rule_id": "DR-ROLE-SEPARATION-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 98,
+      "diagnosis_code": "ROLE_SEPARATION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "ROLE_SEPARATION_RECOMMENDED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 98,
+      "explanation_template": "記事統合ではなく役割分担が適切です。",
+      "tags": [
+        "CANNIBALIZATION",
+        "ROLE"
+      ]
+    },
+    {
+      "rule_id": "DR-CANNIBAL-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "FOLLOW_UP_REQUIRED"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 84,
+      "explanation_template": "記事間競合の判断には追加データが必要です。",
+      "tags": [
+        "CANNIBALIZATION",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

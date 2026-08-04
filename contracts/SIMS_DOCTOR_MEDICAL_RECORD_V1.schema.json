@@ -36,7 +36,8 @@
     "ctr_opportunity_assessments",
     "position_opportunity_assessments",
     "intent_drift_assessments",
-    "freshness_decay_assessments"
+    "freshness_decay_assessments",
+    "cannibalization_assessments"
   ],
   "properties": {
     "contract_name": {
@@ -194,7 +195,8 @@
         "ctr_opportunity_assessment_count",
         "position_opportunity_assessment_count",
         "intent_drift_assessment_count",
-        "freshness_decay_assessment_count"
+        "freshness_decay_assessment_count",
+        "cannibalization_assessment_count"
       ],
       "properties": {
         "request_count": {
@@ -282,6 +284,10 @@
           "minimum": 0
         },
         "freshness_decay_assessment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cannibalization_assessment_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -967,6 +973,12 @@
       }
     },
     "freshness_decay_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "cannibalization_assessments": {
       "type": "array",
       "items": {
         "type": "object"

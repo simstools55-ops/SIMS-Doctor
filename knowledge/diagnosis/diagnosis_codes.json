@@ -113,6 +113,14 @@
     {
       "code": "FRESHNESS_WINNER_QUERY_PROTECTED",
       "category": "FRESHNESS"
+    },
+    {
+      "code": "MERGE_CANDIDATE",
+      "category": "CROSS_ARTICLE"
+    },
+    {
+      "code": "ROLE_SEPARATION",
+      "category": "CROSS_ARTICLE"
     }
   ]
 }

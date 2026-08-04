@@ -1,3 +1,10 @@
+## 1.0.0-sprint9.9-cannibalization-diagnosis — 2026-08-04
+
+- Added Cannibalization Diagnosis
+- Added Merge Candidate and Role Separation
+- Added safety protections and Rule Engine integration
+- Added tests
+
 ## 1.0.0-sprint9.8-freshness-decay-diagnosis — 2026-08-04
 
 - Added Freshness Decay Diagnosis
