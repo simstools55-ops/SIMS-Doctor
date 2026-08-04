@@ -15,6 +15,12 @@ FIXTURES = ROOT / "tests" / "fixtures"
 CASES = [
 
     (
+        CONTRACTS / "SIMS_DOCTOR_BATCH_QUEUE_RECORD_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "batch_queue" / "queue_record.json",
+        True,
+    ),
+
+    (
         CONTRACTS / "SIMS_DOCTOR_BATCH_REQUEST_V1.schema.json",
         ROOT / "tests" / "fixtures" / "batch" / "batch_request.json",
         True,

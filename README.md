@@ -271,3 +271,11 @@ Doctor can now accept many articles in one request, prioritize them, execute eac
 as an isolated Case, continue after individual failures, and resume a previous batch.
 
 Persistent scheduling and worker infrastructure are not included yet.
+
+
+## Sprint8.2 Persistent Batch Queue
+
+Doctor now contains a storage-neutral persistent queue and nightly worker foundation.
+
+It supports durable checkpoints, lease locks, retries, pause/resume, incomplete-batch discovery,
+and completion events. Production database and scheduler adapters remain deployment tasks.

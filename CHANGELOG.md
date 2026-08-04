@@ -1,3 +1,17 @@
+## 1.0.0-sprint8.2-persistent-batch-queue — 2026-08-04
+
+- Added storage-neutral persistent Batch Queue
+- Added queue record contract
+- Added idempotent enqueue
+- Added lease-based worker locking and expired-lock recovery
+- Added item-level durable checkpoints
+- Added retry scheduling with backoff
+- Added pause and resume
+- Added Nightly Batch Worker cycle
+- Added incomplete-batch discovery and lifecycle events
+- Added contract, unit, integration, and regression tests
+- Did not add production database, cron deployment, parallel workers, external notifications, or SBM batch UI
+
 ## 1.0.0-sprint8.1-batch-doctor-foundation — 2026-08-04
 
 - Added Batch Doctor request and result contracts
