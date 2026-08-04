@@ -366,6 +366,114 @@
         "CTR",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-POSITION-OPPORTUNITY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 92,
+      "diagnosis_code": "POSITION_OPPORTUNITY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POSITION_OPPORTUNITY",
+            "HIGH_POSITION_OPPORTUNITY",
+            "QUERY_FOCUSED_OPPORTUNITY"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 94,
+      "explanation_template": "表示回数があり、上位表示へ改善できる余地があります。",
+      "tags": [
+        "POSITION",
+        "OPPORTUNITY"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "POSITION_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを維持しながら限定的な順位改善を検討します。",
+      "tags": [
+        "POSITION",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-MISALIGNMENT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 94,
+      "diagnosis_code": "LOW_VISIBILITY_OR_MISALIGNMENT",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "LOW_VISIBILITY_OR_MISALIGNMENT"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 92,
+      "explanation_template": "順位が低く、検索意図または記事役割のずれが疑われます。",
+      "tags": [
+        "POSITION",
+        "MISALIGNMENT"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_DATA"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 82,
+      "explanation_template": "順位改善判断には追加データが必要です。",
+      "tags": [
+        "POSITION",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

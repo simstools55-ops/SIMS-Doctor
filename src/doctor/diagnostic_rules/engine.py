@@ -146,8 +146,23 @@ class DiagnosticRuleEngine:
                     "long_term_degradation_assessments", []
                 )
             ] + [
-                {"observation_type": "CTR_OPPORTUNITY_ASSESSMENT", "facts": item, "observation_id": item.get("assessment_id")}
-                for item in medical_record.get("ctr_opportunity_assessments", [])
+                {
+                    "observation_type": "CTR_OPPORTUNITY_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "ctr_opportunity_assessments", []
+                )
+            ] + [
+                {
+                    "observation_type": "POSITION_OPPORTUNITY_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "position_opportunity_assessments", []
+                )
             ],
             "LONGITUDINAL_PROFILE": (
                 [medical_record.get("longitudinal_profiles", [])[-1]]

@@ -50,6 +50,7 @@ class ClinicalKnowledgeBase:
         "improvement_failure_policy": "improvement_failure/improvement_failure_policy_v1.json",
         "long_term_degradation_policy": "long_term_degradation/long_term_degradation_policy_v1.json",
         "ctr_opportunity_policy": "ctr_opportunity/ctr_opportunity_policy_v1.json",
+        "position_opportunity_policy": "position_opportunity/position_opportunity_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -286,6 +287,9 @@ class ClinicalKnowledgeBase:
 
     def ctr_opportunity_policy(self) -> dict[str, Any]:
         return dict(self._documents["ctr_opportunity_policy"])
+
+    def position_opportunity_policy(self) -> dict[str, Any]:
+        return dict(self._documents["position_opportunity_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

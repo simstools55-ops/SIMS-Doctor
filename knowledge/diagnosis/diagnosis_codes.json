@@ -73,6 +73,18 @@
     {
       "code": "FOLLOW_UP_REQUIRED",
       "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "POSITION_OPPORTUNITY",
+      "category": "RANKING"
+    },
+    {
+      "code": "POSITION_WINNER_QUERY_PROTECTED",
+      "category": "RANKING"
+    },
+    {
+      "code": "LOW_VISIBILITY_OR_MISALIGNMENT",
+      "category": "RANKING"
     }
   ]
 }

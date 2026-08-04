@@ -346,3 +346,10 @@ CTR degradation, position degradation, seasonal variation, and recovery.
 ## Sprint9.5 CTR Opportunity Diagnosis
 
 順位別期待CTR、Winner Query保護、直近タイトル変更、LOW_SAMPLEを統合しました。
+
+
+## Sprint9.6 Position Opportunity Diagnosis
+
+Doctor now identifies articles with meaningful impressions that remain near page one,
+including high opportunity, query-focused opportunity, Winner Query protection,
+and low-visibility or intent-misalignment cases.

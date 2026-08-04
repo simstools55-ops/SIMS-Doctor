@@ -1,3 +1,18 @@
+## 1.0.0-sprint9.6-position-opportunity-diagnosis — 2026-08-04
+
+- Added Position Opportunity Diagnosis
+- Added high, normal, and query-focused ranking opportunities
+- Added Winner Query protection
+- Added low-visibility or intent-misalignment signal
+- Added Competition Resilience and Content Integrity integration
+- Added LOW_SAMPLE safeguards
+- Added SIMS_DOCTOR_POSITION_OPPORTUNITY_ASSESSMENT_V1
+- Added Position Opportunity rules to the Diagnostic Rule Engine
+- Added Medical Record assessment history
+- Added POSITION_OPPORTUNITY_ASSESSED event
+- Added contract, unit, integration, and regression tests
+- Did not add automatic new article creation, deletion, or Writer execution
+
 ## 1.0.0-sprint9.5-ctr-opportunity-diagnosis — 2026-08-04
 
 - Added CTR Opportunity Diagnosis
