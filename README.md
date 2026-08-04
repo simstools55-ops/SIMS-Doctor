@@ -370,3 +370,11 @@ while protecting Winner Queries and recently updated articles.
 ## Sprint9.9 Cannibalization Diagnosis
 
 記事間の共通クエリ、SERP、検索意図、流入差から統合候補と役割分担を診断します。
+
+
+## Sprint10.0 Composite Diagnosis
+
+Doctor now integrates all specialist assessments into one final diagnosis.
+
+Safety rules for LOW_SAMPLE, recent changes, Winner Queries, Merge candidates, and role
+separation take precedence over weighted scoring.

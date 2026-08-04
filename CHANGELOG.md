@@ -1,3 +1,17 @@
+## 1.0.0-sprint10.0-composite-diagnosis — 2026-08-04
+
+- Added Composite Diagnosis Engine
+- Added SIMS_DOCTOR_COMPOSITE_DIAGNOSIS_V1
+- Added weighted integration of specialist assessments
+- Added Vital Score, Content Integrity, and Competition Resilience integration
+- Added LOW_SAMPLE, recent-change, Winner Query, Merge, and role-separation safety precedence
+- Added Healthy, Minor Refresh, Local Optimization, Full Rewrite, New Article, Merge, Observe, and Follow-Up outcomes
+- Added confidence, priority, supporting-assessment, and trace output
+- Added Medical Record composite diagnosis history
+- Added COMPOSITE_DIAGNOSIS_COMPLETED event
+- Added contract, unit, integration, and regression tests
+- Did not add treatment execution or referral generation
+
 ## 1.0.0-sprint9.9-cannibalization-diagnosis — 2026-08-04
 
 - Added Cannibalization Diagnosis
