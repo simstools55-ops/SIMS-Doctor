@@ -327,3 +327,10 @@ Doctor now calculates a 0–100 article health score from the seven Vital Signs.
 
 The score supports missing-sign reweighting, LOW_SAMPLE and serious-Finding adjustments,
 health bands, and explainable positive and negative factors.
+
+
+## Sprint9.3 Improvement Failure Diagnosis
+
+Doctor now integrates treatment history, Vital Score changes, metric deterioration,
+recurrence, and LOW_SAMPLE safeguards to distinguish no effect, worsening, possible
+wrong treatment direction, recurrent failure, and insufficient follow-up.

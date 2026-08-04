@@ -127,7 +127,16 @@ class DiagnosticRuleEngine:
                 medical_record.get("vital_profiles", [{}])[-1].get("signs", [])
                 if medical_record.get("vital_profiles") else []
             ),
-            "OBSERVATION": medical_record.get("observations", []),
+            "OBSERVATION": medical_record.get("observations", []) + [
+                {
+                    "observation_type": "IMPROVEMENT_FAILURE_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "improvement_failure_assessments", []
+                )
+            ],
             "LONGITUDINAL_PROFILE": (
                 [medical_record.get("longitudinal_profiles", [])[-1]]
                 if medical_record.get("longitudinal_profiles") else []

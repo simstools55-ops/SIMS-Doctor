@@ -15,6 +15,12 @@ FIXTURES = ROOT / "tests" / "fixtures"
 CASES = [
 
     (
+        CONTRACTS / "SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1.schema.json",
+        ROOT / "tests" / "fixtures" / "improvement_failure" / "result.json",
+        True,
+    ),
+
+    (
         CONTRACTS / "SIMS_DOCTOR_VITAL_SCORE_RESULT_V1.schema.json",
         ROOT / "tests" / "fixtures" / "vital_score" / "result.json",
         True,

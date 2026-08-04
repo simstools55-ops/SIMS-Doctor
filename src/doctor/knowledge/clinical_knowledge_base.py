@@ -47,6 +47,7 @@ class ClinicalKnowledgeBase:
         "diagnostic_rule_engine_policy": "diagnostic_rules/diagnostic_rule_engine_policy_v1.json",
         "core_diagnostic_rules": "diagnostic_rules/core_diagnostic_rules_v1.json",
         "vital_score_policy": "vital_score/vital_score_policy_v1.json",
+        "improvement_failure_policy": "improvement_failure/improvement_failure_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -274,6 +275,9 @@ class ClinicalKnowledgeBase:
 
     def vital_score_policy(self) -> dict[str, Any]:
         return dict(self._documents["vital_score_policy"])
+
+    def improvement_failure_policy(self) -> dict[str, Any]:
+        return dict(self._documents["improvement_failure_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

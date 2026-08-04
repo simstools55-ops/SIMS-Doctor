@@ -1,3 +1,16 @@
+## 1.0.0-sprint9.3-improvement-failure-diagnosis — 2026-08-04
+
+- Added Improvement Failure Diagnosis
+- Added treatment-history and Vital Score integration
+- Added no-effect, worsening, wrong-direction, recurrent-failure, and insufficient-follow-up classifications
+- Added LOW_SAMPLE safety behavior
+- Added SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1
+- Added Improvement Failure rules to the Diagnostic Rule Engine
+- Added Medical Record assessment history
+- Added IMPROVEMENT_FAILURE_ASSESSED event
+- Added contract, unit, integration, and regression tests
+- Did not add automatic rollback or automatic Writer execution
+
 ## 1.0.0-sprint9.2-vital-score-engine — 2026-08-04
 
 - Added Vital Score Engine

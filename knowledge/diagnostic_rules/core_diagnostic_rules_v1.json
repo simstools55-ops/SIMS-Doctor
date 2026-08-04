@@ -93,6 +93,88 @@
         "LONG_TERM",
         "RECOVERY"
       ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-FAILURE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "NO_MEASURABLE_EFFECT"
+        }
+      ],
+      "base_confidence": 78,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 90,
+      "explanation_template": "改善履歴の比較で明確な効果が確認できませんでした。",
+      "tags": [
+        "IMPROVEMENT",
+        "FAILURE"
+      ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-WORSENING-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 99,
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POST_TREATMENT_WORSENING",
+            "POSSIBLE_WRONG_TREATMENT_DIRECTION",
+            "RECURRENT_FAILURE"
+          ]
+        }
+      ],
+      "base_confidence": 85,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 95,
+      "explanation_template": "改善後の主要指標に悪化または再発が確認されました。",
+      "tags": [
+        "IMPROVEMENT",
+        "WORSENING"
+      ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 88,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_FOLLOW_UP"
+        }
+      ],
+      "base_confidence": 75,
+      "severity": "INFO",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 85,
+      "explanation_template": "改善効果を判断するための期間またはデータ量が不足しています。",
+      "tags": [
+        "IMPROVEMENT",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

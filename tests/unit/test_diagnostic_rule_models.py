@@ -11,5 +11,12 @@ def test_loads_rule_registry():
     registry = DiagnosticRuleRegistry.from_file(
         ROOT / "knowledge/diagnostic_rules/core_diagnostic_rules_v1.json"
     )
-    assert len(registry.enabled_rules()) == 3
-    assert registry.enabled_rules()[0].rule_id == "DR-CTR-001"
+    enabled = registry.enabled_rules()
+    assert len(enabled) >= 6
+    rule_ids = {rule.rule_id for rule in enabled}
+    assert {"DR-CTR-001", "DR-LONG-001", "DR-RECOVERY-001"}.issubset(rule_ids)
+    assert {
+        "DR-IMPROVEMENT-FAILURE-001",
+        "DR-IMPROVEMENT-WORSENING-001",
+        "DR-IMPROVEMENT-FOLLOWUP-001",
+    }.issubset(rule_ids)
