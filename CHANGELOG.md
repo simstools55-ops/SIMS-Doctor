@@ -463,3 +463,9 @@
 - Added valid and invalid contract fixtures
 - Added fixture validation script
 - Added SBM compatibility checklist
+
+## 1.0.0-RC4 - 2026-08-05
+- Added Clinical Review and limited factual repair.
+- Split evidence acquisition quality from content quality.
+- Added factor-based confidence scoring and external demand diagnosis.
+- Added multi-track treatment and Japanese user-facing output policy.
