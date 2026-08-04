@@ -39,7 +39,8 @@
     "freshness_decay_assessments",
     "cannibalization_assessments",
     "composite_diagnoses",
-    "doctor_reports"
+    "doctor_reports",
+    "diagnosis_explanations"
   ],
   "properties": {
     "contract_name": {
@@ -200,7 +201,8 @@
         "freshness_decay_assessment_count",
         "cannibalization_assessment_count",
         "composite_diagnosis_count",
-        "doctor_report_count"
+        "doctor_report_count",
+        "diagnosis_explanation_count"
       ],
       "properties": {
         "request_count": {
@@ -300,6 +302,10 @@
           "minimum": 0
         },
         "doctor_report_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "diagnosis_explanation_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -1003,6 +1009,12 @@
       }
     },
     "doctor_reports": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "diagnosis_explanations": {
       "type": "array",
       "items": {
         "type": "object"

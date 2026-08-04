@@ -1,3 +1,11 @@
+## 1.0.0-sprint10.3-explainable-diagnosis — 2026-08-04
+
+- Added Explainable Diagnosis
+- Added SIMS_DOCTOR_EXPLANATION_V1
+- Added user-facing decision paths and system audit traces
+- Added blocking and supporting factors
+- Added Medical Record explanation history and tests
+
 ## 1.0.0-sprint10.2-doctor-report-generator — 2026-08-04
 
 - Added user-facing and system-facing Doctor reports

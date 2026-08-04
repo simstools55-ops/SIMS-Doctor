@@ -389,3 +389,8 @@ Merge, observation, or follow-up while preserving treatment safety boundaries.
 ## Sprint10.2 Doctor Report Generator
 
 利用者向け診断書とシステム向け構造化レポートを分離しました。
+
+
+## Sprint10.3 Explainable Diagnosis
+
+Doctor now records a user-facing decision path and a separate system audit trail.
