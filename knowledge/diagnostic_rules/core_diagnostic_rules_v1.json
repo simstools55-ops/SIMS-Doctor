@@ -474,6 +474,136 @@
         "POSITION",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-INTENT-DRIFT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "INTENT_DRIFT",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INTENT_DRIFT"
+        }
+      ],
+      "base_confidence": 86,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 96,
+      "explanation_template": "主要検索意図と記事テーマのずれが確認されました。",
+      "tags": [
+        "INTENT",
+        "DRIFT"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-DISPERSION-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "TOPIC_DISPERSION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "TOPIC_DISPERSION"
+        }
+      ],
+      "base_confidence": 85,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 95,
+      "explanation_template": "流入クエリが複数の検索意図へ分散しています。",
+      "tags": [
+        "INTENT",
+        "DISPERSION"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-EMERGING-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 94,
+      "diagnosis_code": "EMERGING_INTENT_TRANSITION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "EMERGING_INTENT_TRANSITION"
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 94,
+      "explanation_template": "新しい検索意図への流入遷移が確認されました。",
+      "tags": [
+        "INTENT",
+        "EMERGING"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "INTENT_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 97,
+      "explanation_template": "主要流入クエリを保護しながら意図調整を検討します。",
+      "tags": [
+        "INTENT",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_DATA"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 82,
+      "explanation_template": "検索意図診断には追加データが必要です。",
+      "tags": [
+        "INTENT",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

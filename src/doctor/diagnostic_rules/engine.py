@@ -163,6 +163,15 @@ class DiagnosticRuleEngine:
                 for item in medical_record.get(
                     "position_opportunity_assessments", []
                 )
+            ] + [
+                {
+                    "observation_type": "INTENT_DRIFT_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "intent_drift_assessments", []
+                )
             ],
             "LONGITUDINAL_PROFILE": (
                 [medical_record.get("longitudinal_profiles", [])[-1]]

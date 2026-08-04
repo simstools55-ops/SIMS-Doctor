@@ -353,3 +353,9 @@ CTR degradation, position degradation, seasonal variation, and recovery.
 Doctor now identifies articles with meaningful impressions that remain near page one,
 including high opportunity, query-focused opportunity, Winner Query protection,
 and low-visibility or intent-misalignment cases.
+
+
+## Sprint9.7 Intent Drift Diagnosis
+
+Doctor now compares current query demand with article identity through query clusters,
+intent shares, entropy, title overlap, emerging-intent growth, and Winner Query protection.

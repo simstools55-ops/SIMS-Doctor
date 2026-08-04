@@ -1,3 +1,18 @@
+## 1.0.0-sprint9.7-intent-drift-diagnosis — 2026-08-04
+
+- Added Intent Drift Diagnosis
+- Added query-cluster concentration and normalized entropy
+- Added primary and secondary intent shares
+- Added query-title overlap
+- Added emerging-intent transition detection
+- Added Winner Query protection and LOW_SAMPLE safeguards
+- Added SIMS_DOCTOR_INTENT_DRIFT_ASSESSMENT_V1
+- Added Intent Drift rules to the Diagnostic Rule Engine
+- Added Medical Record assessment history
+- Added INTENT_DRIFT_ASSESSED event
+- Added contract, unit, integration, and regression tests
+- Did not add automatic article creation, merge, deletion, semantic embeddings, or SERP intent classification
+
 ## 1.0.0-sprint9.6-position-opportunity-diagnosis — 2026-08-04
 
 - Added Position Opportunity Diagnosis
