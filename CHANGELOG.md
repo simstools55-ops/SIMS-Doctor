@@ -1,3 +1,17 @@
+## 1.0.0-sprint9.4-long-term-degradation-diagnosis — 2026-08-04
+
+- Added Long-Term Degradation Diagnosis
+- Added 365-day trend, Vital Score, recurrence, seasonality, and recovery integration
+- Added chronic, sharp, CTR, and position degradation classifications
+- Added seasonality and recovery safety gates
+- Added LOW_SAMPLE confidence reduction
+- Added SIMS_DOCTOR_LONG_TERM_DEGRADATION_ASSESSMENT_V1
+- Added long-term degradation rules to the Diagnostic Rule Engine
+- Added Medical Record assessment history
+- Added LONG_TERM_DEGRADATION_ASSESSED event
+- Added contract, unit, integration, and regression tests
+- Did not add core-update calendar correlation, external seasonality data, or automatic Writer execution
+
 ## 1.0.0-sprint9.3-improvement-failure-diagnosis — 2026-08-04
 
 - Added Improvement Failure Diagnosis

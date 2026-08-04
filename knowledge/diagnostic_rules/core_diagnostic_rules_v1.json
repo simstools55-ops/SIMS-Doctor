@@ -175,6 +175,113 @@
         "IMPROVEMENT",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-CHRONIC-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "CHRONIC_DEGRADATION",
+            "SHARP_DEGRADATION"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 95,
+      "explanation_template": "365日推移に慢性的または急激な劣化が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "DEGRADATION"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-SEASONAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 89,
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "SEASONAL_VARIATION"
+        }
+      ],
+      "base_confidence": 80,
+      "severity": "INFO",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 90,
+      "explanation_template": "過去期間と類似した季節変動が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "SEASONAL"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-RECOVERY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 91,
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "RECOVERY_IN_PROGRESS"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "MILD",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 92,
+      "explanation_template": "長期推移に回復傾向が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "RECOVERY"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 82,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_HISTORY"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 82,
+      "explanation_template": "長期診断に必要な観察期間が不足しています。",
+      "tags": [
+        "LONG_TERM",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

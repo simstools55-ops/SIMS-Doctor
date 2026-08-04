@@ -334,3 +334,10 @@ health bands, and explainable positive and negative factors.
 Doctor now integrates treatment history, Vital Score changes, metric deterioration,
 recurrence, and LOW_SAMPLE safeguards to distinguish no effect, worsening, possible
 wrong treatment direction, recurrent failure, and insufficient follow-up.
+
+
+## Sprint9.4 Long-Term Degradation Diagnosis
+
+Doctor now integrates 365-day trend data, Vital Score changes, recurrence, seasonality,
+recovery, and LOW_SAMPLE safeguards to distinguish chronic degradation, sharp degradation,
+CTR degradation, position degradation, seasonal variation, and recovery.

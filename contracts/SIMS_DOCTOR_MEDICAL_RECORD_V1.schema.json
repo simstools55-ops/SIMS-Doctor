@@ -31,7 +31,8 @@
     "longitudinal_profiles",
     "rule_evaluations",
     "vital_scores",
-    "improvement_failure_assessments"
+    "improvement_failure_assessments",
+    "long_term_degradation_assessments"
   ],
   "properties": {
     "contract_name": {
@@ -184,7 +185,8 @@
         "longitudinal_profile_count",
         "rule_evaluation_count",
         "vital_score_count",
-        "improvement_failure_assessment_count"
+        "improvement_failure_assessment_count",
+        "long_term_degradation_assessment_count"
       ],
       "properties": {
         "request_count": {
@@ -252,6 +254,10 @@
           "minimum": 0
         },
         "improvement_failure_assessment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "long_term_degradation_assessment_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -907,6 +913,12 @@
       }
     },
     "improvement_failure_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "long_term_degradation_assessments": {
       "type": "array",
       "items": {
         "type": "object"

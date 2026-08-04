@@ -136,6 +136,15 @@ class DiagnosticRuleEngine:
                 for item in medical_record.get(
                     "improvement_failure_assessments", []
                 )
+            ] + [
+                {
+                    "observation_type": "LONG_TERM_DEGRADATION_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "long_term_degradation_assessments", []
+                )
             ],
             "LONGITUDINAL_PROFILE": (
                 [medical_record.get("longitudinal_profiles", [])[-1]]
