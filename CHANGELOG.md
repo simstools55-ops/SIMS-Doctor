@@ -1,3 +1,10 @@
+## 1.0.0-sprint10.2-doctor-report-generator — 2026-08-04
+
+- Added user-facing and system-facing Doctor reports
+- Added SIMS_DOCTOR_REPORT_V1
+- Preserved DiagnosisReportBuilder compatibility
+- Added Medical Record history and tests
+
 ## 1.0.0-sprint10.1-treatment-recommendation — 2026-08-04
 
 - Added Treatment Recommendation Engine

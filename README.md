@@ -384,3 +384,8 @@ separation take precedence over weighted scoring.
 
 Doctor now converts Composite Diagnosis into target-specific referrals for Writer, Creator,
 Merge, observation, or follow-up while preserving treatment safety boundaries.
+
+
+## Sprint10.2 Doctor Report Generator
+
+利用者向け診断書とシステム向け構造化レポートを分離しました。

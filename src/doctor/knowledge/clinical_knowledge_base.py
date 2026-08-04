@@ -56,6 +56,7 @@ class ClinicalKnowledgeBase:
         "cannibalization_policy": "cannibalization/cannibalization_policy_v1.json",
         "composite_diagnosis_policy": "composite_diagnosis/composite_diagnosis_policy_v1.json",
         "treatment_recommendation_policy": "treatment_recommendation/treatment_recommendation_policy_v1.json",
+        "doctor_report_policy": "reporting/doctor_report_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -310,6 +311,9 @@ class ClinicalKnowledgeBase:
 
     def treatment_recommendation_policy(self) -> dict[str, Any]:
         return dict(self._documents["treatment_recommendation_policy"])
+
+    def doctor_report_policy(self) -> dict[str, Any]:
+        return dict(self._documents["doctor_report_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
