@@ -1,3 +1,17 @@
+## 1.0.0-sprint9.1-diagnostic-rule-engine — 2026-08-04
+
+- Added declarative Diagnostic Rule Engine
+- Added diagnostic rule and evaluation-result contracts
+- Added rule registry and validation
+- Added Evidence, Finding, Vital Sign, Observation, Longitudinal, Treatment History, and Context sources
+- Added deterministic ordering and explainable condition results
+- Added confidence bonuses and low-sample penalties
+- Added same-diagnosis and mutual-exclusion conflict resolution
+- Added Medical Record rule-evaluation history
+- Added DIAGNOSTIC_RULES_EVALUATED event
+- Added contract, unit, integration, and regression tests
+- Did not replace Differential Diagnosis or generate treatment and referrals directly
+
 ## 1.0.0-sprint8.6-production-security-deployment — 2026-08-04
 
 - Added SQLite-persistent nonce replay protection

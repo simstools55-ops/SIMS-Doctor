@@ -310,3 +310,12 @@ Doctor now persists nonce replay protection, API idempotency responses, and audi
 
 A production application factory loads secrets from environment variables and exposes liveness
 and readiness endpoints. Real secrets are never stored in the repository.
+
+
+## Sprint9.1 Diagnostic Rule Engine
+
+Doctor now supports declarative, explainable diagnostic rules.
+
+Rules can evaluate Evidence, Findings, Vital Signs, Observations, Longitudinal Profiles,
+Treatment History, and case context, then produce prioritized diagnosis candidates without
+directly creating treatment or referral instructions.

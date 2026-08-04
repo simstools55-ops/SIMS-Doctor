@@ -1,0 +1,98 @@
+{
+  "rule_set": "SIMS_DOCTOR_CORE_DIAGNOSTIC_RULES_V1",
+  "version": "1.0",
+  "rules": [
+    {
+      "rule_id": "DR-CTR-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 80,
+      "diagnosis_code": "CTR_PROBLEM",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "CTR_UNDERPERFORMING",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "CTR_UNDERPERFORMING"
+        },
+        {
+          "source": "VITAL_SIGN",
+          "code": "CTR_HEALTH",
+          "field": "score",
+          "operator": "LT",
+          "value": 50
+        }
+      ],
+      "base_confidence": 65,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": null,
+      "specificity": 80,
+      "explanation_template": "CTR関連所見とCTR Health低下が一致しました。",
+      "tags": [
+        "CTR",
+        "SINGLE_CASE"
+      ]
+    },
+    {
+      "rule_id": "DR-LONG-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "LONG_TERM_VISIBILITY_DECAY"
+        },
+        {
+          "source": "FINDING",
+          "code": "LONG_TERM_POSITION_DECAY",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "LONG_TERM_POSITION_DECAY"
+        }
+      ],
+      "base_confidence": 70,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 90,
+      "explanation_template": "長期推移に継続的な劣化所見が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "DECLINE"
+      ]
+    },
+    {
+      "rule_id": "DR-RECOVERY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 85,
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "RECOVERY_TREND",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "RECOVERY_TREND"
+        }
+      ],
+      "base_confidence": 70,
+      "severity": "MILD",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 85,
+      "explanation_template": "直近データに回復傾向が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "RECOVERY"
+      ]
+    }
+  ]
+}
