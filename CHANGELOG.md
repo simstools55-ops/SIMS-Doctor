@@ -1,3 +1,14 @@
+## 1.0.0-sprint8.3-production-queue-scheduler — 2026-08-04
+
+- Added SQLite durable Batch Queue adapter
+- Added WAL, synchronous transactions, and busy timeout
+- Added persistence across process restart
+- Added Scheduler CLI for enqueue, run, status, and incomplete-list operations
+- Added pluggable module:function executor loading
+- Added JSONL operations logging and automation exit codes
+- Added repository, restart, CLI, and regression tests
+- Did not add cloud database, cron installation, parallel workers, SBM UI, or external notifications
+
 ## 1.0.0-sprint8.2-persistent-batch-queue — 2026-08-04
 
 - Added storage-neutral persistent Batch Queue

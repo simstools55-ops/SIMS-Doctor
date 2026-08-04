@@ -279,3 +279,9 @@ Doctor now contains a storage-neutral persistent queue and nightly worker founda
 
 It supports durable checkpoints, lease locks, retries, pause/resume, incomplete-batch discovery,
 and completion events. Production database and scheduler adapters remain deployment tasks.
+
+
+## Sprint8.3 Production Queue and Scheduler
+
+Doctor now includes a durable SQLite queue adapter and an automation-friendly scheduler CLI.
+A paused batch can survive process restart and resume from its saved checkpoint.
