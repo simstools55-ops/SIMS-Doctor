@@ -1,3 +1,11 @@
+## 1.0.0-RC1 — 2026-08-04
+
+- Finalized SIMS Doctor v1.0.0 release candidate
+- Froze diagnostic and treatment-policy responsibilities
+- Added release manifest, checklist, architecture freeze, and integrity tests
+- Added repository release audit
+- Did not add treatment execution
+
 ## 1.0.0-sprint10.3-explainable-diagnosis — 2026-08-04
 
 - Added Explainable Diagnosis

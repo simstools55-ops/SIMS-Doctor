@@ -394,3 +394,8 @@ Merge, observation, or follow-up while preserving treatment safety boundaries.
 ## Sprint10.3 Explainable Diagnosis
 
 Doctor now records a user-facing decision path and a separate system audit trail.
+
+
+## v1.0.0-RC1
+
+The complete Doctor workflow is frozen as a release candidate for end-to-end acceptance testing.
