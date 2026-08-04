@@ -293,3 +293,12 @@ Doctor now defines the complete JSON-contract flow for SBM batch submission, acc
 progress polling, terminal result export, and idempotent result import acknowledgement.
 
 The integration does not expose Doctor Medical Records or internal diagnosis rules.
+
+
+## Sprint8.5 SBM–Doctor Transport API
+
+Doctor now provides an authenticated transport layer for SBM batch submission, status polling,
+and result retrieval.
+
+Requests use HMAC-SHA256 signatures, timestamps, nonces, per-client rate limits, and
+idempotency keys. A WSGI adapter is included for deployment integration.

@@ -1,3 +1,16 @@
+## 1.0.0-sprint8.5-transport-api-auth — 2026-08-04
+
+- Added SBM–Doctor transport API
+- Added batch submit, status, and result endpoints
+- Added HMAC-SHA256 request authentication
+- Added timestamp and nonce replay protection
+- Added per-client rate limiting
+- Added Idempotency-Key support
+- Added audit logging
+- Added WSGI adapter
+- Added unit, integration, and regression tests
+- Did not add TLS termination, production secret management, OAuth, or public deployment configuration
+
 ## 1.0.0-sprint8.4-sbm-batch-integration — 2026-08-04
 
 - Added SBM-to-Doctor batch request contract

@@ -42,6 +42,7 @@ class ClinicalKnowledgeBase:
         "batch_policy": "batch/batch_policy_v1.json",
         "batch_queue_policy": "batch/batch_queue_policy_v1.json",
         "sbm_batch_integration_policy": "integration/sbm_batch_integration_policy_v1.json",
+        "transport_api_policy": "integration/transport_api_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -254,6 +255,9 @@ class ClinicalKnowledgeBase:
 
     def sbm_batch_integration_policy(self) -> dict[str, Any]:
         return dict(self._documents["sbm_batch_integration_policy"])
+
+    def transport_api_policy(self) -> dict[str, Any]:
+        return dict(self._documents["transport_api_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
