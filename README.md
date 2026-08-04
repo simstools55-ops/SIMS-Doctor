@@ -302,3 +302,11 @@ and result retrieval.
 
 Requests use HMAC-SHA256 signatures, timestamps, nonces, per-client rate limits, and
 idempotency keys. A WSGI adapter is included for deployment integration.
+
+
+## Sprint8.6 Production Security Persistence
+
+Doctor now persists nonce replay protection, API idempotency responses, and audit logs in SQLite.
+
+A production application factory loads secrets from environment variables and exposes liveness
+and readiness endpoints. Real secrets are never stored in the repository.

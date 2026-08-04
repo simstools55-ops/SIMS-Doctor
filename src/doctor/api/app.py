@@ -38,6 +38,7 @@ class DoctorApiApp:
         self.idempotency_store = idempotency_store
         self.audit_log = audit_log
         self.idempotency_ttl_hours = idempotency_ttl_hours
+        self.readiness_checks: list[callable] = []
 
     def handle(
         self,
@@ -58,7 +59,16 @@ class DoctorApiApp:
             )
             self.rate_limiter.check(client_id)
 
-            if method.upper() == "POST" and path == "/v1/sbm/batches":
+            if method.upper() == "GET" and path == "/health/live":
+                response = ApiResponse(200, {"status": "LIVE"}, {})
+            elif method.upper() == "GET" and path == "/health/ready":
+                ready = all(check() for check in self.readiness_checks)
+                response = ApiResponse(
+                    200 if ready else 503,
+                    {"status": "READY" if ready else "NOT_READY"},
+                    {},
+                )
+            elif method.upper() == "POST" and path == "/v1/sbm/batches":
                 response = self._submit(client_id, headers, body)
             else:
                 match = re.fullmatch(r"/v1/sbm/batches/([^/]+)(/result)?", path)

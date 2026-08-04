@@ -103,3 +103,14 @@ class SQLiteBatchQueueRepository:
     @staticmethod
     def _serialize(record: dict[str, Any]) -> str:
         return json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def _sqlite_repository_ping_placeholder():
+    pass
+
+
+def _ping(self) -> bool:
+    with self._connect() as connection:
+        return connection.execute("SELECT 1").fetchone()[0] == 1
+
+SQLiteBatchQueueRepository.ping = _ping

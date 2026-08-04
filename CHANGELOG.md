@@ -1,3 +1,17 @@
+## 1.0.0-sprint8.6-production-security-deployment — 2026-08-04
+
+- Added SQLite-persistent nonce replay protection
+- Added SQLite-persistent API idempotency storage
+- Added SQLite audit logging
+- Added environment-based client secret configuration
+- Added invalid and placeholder secret rejection
+- Added production application factory
+- Added liveness and readiness endpoints
+- Added queue and security database readiness checks
+- Added production operations documentation
+- Added unit, integration, and regression tests
+- Did not add TLS, cloud secret manager, managed database, multi-worker rate limiting, or public deployment
+
 ## 1.0.0-sprint8.5-transport-api-auth — 2026-08-04
 
 - Added SBM–Doctor transport API
