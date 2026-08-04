@@ -359,3 +359,9 @@ and low-visibility or intent-misalignment cases.
 
 Doctor now compares current query demand with article identity through query clusters,
 intent shares, entropy, title overlap, emerging-intent growth, and Winner Query protection.
+
+
+## Sprint9.8 Freshness Decay Diagnosis
+
+Doctor now distinguishes local factual decay from severe article-wide freshness decay,
+while protecting Winner Queries and recently updated articles.

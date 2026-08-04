@@ -604,6 +604,113 @@
         "INTENT",
         "FOLLOW_UP"
       ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-PARTIAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 90,
+      "diagnosis_code": "FRESHNESS_DECAY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "PARTIAL_FRESHNESS_DECAY"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 92,
+      "explanation_template": "一部情報に鮮度劣化があり、局所更新が必要です。",
+      "tags": [
+        "FRESHNESS",
+        "PARTIAL"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-SEVERE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "SEVERE_FRESHNESS_DECAY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "SEVERE_FRESHNESS_DECAY"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 97,
+      "explanation_template": "記事全体に重大な情報鮮度劣化が確認されました。",
+      "tags": [
+        "FRESHNESS",
+        "SEVERE"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "FRESHNESS_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを維持しながら事実情報を更新します。",
+      "tags": [
+        "FRESHNESS",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "RECENT_UPDATE_OBSERVATION",
+            "INSUFFICIENT_DATA"
+          ]
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 84,
+      "explanation_template": "鮮度劣化判断には追加観察が必要です。",
+      "tags": [
+        "FRESHNESS",
+        "FOLLOW_UP"
+      ]
     }
   ]
 }

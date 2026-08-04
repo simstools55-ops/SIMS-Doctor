@@ -1,3 +1,18 @@
+## 1.0.0-sprint9.8-freshness-decay-diagnosis — 2026-08-04
+
+- Added Freshness Decay Diagnosis
+- Added article-age and FRESHNESS Vital Sign integration
+- Added outdated year, price, specification, procedure, policy, screenshot, and reference signals
+- Added partial and severe freshness decay
+- Added recent-update observation
+- Added Winner Query protection and preferred update scope
+- Added SIMS_DOCTOR_FRESHNESS_DECAY_ASSESSMENT_V1
+- Added Freshness Decay rules to the Diagnostic Rule Engine
+- Added Medical Record assessment history
+- Added FRESHNESS_DECAY_ASSESSED event
+- Added contract, unit, integration, and regression tests
+- Did not add automatic fact verification, content updates, deletion, noindex, or SERP freshness comparison
+
 ## 1.0.0-sprint9.7-intent-drift-diagnosis — 2026-08-04
 
 - Added Intent Drift Diagnosis

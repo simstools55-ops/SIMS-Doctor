@@ -35,7 +35,8 @@
     "long_term_degradation_assessments",
     "ctr_opportunity_assessments",
     "position_opportunity_assessments",
-    "intent_drift_assessments"
+    "intent_drift_assessments",
+    "freshness_decay_assessments"
   ],
   "properties": {
     "contract_name": {
@@ -192,7 +193,8 @@
         "long_term_degradation_assessment_count",
         "ctr_opportunity_assessment_count",
         "position_opportunity_assessment_count",
-        "intent_drift_assessment_count"
+        "intent_drift_assessment_count",
+        "freshness_decay_assessment_count"
       ],
       "properties": {
         "request_count": {
@@ -276,6 +278,10 @@
           "minimum": 0
         },
         "intent_drift_assessment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freshness_decay_assessment_count": {
           "type": "integer",
           "minimum": 0
         }
@@ -955,6 +961,12 @@
       }
     },
     "intent_drift_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "freshness_decay_assessments": {
       "type": "array",
       "items": {
         "type": "object"

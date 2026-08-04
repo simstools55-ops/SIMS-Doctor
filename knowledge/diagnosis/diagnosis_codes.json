@@ -101,6 +101,18 @@
     {
       "code": "INTENT_WINNER_QUERY_PROTECTED",
       "category": "INTENT"
+    },
+    {
+      "code": "FRESHNESS_DECAY",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "SEVERE_FRESHNESS_DECAY",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "FRESHNESS_WINNER_QUERY_PROTECTED",
+      "category": "FRESHNESS"
     }
   ]
 }

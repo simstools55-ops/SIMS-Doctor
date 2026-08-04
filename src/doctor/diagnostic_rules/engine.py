@@ -172,6 +172,15 @@ class DiagnosticRuleEngine:
                 for item in medical_record.get(
                     "intent_drift_assessments", []
                 )
+            ] + [
+                {
+                    "observation_type": "FRESHNESS_DECAY_ASSESSMENT",
+                    "facts": item,
+                    "observation_id": item.get("assessment_id"),
+                }
+                for item in medical_record.get(
+                    "freshness_decay_assessments", []
+                )
             ],
             "LONGITUDINAL_PROFILE": (
                 [medical_record.get("longitudinal_profiles", [])[-1]]
