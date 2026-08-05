@@ -1,0 +1,11 @@
+{
+  "product_code": "DOCTOR",
+  "product_name": "SIMS Doctor",
+  "repository_name": "SIMS-Doctor",
+  "repository_type": "PRODUCT",
+  "platform": "SIMS Editorial Platform",
+  "platform_compatibility": "1.x",
+  "current_version": "1.0.0-RC13",
+  "shared_version": "3.3.0",
+  "role": "Diagnosis and treatment referral; no treatment execution"
+}

@@ -5,7 +5,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.0.0-RC12`
+`1.0.0-RC13`
 
 Sprint2-2 implements the reception foundation:
 
@@ -18,6 +18,10 @@ Sprint2-2 implements the reception foundation:
 
 365-day data collection, SERP comparison, diagnosis, and referral generation remain outside this release.
 
+
+## RC13 Platform Contract adaptation
+
+RC13 synchronizes with SIMS Shared Editorial Knowledge 3.3.0 and adds the canonical Platform contracts `SIMS_DOCTOR_DIAGNOSIS_REQUEST_V1` and `SIMS_DOCTOR_DIAGNOSIS_RESULT_V1`. The existing `SIMS_DOCTOR_CASE_RESULT_V2` path remains supported as a legacy compatibility route. Doctor returns treatment referrals to SBM and never invokes Writer, Creator, or Merge directly.
 
 ## RC12 SBM orchestration
 

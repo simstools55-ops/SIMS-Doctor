@@ -1,3 +1,14 @@
+# Changelog
+
+## [1.0.0-RC13] - 2026-08-05
+
+- Added SIMS Editorial Platform v1 common envelope and Doctor diagnosis request/result schemas.
+- Synchronized Doctor-scoped Shared snapshot to Shared Editorial Knowledge 3.3.0.
+- Added product identity and explicit Shared version metadata.
+- Preserved `SIMS_DOCTOR_CASE_RESULT_V2` as a legacy compatibility route.
+- Formalized SBM-only treatment routing and prohibited direct Doctor-to-treatment-product invocation.
+- Added RC13 platform contract adaptation documentation.
+
 ## 1.0.0-RC1 — 2026-08-04
 
 - Finalized SIMS Doctor v1.0.0 release candidate
