@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from src.doctor.reporting import DiagnosisReportBuilder
+from .case_result_v2 import CaseResultV2Builder
 
 
 class SingleCaseResultBuilder:
@@ -47,7 +48,7 @@ class SingleCaseResultBuilder:
                 "review_due_at": diagnosis.get("review_due_at"),
             }
 
-        return {
+        legacy = {
             "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
             "contract_version": "1.0",
             "case_id": medical_record["case_id"],
@@ -83,3 +84,12 @@ class SingleCaseResultBuilder:
             },
             "completed_at": datetime.now(timezone.utc).isoformat(),
         }
+        result = CaseResultV2Builder().build(medical_record, user_display=legacy["user_display"])
+        result.update({
+            "result_status": legacy["result_status"],
+            "treatment": legacy["treatment"],
+            "review": legacy["review"],
+            "trace": legacy["trace"],
+            "legacy_result": legacy,
+        })
+        return result

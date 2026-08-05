@@ -55,7 +55,7 @@ class DoctorReceptionService:
                     existing["case_id"], record_id, updated_record["case_status"],
                 )
 
-            case_id = generate_case_id(now, self.registry)
+            case_id = request.get("case_id") or generate_case_id(now, self.registry)
             record_id = medical_record_id(case_id)
             case = {
                 "case_id": case_id,

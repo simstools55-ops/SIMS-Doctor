@@ -5,7 +5,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.0.0-sprint2.2-foundation`
+`1.0.0-RC12`
 
 Sprint2-2 implements the reception foundation:
 
@@ -17,6 +17,11 @@ Sprint2-2 implements the reception foundation:
 6. Return `SIMS_DOCTOR_SINGLE_CASE_RESULT_V1`
 
 365-day data collection, SERP comparison, diagnosis, and referral generation remain outside this release.
+
+
+## RC12 SBM orchestration
+
+RC12 accepts SBM Evidence Package V2 requests, preserves SBM-issued CaseID, and returns `SIMS_DOCTOR_CASE_RESULT_V2` to SBM. Treatment execution is orchestrated by SBM; direct Doctor-to-Writer/Creator/Merge invocation is deprecated.
 
 ## Repository structure
 
@@ -47,7 +52,7 @@ The single-case schemas remain provisional until compared with one real JSON cop
 
 - SBM contains no Doctor diagnosis logic.
 - JSON contracts are the only system-to-system interface.
-- Medical Record is the Doctor diagnostic SSOT.
+- SBM owns the platform Case lifecycle; the Medical Record remains Doctor's diagnostic record.
 - User-facing messages and system-facing contracts are separated.
 - Diagnosis and referral are separate artifacts.
 - Observation and diagnosis do not read the raw SBM request directly.

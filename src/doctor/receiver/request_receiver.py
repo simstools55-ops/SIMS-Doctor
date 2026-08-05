@@ -7,6 +7,7 @@ from typing import Any, Dict, Mapping, Union
 from doctor.common.errors import DoctorError, INVALID_JSON, INVALID_FIELD_TYPE
 from doctor.receiver.request_normalizer import normalize_request
 from doctor.receiver.request_validator import validate_request
+from doctor.receiver.sbm_v2_adapter import adapt_sbm_v2, is_sbm_v2
 
 
 @dataclass(frozen=True)
@@ -32,6 +33,7 @@ def receive_request(payload: Union[str, bytes, Mapping[str, Any]]) -> ReceivedRe
     else:
         raise DoctorError(INVALID_FIELD_TYPE, "request must be JSON text or an object", "request")
 
-    validate_request(parsed)
-    normalized = normalize_request(parsed)
+    intake = adapt_sbm_v2(parsed) if is_sbm_v2(parsed) else parsed
+    validate_request(intake)
+    normalized = normalize_request(intake)
     return ReceivedRequest(raw_request=parsed, normalized_request=normalized)

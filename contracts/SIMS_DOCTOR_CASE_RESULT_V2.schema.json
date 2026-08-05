@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SIMS_DOCTOR_CASE_RESULT_V2.schema.json",
+  "title": "SIMS Doctor Case Result V2",
+  "type": "object",
+  "required": ["format", "contract_version", "case_id", "article_id", "diagnosis", "treatment_plan", "referral", "workflow", "reexamination"],
+  "properties": {
+    "format": {"const": "SIMS_DOCTOR_CASE_RESULT_V2"},
+    "contract_version": {"const": "2.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "diagnosis_id": {"type": ["string", "null"]},
+    "medical_record_id": {"type": ["string", "null"]},
+    "site_id": {"type": ["string", "null"]},
+    "article_id": {"type": "string", "minLength": 1},
+    "completed_at": {"type": "string"},
+    "diagnosis": {"type": "object"},
+    "treatment_plan": {"type": "object"},
+    "referral": {
+      "type": "object",
+      "required": ["required", "destination", "allowed_scope", "blocked_scope"]
+    },
+    "workflow": {
+      "type": "object",
+      "required": ["workflow_locked", "return_to"],
+      "properties": {"return_to": {"const": "SIMS_BLOG_MANAGER"}}
+    },
+    "reexamination": {"type": "object"}
+  },
+  "additionalProperties": true
+}
