@@ -1,13 +1,12 @@
-# Diagnosis Report and Output Architecture
+# Diagnosis Report and Output Architecture v1.0.1
 
-## Outputs
+## Required user-display order
+1. 今回やること
+2. そのまま使える依頼文
+3. 診断結果
+4. 診断の根拠
+5. 今回行わないこと
+6. 再診時期と未評価項目
+7. 機械連携用JSON
 
-- `SIMS_DOCTOR_SINGLE_CASE_RESULT_V1`: Doctor's system result for SBM and other consumers
-- User Display: plain-language diagnosis summary embedded in the result
-- `SIMS_DOCTOR_WRITER_REQUEST_V1`: treatment referral for Writer
-
-## Separation
-
-The user display does not expose internal codes or raw rules.
-The system result retains trace IDs.
-The Writer request contains treatment goals and preservation constraints, not the full Medical Record.
+Doctor returns all referrals to SBM and never invokes treatment products directly. Internal codes remain in system output only.

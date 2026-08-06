@@ -5,7 +5,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.0.0-RC13`
+`1.0.1`
 
 Sprint2-2 implements the reception foundation:
 
@@ -408,3 +408,7 @@ Doctor now records a user-facing decision path and a separate system audit trail
 ## v1.0.0-RC1
 
 The complete Doctor workflow is frozen as a release candidate for end-to-end acceptance testing.
+
+
+## v1.0.1 行動優先型出力
+利用者向け診断は「今回やること」から開始し、SBMが次の担当製品へ渡せる依頼文を含みます。

@@ -38,8 +38,13 @@ class DoctorReportGenerator:
             "prohibited_actions": recommendation["prohibited_actions"],
         }
 
+        action_plan = self._action_plan(target, recommendation)
+        handoff_request = self._handoff_request(target, recommendation)
+
         sections = [
-            {"code": "SUMMARY", "title": "診断概要", "content": summary},
+            {"code": "NEXT_ACTIONS", "title": "今回やること", "content": action_plan},
+            {"code": "HANDOFF_REQUEST", "title": "そのまま使える依頼文", "content": handoff_request},
+            {"code": "SUMMARY", "title": "診断結果", "content": summary},
             {
                 "code": "CURRENT_STATE",
                 "title": "現在の状態",
@@ -52,7 +57,7 @@ class DoctorReportGenerator:
             },
             {
                 "code": "WHY",
-                "title": "診断理由",
+                "title": "診断の根拠",
                 "content": list(composite.get("reasons", [])),
             },
             {
@@ -66,12 +71,12 @@ class DoctorReportGenerator:
             },
             {
                 "code": "DO_NOT_DO",
-                "title": "行わないこと",
+                "title": "今回行わないこと",
                 "content": recommendation["prohibited_actions"],
             },
             {
                 "code": "MONITORING",
-                "title": "今後の確認",
+                "title": "再診時期と未評価項目",
                 "content": recommendation["monitoring"],
             },
         ]
@@ -107,6 +112,29 @@ class DoctorReportGenerator:
             "sections": sections,
             "trace": trace,
         }
+
+    @staticmethod
+    def _action_plan(target, recommendation):
+        products = {"SBM": "確認事項がある場合に実施", "WRITER": "今回は不要", "CREATOR": "今回は不要", "MERGE": "今回は不要"}
+        if target in products:
+            products[target] = "依頼する"
+        elif target in {"OBSERVE", "FOLLOW_UP", "NONE"}:
+            products["SBM"] = "経過観察または再診を管理する"
+        return {
+            "担当別": products,
+            "実施内容": recommendation.get("recommended_scope", []),
+            "再診": recommendation.get("monitoring", {}),
+        }
+
+    @staticmethod
+    def _handoff_request(target, recommendation):
+        if target in {"NONE", "OBSERVE", "FOLLOW_UP"}:
+            return "今回はWriter・Creator・Mergeへの依頼はありません。SBMで経過観察または再診を管理してください。"
+        scope = recommendation.get("recommended_scope", [])
+        prohibited = recommendation.get("prohibited_actions", [])
+        scope_text = "\n".join(f"・{item}" for item in scope) or "・診断で許可された範囲のみ実施"
+        blocked_text = "\n".join(f"・{item}" for item in prohibited) or "・診断範囲外の変更"
+        return f"【担当】{target}\n\n【実施すること】\n{scope_text}\n\n【変更しないこと】\n{blocked_text}\n\n結果をSBMへ返してください。"
 
     @staticmethod
     def _summary(label, target, priority):

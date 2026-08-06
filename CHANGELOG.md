@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-08-06
+
+- Added action-first user output and SBM-routed handoff instructions.
+- Kept diagnosis logic and machine-readable codes unchanged.
+
+
 ## [1.0.0-RC13] - 2026-08-05
 
 - Added SIMS Editorial Platform v1 common envelope and Doctor diagnosis request/result schemas.
@@ -455,6 +461,12 @@
 - Kept diagnosis, scoring formulas, and referrals out of Sprint3.1
 
 # Changelog
+
+## [1.0.1] - 2026-08-06
+
+- Added action-first user output and SBM-routed handoff instructions.
+- Kept diagnosis logic and machine-readable codes unchanged.
+
 
 ## 1.0.0-sprint2.2-foundation — 2026-08-04
 
