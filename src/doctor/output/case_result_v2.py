@@ -16,6 +16,34 @@ _TARGET_MAP = {
 }
 
 
+
+def _treatment_class(destination: str, recommendation: dict[str, Any] | None) -> str:
+    rec = recommendation or {}
+    explicit = rec.get("treatment_class")
+    if explicit:
+        return str(explicit)
+    level = str(rec.get("treatment_level") or rec.get("treatment_mode") or rec.get("treatment_code") or "").upper()
+    if destination == "SIMS_CREATOR":
+        return "新規記事作成"
+    if destination == "SIMS_MERGE":
+        return "記事統合"
+    if destination == "NONE":
+        return "経過観察"
+    if any(token in level for token in ("FULL", "MAJOR", "L4")):
+        return "全面リライト"
+    if any(token in level for token in ("REWRITE", "L3")):
+        return "通常リライト"
+    if any(token in level for token in ("LIMITED", "LOCAL", "L2")):
+        return "限定修正"
+    return "軽微修正"
+
+
+def _request_text(label: str, treatment_class: str, scope: list[Any], blocked: list[Any], dependencies: list[Any]) -> str:
+    scope_text = "\n".join(f"・{item}" for item in scope) or "・診断で許可された範囲のみ実施"
+    blocked_text = "\n".join(f"・{item}" for item in blocked) or "・診断範囲外の変更"
+    dep_text = "\n".join(f"・{item}" for item in dependencies) or "・なし"
+    return f"【担当】{label}\n【治療区分】{treatment_class}\n\n【実施すること】\n{scope_text}\n\n【変更しないこと】\n{blocked_text}\n\n【前提条件】\n{dep_text}\n\n結果をSBMへ返してください。"
+
 def _list(value: Any) -> list[Any]:
     return list(value) if isinstance(value, (list, tuple)) else []
 
@@ -62,6 +90,7 @@ class CaseResultV2Builder:
             monitoring = recommendation.get("monitoring") or {}
             review_days = monitoring.get("review_after_days") or monitoring.get("recommended_review_days") or review_days
             instructions = _list(recommendation.get("instructions"))
+        dependencies = _list((recommendation or {}).get("dependencies"))
 
         workflow = medical_record.get("workflow") or {}
         locked = bool(workflow.get("lock", {}).get("locked") or workflow.get("workflow_locked"))
@@ -71,6 +100,16 @@ class CaseResultV2Builder:
 
         diagnosis_id = diagnosis.get("diagnosis_id") if diagnosis else None
         completed_at = datetime.now(timezone.utc).isoformat()
+        treatment_class = _treatment_class(destination if treatment_required else "NONE", recommendation)
+        request_text = _request_text(destination, treatment_class, recommended_scope, blocked_scope, dependencies) if treatment_required else None
+        user_confirmation_text = request_text if destination == "MANUAL_REVIEW" or target == "SBM" else None
+        action_checklist = []
+        if user_confirmation_text:
+            action_checklist.append({"order": 1, "owner": "USER", "action": "診断で指定された確認作業を行う", "dependencies": dependencies})
+        elif treatment_required:
+            action_checklist.append({"order": 1, "owner": destination, "action": "診断で許可された範囲の処置を実施する", "dependencies": dependencies})
+        elif review_days:
+            action_checklist.append({"order": 1, "owner": "SBM", "action": "再診日まで経過観察する", "dependencies": dependencies})
         return {
             "format": "SIMS_DOCTOR_CASE_RESULT_V2",
             "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
@@ -126,6 +165,15 @@ class CaseResultV2Builder:
                 "trigger": "AFTER_MEASUREMENT" if review_days else None,
                 "recommended_review_days": review_days,
                 "required_evidence": ["PUBLICATION_CONFIRMATION", "POST_TREATMENT_PERFORMANCE"] if treatment_required else ["UPDATED_PERFORMANCE"],
+            },
+            "workflow_handoff": {
+                "treatment_class": treatment_class,
+                "action_checklist": action_checklist,
+                "user_confirmation_text": user_confirmation_text,
+                "writer_request_text": request_text if destination == "SIMS_WRITER" and treatment_required else None,
+                "creator_request_text": request_text if destination == "SIMS_CREATOR" and treatment_required else None,
+                "merge_request_text": request_text if destination == "SIMS_MERGE" and treatment_required else None,
+                "dependencies": dependencies,
             },
             "user_display": user_display,
             "compatibility": {

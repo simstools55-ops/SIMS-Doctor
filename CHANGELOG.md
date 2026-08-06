@@ -1,3 +1,6 @@
+## v1.0.2
+- Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
+
 # Changelog
 
 ## [1.0.1] - 2026-08-06

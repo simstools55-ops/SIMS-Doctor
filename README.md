@@ -1,3 +1,6 @@
+## v1.0.2
+- Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
+
 # SIMS Doctor v1.0
 
 SIMS Doctor is the independent diagnosis product in the SIMS Editorial Platform.
