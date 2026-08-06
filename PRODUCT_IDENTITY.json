@@ -5,7 +5,7 @@
   "repository_type": "PRODUCT",
   "platform": "SIMS Editorial Platform",
   "platform_compatibility": "1.x",
-  "current_version": "1.0.4",
+  "current_version": "1.1.0",
   "shared_version": "3.3.0",
   "role": "Diagnosis and direct treatment handoff to Writer, Creator, or Merge; no treatment execution"
 }

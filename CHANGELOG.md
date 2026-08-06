@@ -511,3 +511,6 @@
 - Hide Doctor diagnosis JSON from normal user-facing responses.
 - Require a standalone copy-ready request block for Writer, Creator, or Merge.
 - Clarify that only specialist treatment results return to SBM.
+
+## 1.1.0 - Treatment Plan UX
+- Added reassurance, concrete ToDo, do-not-do guidance, confidence-led decisions, and copy-ready specialist handoff.
