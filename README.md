@@ -1,4 +1,8 @@
-## v1.0.2
+## Current release
+
+`1.0.3`
+
+## v1.0.3
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
 
 # SIMS Doctor v1.0
@@ -8,7 +12,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.0.2`
+`1.0.3`
 
 Sprint2-2 implements the reception foundation:
 
@@ -414,4 +418,4 @@ The complete Doctor workflow is frozen as a release candidate for end-to-end acc
 
 
 ## v1.0.1 行動優先型出力
-利用者向け診断は「今回やること」から開始し、SBMが次の担当製品へ渡せる依頼文を含みます。
+利用者向け診断は「今回やること」から開始し、利用者が次の担当製品へ直接渡せる依頼文を含みます。

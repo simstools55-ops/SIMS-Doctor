@@ -1,3 +1,9 @@
+# CHANGELOG
+
+## 1.0.3
+- Direct specialist handoff: Doctor → Writer / Creator / Merge → SBM.
+- Doctor result registration in SBM is optional archive only.
+
 ## [1.0.2] - 2026-08-07
 
 - Corrected all current release and Claude deployment identity metadata to 1.0.2.

@@ -45,7 +45,7 @@ def test_sbm_v2_case_id_is_preserved():
     assert result["case_id"] == "CASE-20260805-A000026-001"
 
 
-def test_case_result_v2_returns_to_sbm_without_direct_invocation():
+def test_case_result_v2_hands_off_directly_and_returns_specialist_result_to_sbm():
     record = {
         "case_id": "CASE-1",
         "medical_record_id": "MR-CASE-1",
@@ -66,5 +66,6 @@ def test_case_result_v2_returns_to_sbm_without_direct_invocation():
     result = CaseResultV2Builder().build(record)
     assert result["format"] == "SIMS_DOCTOR_CASE_RESULT_V2"
     assert result["referral"]["destination"] == "SIMS_WRITER"
-    assert result["workflow"]["return_to"] == "SIMS_BLOG_MANAGER"
-    assert result["compatibility"]["direct_specialist_invocation"] == "DEPRECATED"
+    assert result["workflow"]["return_to"] == "DIRECT_SPECIALIST_HANDOFF"
+    assert result["workflow_handoff"]["specialist_result_destination"] == "SIMS_BLOG_MANAGER"
+    assert result["compatibility"]["direct_specialist_invocation"] == "ACTIVE"

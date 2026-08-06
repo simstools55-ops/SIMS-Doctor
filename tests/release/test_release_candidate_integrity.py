@@ -25,7 +25,7 @@ def test_release_manifest_events_match_registry():
 def test_version_is_release_candidate():
     assert (ROOT / "VERSION").read_text(
         encoding="utf-8"
-    ).strip() == "1.0.2"
+    ).strip() == "1.0.3"
 
 def test_treatment_execution_remains_disabled():
     manifest = json.loads(
