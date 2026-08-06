@@ -1,3 +1,8 @@
+## [1.0.2] - 2026-08-07
+
+- Corrected all current release and Claude deployment identity metadata to 1.0.2.
+- Added release consistency checks for VERSION, identity, manifests, instructions, and deployment tests.
+
 ## v1.0.2
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
 

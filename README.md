@@ -8,7 +8,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.0.1`
+`1.0.2`
 
 Sprint2-2 implements the reception foundation:
 

@@ -20,6 +20,6 @@
     "runtime/merge"
   ],
   "compatible_product_versions": [
-    "1.0.0-RC13"
+    "1.0.2"
   ]
 }
