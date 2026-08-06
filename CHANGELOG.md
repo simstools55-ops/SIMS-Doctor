@@ -506,3 +506,8 @@
 - Split evidence acquisition quality from content quality.
 - Added factor-based confidence scoring and external demand diagnosis.
 - Added multi-track treatment and Japanese user-facing output policy.
+
+## 1.0.4
+- Hide Doctor diagnosis JSON from normal user-facing responses.
+- Require a standalone copy-ready request block for Writer, Creator, or Merge.
+- Clarify that only specialist treatment results return to SBM.

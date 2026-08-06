@@ -1,18 +1,20 @@
 ## Current release
 
-`1.0.3`
+`1.0.4`
 
-## v1.0.3
+## v1.0.4
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
 
-# SIMS Doctor v1.0
+# SIMS Doctor
+
+Current user workflow: SBM → Doctor → Writer / Creator / Merge → SBM. Doctor JSON is internal and is not displayed to normal users; copy-ready specialist requests are shown instead. v1.0
 
 SIMS Doctor is the independent diagnosis product in the SIMS Editorial Platform.
 It receives a case request from SIMS Blog Manager, maintains the medical record as the diagnostic SSOT, and later produces diagnosis and referral contracts. It does not rewrite articles.
 
 ## Current release
 
-`1.0.3`
+`1.0.4`
 
 Sprint2-2 implements the reception foundation:
 
