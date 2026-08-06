@@ -1,3 +1,7 @@
+# v1.1.1
+- URL identity and canonical diagnostic accuracy update.
+- Trailing-slash aliases no longer trigger false indexing-loss conclusions.
+
 # CHANGELOG
 
 ## 1.0.3

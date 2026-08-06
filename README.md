@@ -1,8 +1,8 @@
-# SIMS Doctor v1.1.0
+# SIMS Doctor v1.1.1
 
 ## Current release
 
-`1.1.0`
+`1.1.1`
 
 ## v1.0.4
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
@@ -16,7 +16,7 @@ It receives a case request from SIMS Blog Manager, maintains the medical record 
 
 ## Current release
 
-`1.1.0`
+`1.1.1`
 
 Sprint2-2 implements the reception foundation:
 
