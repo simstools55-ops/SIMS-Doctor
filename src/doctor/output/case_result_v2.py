@@ -49,11 +49,12 @@ def _list(value: Any) -> list[Any]:
 
 
 class CaseResultV2Builder:
-    """Build a diagnostic result with direct specialist handoff.
+    """Build a diagnostic result returned to SBM for orchestration.
 
-    Doctor still does not execute treatment. When treatment is recommended,
-    it produces a copy-ready request for Writer, Creator, or Merge. SBM is
-    used after treatment to record the specialist result and measure impact.
+    Doctor diagnoses and selects the next specialist, but does not create the
+    final specialist request. SBM receives this JSON, combines it with the
+    stored article body and evidence package, and generates the complete
+    Writer, Creator, or Merge referral.
     """
 
     def build(self, medical_record: dict[str, Any], *, user_display: Any = None) -> dict[str, Any]:
@@ -159,7 +160,7 @@ class CaseResultV2Builder:
                 "lock_owner": (workflow.get("lock") or {}).get("lock_owner"),
                 "lock_reference_id": (workflow.get("lock") or {}).get("lock_reference_id"),
                 "user_approval_required": action in {"REFER", "MANUAL_REVIEW"},
-                "return_to": "DIRECT_SPECIALIST_HANDOFF",
+                "return_to": "SIMS_BLOG_MANAGER",
             },
             "reexamination": {
                 "required": bool(review_days),
@@ -171,19 +172,20 @@ class CaseResultV2Builder:
                 "treatment_class": treatment_class,
                 "action_checklist": action_checklist,
                 "user_confirmation_text": user_confirmation_text,
-                "writer_request_text": request_text if destination == "SIMS_WRITER" and treatment_required else None,
-                "creator_request_text": request_text if destination == "SIMS_CREATOR" and treatment_required else None,
-                "merge_request_text": request_text if destination == "SIMS_MERGE" and treatment_required else None,
+                "writer_request_text": None,
+                "creator_request_text": None,
+                "merge_request_text": None,
                 "dependencies": dependencies,
-                "handoff_mode": "DIRECT_TO_SPECIALIST" if treatment_required else "NO_SPECIALIST_HANDOFF",
-                "doctor_json_usage": "OPTIONAL_ARCHIVE_ONLY",
+                "handoff_mode": "RETURN_TO_SBM_FOR_REFERRAL" if treatment_required else "RETURN_TO_SBM_FOR_MONITORING",
+                "doctor_json_usage": "REQUIRED_SBM_REGISTRATION",
                 "specialist_result_destination": "SIMS_BLOG_MANAGER" if treatment_required else None,
             },
             "user_display": user_display,
             "compatibility": {
                 "legacy_contract": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
-                "direct_specialist_invocation": "ACTIVE",
-                "doctor_result_registration_to_sbm": "OPTIONAL_ARCHIVE",
+                "direct_specialist_invocation": "DISABLED",
+                "doctor_result_registration_to_sbm": "REQUIRED",
+                "specialist_referral_generation_by_sbm": "REQUIRED",
                 "specialist_result_registration_to_sbm": "REQUIRED",
             },
         }

@@ -1,3 +1,9 @@
+# v1.1.2
+
+- Restore required Doctor result JSON registration to SBM.
+- Move final specialist referral generation to SBM.
+- Remove direct specialist request from normal Doctor output.
+
 # v1.1.1
 - URL identity and canonical diagnostic accuracy update.
 - Trailing-slash aliases no longer trigger false indexing-loss conclusions.
