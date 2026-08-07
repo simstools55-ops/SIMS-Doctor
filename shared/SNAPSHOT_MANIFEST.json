@@ -29,5 +29,8 @@
   ],
   "compatible_product_versions": [
     "1.2.0-RC3"
+  ],
+  "compatible_package_versions": [
+    "1.2.0-RC4"
   ]
 }

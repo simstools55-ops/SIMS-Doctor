@@ -54,6 +54,7 @@ RELEASE_NOTES_v1.1.3.md
 RELEASE_NOTES_v1.2.0-RC1.md
 RELEASE_NOTES_v1.2.0-RC2.md
 RELEASE_NOTES_v1.2.0-RC3.md
+RELEASE_NOTES_v1.2.0-RC4.md
 SHARED_VERSION
 VERSION
 contracts/SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1.schema.json
@@ -72,6 +73,7 @@ contracts/SIMS_DOCTOR_EXPLANATION_V1.schema.json
 contracts/SIMS_DOCTOR_FRESHNESS_DECAY_ASSESSMENT_V1.schema.json
 contracts/SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1.schema.json
 contracts/SIMS_DOCTOR_INTENT_DRIFT_ASSESSMENT_V1.schema.json
+contracts/SIMS_DOCTOR_INTERNAL_LINK_RECOMMENDATION_V1.schema.json
 contracts/SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1.schema.json
 contracts/SIMS_DOCTOR_LONG_TERM_DEGRADATION_ASSESSMENT_V1.schema.json
 contracts/SIMS_DOCTOR_LONG_TERM_OBSERVATION_INPUT_V1.schema.json
@@ -215,6 +217,7 @@ knowledge/integration/sbm_batch_integration_policy_v1.json
 knowledge/integration/transport_api_policy_v1.json
 knowledge/intent_drift/README.md
 knowledge/intent_drift/intent_drift_policy_v1.json
+knowledge/internal_links/internal_link_referral_policy_v1.md
 knowledge/long_term_degradation/README.md
 knowledge/long_term_degradation/long_term_degradation_policy_v1.json
 knowledge/longitudinal/README.md
@@ -644,6 +647,7 @@ tests/unit/test_production_settings.py
 tests/unit/test_rc12_sbm_orchestration.py
 tests/unit/test_rc3_human_presentation.py
 tests/unit/test_rc4_clinical_review.py
+tests/unit/test_rc4_internal_link_referral.py
 tests/unit/test_request_receiver.py
 tests/unit/test_sbm_batch_gateway.py
 tests/unit/test_sbm_orchestrated_handoff_v112.py

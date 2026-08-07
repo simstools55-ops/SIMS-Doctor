@@ -48,6 +48,38 @@ def _request_text(label: str, treatment_class: str, scope: list[Any], blocked: l
     dep_text = "\n".join(f"・{item}" for item in dependencies) or "・なし"
     return f"【担当】{label}\n【治療区分】{treatment_class}\n\n【実施すること】\n{scope_text}\n\n【変更しないこと】\n{blocked_text}\n\n【前提条件】\n{dep_text}\n\n処置後の結果はSBMへ登録してください。"
 
+
+
+def _normalize_internal_link_recommendations(recommendation: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Normalize Doctor internal-link advice without taking over Writer editing.
+
+    Doctor identifies the destination and clinical/SEO rationale. Writer remains
+    responsible for final placement, surrounding copy, and anchor wording.
+    """
+    rec = recommendation or {}
+    raw = rec.get("internal_link_recommendations") or []
+    out: list[dict[str, Any]] = []
+    if isinstance(raw, dict):
+        raw = [raw]
+    for item in raw if isinstance(raw, list) else []:
+        if isinstance(item, str):
+            item = {"url": item}
+        if not isinstance(item, dict):
+            continue
+        url = str(item.get("url") or item.get("target_url") or "").strip()
+        if not url:
+            continue
+        out.append({
+            "url": url,
+            "title": item.get("title"),
+            "reason": item.get("reason") or item.get("selection_reason"),
+            "relationship": item.get("relationship"),
+            "suggested_context": item.get("suggested_context") or item.get("context"),
+            "suggested_anchor_hint": item.get("suggested_anchor_hint") or item.get("anchor"),
+            "writer_must_finalize_anchor": True,
+        })
+    return out
+
 def _list(value: Any) -> list[Any]:
     return list(value) if isinstance(value, (list, tuple)) else []
 
@@ -99,6 +131,7 @@ class CaseResultV2Builder:
             review_days = monitoring.get("review_after_days") or monitoring.get("recommended_review_days") or review_days
             instructions = _list(recommendation.get("instructions"))
         dependencies = _list((recommendation or {}).get("dependencies"))
+        internal_link_recommendations = _normalize_internal_link_recommendations(recommendation)
 
         workflow = medical_record.get("workflow") or {}
         locked = bool(workflow.get("lock", {}).get("locked") or workflow.get("workflow_locked"))
@@ -163,6 +196,7 @@ class CaseResultV2Builder:
                 "wait_plan": (recommendation or {}).get("wait_plan"),
                 "user_todo": _list((recommendation or {}).get("user_todo")),
                 "reassurance_comment": (recommendation or {}).get("reassurance_comment"),
+                "internal_link_recommendations": internal_link_recommendations,
             },
             "referral": {
                 "required": treatment_required,
@@ -172,6 +206,7 @@ class CaseResultV2Builder:
                 "allowed_scope": recommended_scope,
                 "blocked_scope": blocked_scope,
                 "instructions": instructions,
+                "internal_link_recommendations": internal_link_recommendations,
             },
             "workflow": {
                 "doctor_diagnosis_allowed": True,
@@ -204,6 +239,9 @@ class CaseResultV2Builder:
                 "creator_request_text": None,
                 "merge_request_text": None,
                 "dependencies": dependencies,
+                "allowed_scope": recommended_scope,
+                "blocked_scope": blocked_scope,
+                "internal_link_recommendations": internal_link_recommendations,
                 "handoff_mode": "RETURN_TO_SBM_FOR_REFERRAL" if treatment_required else "RETURN_TO_SBM_FOR_MONITORING",
                 "doctor_json_usage": "REQUIRED_SBM_REGISTRATION",
                 "specialist_result_destination": "SIMS_BLOG_MANAGER" if treatment_required else None,

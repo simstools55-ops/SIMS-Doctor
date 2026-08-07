@@ -1,3 +1,7 @@
+## 1.2.0-RC4
+
+- Structured internal-link referral metadata and workflow scope propagation.
+
 
 ## 1.2.0-RC3
 - Shared 3.5.0 Presentation Frameworkへ同期。

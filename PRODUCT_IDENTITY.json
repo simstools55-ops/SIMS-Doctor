@@ -5,7 +5,7 @@
   "repository_type": "PRODUCT",
   "platform": "SIMS Editorial Platform",
   "platform_compatibility": "1.x",
-  "current_version": "1.2.0-RC3",
+  "current_version": "1.2.0-RC4",
   "shared_version": "3.5.0",
   "role": "Diagnosis and return to SBM for complete specialist referral generation; no treatment execution"
 }
