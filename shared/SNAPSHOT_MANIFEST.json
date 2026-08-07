@@ -1,7 +1,7 @@
 {
-  "shared_version": "3.4.0",
+  "shared_version": "3.5.0",
   "snapshot_for": "DOCTOR",
-  "generated_at": "2026-08-07T17:00:00+09:00",
+  "generated_at": "2026-08-07T17:30:00+09:00",
   "included_paths": [
     "contracts/common",
     "contracts/doctor",
@@ -15,7 +15,12 @@
     "enums/treatment-type.json",
     "enums/result-status.json",
     "enums/priority.json",
-    "enums/product-code.json"
+    "enums/product-code.json",
+    "presentation/HUMAN_EXPERIENCE_ARCHITECTURE_V1.md",
+    "presentation/PRESENTATION_STANDARD_V1.md",
+    "presentation/HUMAN_OUTPUT_POLICY_V1.md",
+    "presentation/MACHINE_OUTPUT_POLICY_V1.md",
+    "presentation/HUMAN_USABILITY_GATE_V1.md"
   ],
   "excluded_paths": [
     "runtime/writer",
@@ -23,6 +28,6 @@
     "runtime/merge"
   ],
   "compatible_product_versions": [
-    "1.2.0-RC2"
+    "1.2.0-RC3"
   ]
 }

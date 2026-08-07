@@ -1,21 +1,21 @@
 {
-  "version": "1.1.3",
-  "file_count": 642,
+  "version": "1.2.0-RC3",
+  "file_count": 665,
   "files": [
     {
       "path": "CHANGELOG.md",
-      "size": 23174,
-      "sha256": "e70b34aa70596d4d551d899f9b4b5ac70660d5f64d8b402a2fab8ad29d239968"
+      "size": 23394,
+      "sha256": "bf83fcc8cca3c9336407c39a607f74d63468cf7caed0adf90c648f45b7c0b650"
     },
     {
       "path": "PRODUCT_IDENTITY.json",
-      "size": 376,
-      "sha256": "152034af565d36958c65c6dc01ce8edeb59e077556d1d673cef174f66477d714"
+      "size": 380,
+      "sha256": "8b9065e5a9fd195344d06821aa1015293764f5f26fa7006bc02838b8e2de8ba9"
     },
     {
       "path": "README.md",
-      "size": 13091,
-      "sha256": "dd9974fab0891a0ab7eca53b91814684f2bc9b4087fbbf61f03357994ea20dea"
+      "size": 13099,
+      "sha256": "b24131871116e2e4ecf4ed40bbdf4654db85e85ec8ffbb18875968bb423f7df7"
     },
     {
       "path": "RELEASE_NOTES_v0.1.0.md",
@@ -268,14 +268,34 @@
       "sha256": "8c037e85663d83e92049803a6a034bbac98708c21e0686c7375d119affeb19c9"
     },
     {
+      "path": "RELEASE_NOTES_v1.2.0-RC1.md",
+      "size": 1124,
+      "sha256": "113b91834ef2334d69a480235551a0c968cb4ba7ffea1c7359a68c1aa0618721"
+    },
+    {
+      "path": "RELEASE_NOTES_v1.2.0-RC2.md",
+      "size": 424,
+      "sha256": "88cc1728a7b72001e474b6e8f5f5592ddac9956c8154f67a47f6b40127e259ce"
+    },
+    {
+      "path": "RELEASE_NOTES_v1.2.0-RC3.md",
+      "size": 582,
+      "sha256": "77a02019e98ba1b9521da992d7cb51148c836f3568e4fa1a08dfa34c00a7e2bb"
+    },
+    {
       "path": "SHARED_VERSION",
       "size": 6,
-      "sha256": "5eee6c0c5c6901f5e523f0a434bca4106e1ff7136deb451f982b0bb1a7b13716"
+      "sha256": "76120c1f2c4311c2154c22a6b58e00e411e0ebe76afae0daf608d9196c61f114"
     },
     {
       "path": "VERSION",
-      "size": 6,
-      "sha256": "5dae0c0a5ed3cdaa78704e25bb38d72c31018311e933283d06ed4f93360bfc6c"
+      "size": 10,
+      "sha256": "5ec583d64f4edf4e88e6fa9febbb84516292d435552340a4b838ac221aba6f78"
+    },
+    {
+      "path": "contracts/SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1.schema.json",
+      "size": 1379,
+      "sha256": "71e3c3318127ada88939d5d598fdb342576a3931daf199e3b0ce62abafab0045"
     },
     {
       "path": "contracts/SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1.schema.json",
@@ -304,8 +324,8 @@
     },
     {
       "path": "contracts/SIMS_DOCTOR_CASE_RESULT_V2.schema.json",
-      "size": 1181,
-      "sha256": "290f7362d77b536b1ed9ea43a77babfe1950ec98301bece54bf9b6e581603287"
+      "size": 2533,
+      "sha256": "fe060f09e81c53fa0e24edb7e050f50816c8017abd62ccbfbef85a90836f37be"
     },
     {
       "path": "contracts/SIMS_DOCTOR_CLINICAL_PIPELINE_RESULT_V1.schema.json",
@@ -838,6 +858,16 @@
       "sha256": "455b05567e32c84b7685e7f3a1d605d73462c73f4e1eb24de778bc06a5a283e8"
     },
     {
+      "path": "knowledge/algorithm_impact/README.md",
+      "size": 459,
+      "sha256": "acf8b93d600c1b93ede5d9251802bcc162bad3197605ebfa436efa905edc38df"
+    },
+    {
+      "path": "knowledge/algorithm_impact/algorithm_impact_policy_v1.json",
+      "size": 776,
+      "sha256": "ea75c40b87c6f0809df52711103b37bb2068ca3e3139c9168acd8c3b6129fd38"
+    },
+    {
       "path": "knowledge/batch/README.md",
       "size": 401,
       "sha256": "9cbf778501d708fbdeecab336d83aa979e119315927ba9554da71377726e7d6c"
@@ -1209,8 +1239,8 @@
     },
     {
       "path": "knowledge/treatment_recommendation/treatment_recommendation_policy_v1.json",
-      "size": 2141,
-      "sha256": "a8f62f9c405c06a6f51b45e2be497644f3d442bb5db997a4754bad06aae88873"
+      "size": 2227,
+      "sha256": "349b679ea546aa278653e387d9cc9010c3542cb127f22c66584028a91c378697"
     },
     {
       "path": "knowledge/url_identity_diagnostic_rule.md",
@@ -1269,8 +1299,8 @@
     },
     {
       "path": "knowledge/workflow/medical_record_events.json",
-      "size": 1066,
-      "sha256": "4f0cf395c9d82f1ee9336e62044347c335747cb7c94b49c41eea15de26e5202d"
+      "size": 1099,
+      "sha256": "618436dfef3fca9e4aaa39fcabef5dbf88606fdb072f274e1ba0207f3d16ff47"
     },
     {
       "path": "knowledge/workflow/output_policy_v1.json",
@@ -1509,13 +1539,23 @@
     },
     {
       "path": "shared/SNAPSHOT_MANIFEST.json",
-      "size": 632,
-      "sha256": "b3bff3e1002ab351af819036c850dba04131c2ae6d6b1da5027163ec7138103f"
+      "size": 995,
+      "sha256": "de79936be6ad9229c153079a35ba543aff7f677c604f87ed1dde2e8fe0e27c31"
+    },
+    {
+      "path": "shared/architecture/ALGORITHM_EVIDENCE_V1.md",
+      "size": 2594,
+      "sha256": "f96da5af5a7a5920ac6398e31e209bdb0f38880c18a0adf71ab25fb62fb60d14"
+    },
+    {
+      "path": "shared/architecture/INTERFACE_CONTRACTS_V2.md",
+      "size": 4317,
+      "sha256": "1760ec99e5be54f14d3e8ffa64d6188a2c6342d7843f1cce36fc82becd3e46df"
     },
     {
       "path": "shared/architecture/PRODUCT_RESPONSIBILITIES.md",
-      "size": 536,
-      "sha256": "d7b2e7615a3ec18528d8840320899ee1550e606d9b24348f41fa5c406938e4b0"
+      "size": 926,
+      "sha256": "4bfc004282793d0f7379cd08c92252e48816bea132e6e307fe3e34ccdadf7de3"
     },
     {
       "path": "shared/architecture/SBM_DOCTOR_SAFETY_BOUNDARY.md",
@@ -1524,8 +1564,8 @@
     },
     {
       "path": "shared/architecture/TREATMENT_ROUTING_V1.md",
-      "size": 606,
-      "sha256": "cd006d43d0aaf15d35719366f00ab091a40cd93781b628b0111633ca3957199b"
+      "size": 1386,
+      "sha256": "063d40a0578dad82d521131c06a0654e11cfb40449155c4d0f3071e8a74c1c61"
     },
     {
       "path": "shared/contracts/common/common-envelope-v1.schema.json",
@@ -1573,6 +1613,31 @@
       "sha256": "14367112b8fd31b67b478a87ecbbbafe9e4681d39379a11205449d8554b22be6"
     },
     {
+      "path": "shared/presentation/HUMAN_EXPERIENCE_ARCHITECTURE_V1.md",
+      "size": 1077,
+      "sha256": "2a10da8c7439ff864e46c71073a88000ed6aab66b92ccbeae6d497bf7bf60b3e"
+    },
+    {
+      "path": "shared/presentation/HUMAN_OUTPUT_POLICY_V1.md",
+      "size": 1150,
+      "sha256": "8d1cdd3cd33e46639c0c5f11e449d9158137f1713f6be1e139d1a405f98d85a9"
+    },
+    {
+      "path": "shared/presentation/HUMAN_USABILITY_GATE_V1.md",
+      "size": 651,
+      "sha256": "03eac261309367eb0955d44b167a9ba51058f676e2c58161c6bf0e6d87eaaddb"
+    },
+    {
+      "path": "shared/presentation/MACHINE_OUTPUT_POLICY_V1.md",
+      "size": 885,
+      "sha256": "f8daadf28067f9e6c423c4a5af67d916a7f113dd7dfffadea7ae2d78076ceccc"
+    },
+    {
+      "path": "shared/presentation/PRESENTATION_STANDARD_V1.md",
+      "size": 1450,
+      "sha256": "7779aabd05fbfb303d7f143460ed89a7eab7d7df5930c889102eac85ae25059b"
+    },
+    {
       "path": "src/__init__.py",
       "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -1581,6 +1646,26 @@
       "path": "src/doctor/__init__.py",
       "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/doctor/algorithm_impact/__init__.py",
+      "size": 224,
+      "sha256": "0758fa5a21f54b1b49a5f4d4d4ceeff00fa230f1298863a076d19446e882507e"
+    },
+    {
+      "path": "src/doctor/algorithm_impact/engine.py",
+      "size": 7447,
+      "sha256": "47107916d75eafe87fbcab5f2e4e25b8d4f6040e462a59a0b77e6d14395eae3a"
+    },
+    {
+      "path": "src/doctor/algorithm_impact/models.py",
+      "size": 1165,
+      "sha256": "46752dd2363e4dec7c96b7bf4c93811d4f362da458d157ec6bb2098975acef3a"
+    },
+    {
+      "path": "src/doctor/algorithm_impact/service.py",
+      "size": 1559,
+      "sha256": "cb1e3e5bf608e11c8f7805b796671c21e014e11b199908c97f351a4293221731"
     },
     {
       "path": "src/doctor/api/__init__.py",
@@ -1729,8 +1814,8 @@
     },
     {
       "path": "src/doctor/composite_diagnosis/engine.py",
-      "size": 16138,
-      "sha256": "becb9f8f4542034c09b7c20bb3d183725ac2cc132bb3b818778c0d2caf893e70"
+      "size": 17065,
+      "sha256": "5aa7dc5340b0c88ede3fa02b3ae3f38ff16a12c7e4c0fe902813c4135af6c748"
     },
     {
       "path": "src/doctor/composite_diagnosis/service.py",
@@ -1999,8 +2084,8 @@
     },
     {
       "path": "src/doctor/knowledge/clinical_knowledge_base.py",
-      "size": 16279,
-      "sha256": "cbcaff921bd94c87f2ba959686088e5afaaec65d8f512dc9e77b6ea074543b7f"
+      "size": 16488,
+      "sha256": "b2f496c0aa49b1c6f0f2c8b159983a02b2eed1cbbec06a2e1a17c5878095a439"
     },
     {
       "path": "src/doctor/long_term/__init__.py",
@@ -2094,8 +2179,8 @@
     },
     {
       "path": "src/doctor/output/case_result_v2.py",
-      "size": 10582,
-      "sha256": "9d294a061c4d243c649e5243942055e4b38690b349f195737e33bc57ada2c959"
+      "size": 11709,
+      "sha256": "ef044cb0fb14bf9fef8b4c475289fa4198a820f7befc0e37e411eb9d92ca63cf"
     },
     {
       "path": "src/doctor/output/result_builder.py",
@@ -2141,6 +2226,16 @@
       "path": "src/doctor/position_opportunity/service.py",
       "size": 2082,
       "sha256": "bf0f4cc9a722f12119a2aed2875bee220bb009f577cdc1bab904ff1c475ff653"
+    },
+    {
+      "path": "src/doctor/presentation/__init__.py",
+      "size": 100,
+      "sha256": "0f2dbb261ed3fdb88eed51b78c6c7b15f79de230634ea5f176b399bcee1fd682"
+    },
+    {
+      "path": "src/doctor/presentation/doctor_presentation.py",
+      "size": 6635,
+      "sha256": "34843c46094b1021ba739560406a59bfe49292629a0f06f891c4605d00113828"
     },
     {
       "path": "src/doctor/receiver/__init__.py",
@@ -2374,8 +2469,8 @@
     },
     {
       "path": "src/doctor/treatment_recommendation/engine.py",
-      "size": 4716,
-      "sha256": "bdc0fdf4beee14f3efe569169bdea02491fd1aaf89032c4bb0599d5b6dff66bf"
+      "size": 8456,
+      "sha256": "95baffd14a7598aed9cf98486075af4f68195af9d647d7ab4bbb2c1ad6d34764"
     },
     {
       "path": "src/doctor/treatment_recommendation/referral_factory.py",
@@ -2698,6 +2793,11 @@
       "sha256": "abeeab4322c343ac62fb3971efc1caa362d10c88ba9d1adbddfa3769851f09c1"
     },
     {
+      "path": "tests/integration/test_algorithm_impact_service.py",
+      "size": 1210,
+      "sha256": "e137ed752e3f21a2c11af9b6c05702636bf4f61e1f2d2db0cce48b29054a843b"
+    },
+    {
       "path": "tests/integration/test_article_snapshot_content_integrity.py",
       "size": 1615,
       "sha256": "60fdaee790ee29b06f97b432ca920e02ab4f85e8cbfb3c60c1a9a4f60eead6e5"
@@ -2919,13 +3019,13 @@
     },
     {
       "path": "tests/release/test_current_release_identity.py",
-      "size": 491,
-      "sha256": "ebf56b1cd515fb705567c823d5839cf05e4c23a88c51db1ccaffdfd199258ba4"
+      "size": 495,
+      "sha256": "906f0ad6d0ddb1393c97a4387a5623067df1cedb91f8f7da34f7d59e5e595d16"
     },
     {
       "path": "tests/release/test_release_candidate_integrity.py",
-      "size": 1144,
-      "sha256": "9552527370d117ea28eb86280f920aa0ebb912d86c6fab1ce29335e4edd8668b"
+      "size": 1155,
+      "sha256": "b733c3e2460560b937cf47241e9d39331e9ba10815538fb5f3c51fc925a1f2c7"
     },
     {
       "path": "tests/test_catalog_importer.py",
@@ -2934,8 +3034,13 @@
     },
     {
       "path": "tests/test_platform_rc13.py",
-      "size": 1085,
-      "sha256": "bab6381f48919c835bb7111c85ee75dce1a9b2bf400a9f726ea636b1cad2c900"
+      "size": 1089,
+      "sha256": "18f09fd43f0498ceaf88afc5c6e0df070e361f58c0350c5dfe660ef0c64bcda5"
+    },
+    {
+      "path": "tests/unit/test_algorithm_impact_engine.py",
+      "size": 1430,
+      "sha256": "2212b150baedb610dfc64af6bbde091b7b8024b4b3674342dc6f756c1295bee9"
     },
     {
       "path": "tests/unit/test_article_snapshot_models.py",
@@ -3114,8 +3219,13 @@
     },
     {
       "path": "tests/unit/test_rc12_sbm_orchestration.py",
-      "size": 2629,
-      "sha256": "02bda23bb9bf7ac67a56c4ec0e16916176492d4b2fc506ed920923ccc1a38be4"
+      "size": 2623,
+      "sha256": "04642962fe00713ff24a099252e834a6e4072cd98e43eeba124bd80ae4161480"
+    },
+    {
+      "path": "tests/unit/test_rc3_human_presentation.py",
+      "size": 2466,
+      "sha256": "e0a72b3655fafe682799cb9eb8b352dcf2a3c23c60c96e188dcdffc4a84181e4"
     },
     {
       "path": "tests/unit/test_rc4_clinical_review.py",
@@ -3188,6 +3298,11 @@
       "sha256": "3f649fd657e56a6b3f0c3f7447044d83b028eb2d7921d42ca0718c8f01d2782e"
     },
     {
+      "path": "tests/unit/test_treatment_strategy_v120.py",
+      "size": 2027,
+      "sha256": "ff3139873749ad0a329e8d5efec4fc09c29d8c67cb39e5aa73c5f16065d4a90d"
+    },
+    {
       "path": "tests/unit/test_url_identity_v111.py",
       "size": 1828,
       "sha256": "ea2c06e50f878004870b345a16991471cd47cd38f359bb6ec26959075d6e6fbd"
@@ -3209,8 +3324,8 @@
     },
     {
       "path": "tests/unit/test_workflow_handoff_v102.py",
-      "size": 859,
-      "sha256": "3cd20c7f2674e224deae14ebf76601ed7da4eb4f6022159b6b4f16981744c462"
+      "size": 901,
+      "sha256": "5334fcf1d929f1fda0e9e40a3bea97691137daaad7c13a98f2c0f148084d04c4"
     }
   ]
 }

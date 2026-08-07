@@ -1,3 +1,8 @@
+
+## 1.2.0-RC3
+- Shared 3.5.0 Presentation Frameworkへ同期。
+- Doctor結果へHuman-facing `presentation` projectionを追加。
+- Machine ContractとHuman Outputを分離し、内部用語の通常表示を禁止。
 # v1.1.3
 
 - `workflow_handoff.next_action`を必須化。

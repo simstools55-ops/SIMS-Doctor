@@ -3,6 +3,8 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Any
 
+from src.doctor.presentation import DoctorPresentationBuilder
+
 
 _TARGET_MAP = {
     "WRITER": "SIMS_WRITER",
@@ -109,6 +111,14 @@ class CaseResultV2Builder:
         treatment_class = _treatment_class(destination if treatment_required else "NONE", recommendation)
         request_text = _request_text(destination, treatment_class, recommended_scope, blocked_scope, dependencies) if treatment_required else None
         user_confirmation_text = request_text if destination == "MANUAL_REVIEW" or target == "SBM" else None
+        presentation = DoctorPresentationBuilder().build(
+            diagnosis=diagnosis,
+            recommendation=recommendation,
+            destination=destination if treatment_required else "NONE",
+            treatment_required=treatment_required,
+            review_days=review_days,
+        )
+
         action_checklist = []
         if user_confirmation_text:
             action_checklist.append({"order": 1, "owner": "USER", "action": "診断で指定された確認作業を行う", "dependencies": dependencies})
@@ -198,7 +208,8 @@ class CaseResultV2Builder:
                 "doctor_json_usage": "REQUIRED_SBM_REGISTRATION",
                 "specialist_result_destination": "SIMS_BLOG_MANAGER" if treatment_required else None,
             },
-            "user_display": user_display,
+            "presentation": presentation,
+            "user_display": presentation if user_display is None else user_display,
             "compatibility": {
                 "legacy_contract": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
                 "direct_specialist_invocation": "DISABLED",

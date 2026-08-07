@@ -51,8 +51,12 @@ RELEASE_NOTES_v1.1.0.md
 RELEASE_NOTES_v1.1.1.md
 RELEASE_NOTES_v1.1.2.md
 RELEASE_NOTES_v1.1.3.md
+RELEASE_NOTES_v1.2.0-RC1.md
+RELEASE_NOTES_v1.2.0-RC2.md
+RELEASE_NOTES_v1.2.0-RC3.md
 SHARED_VERSION
 VERSION
+contracts/SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1.schema.json
 contracts/SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1.schema.json
 contracts/SIMS_DOCTOR_BATCH_QUEUE_RECORD_V1.schema.json
 contracts/SIMS_DOCTOR_BATCH_REQUEST_V1.schema.json
@@ -165,6 +169,8 @@ docs/error_codes.md
 integration/SBM_BATCH_INTEGRATION.md
 integration/SBM_SAFETY_BOUNDARY.md
 knowledge/README.md
+knowledge/algorithm_impact/README.md
+knowledge/algorithm_impact/algorithm_impact_policy_v1.json
 knowledge/batch/README.md
 knowledge/batch/batch_policy_v1.json
 knowledge/batch/batch_queue_policy_v1.json
@@ -300,6 +306,8 @@ runtime/apps-script-validator/SbmDoctorBatchContractValidator.gs
 runtime/catalog_importer.py
 scripts/release_audit.py
 shared/SNAPSHOT_MANIFEST.json
+shared/architecture/ALGORITHM_EVIDENCE_V1.md
+shared/architecture/INTERFACE_CONTRACTS_V2.md
 shared/architecture/PRODUCT_RESPONSIBILITIES.md
 shared/architecture/SBM_DOCTOR_SAFETY_BOUNDARY.md
 shared/architecture/TREATMENT_ROUTING_V1.md
@@ -312,8 +320,17 @@ shared/enums/priority.json
 shared/enums/product-code.json
 shared/enums/result-status.json
 shared/enums/treatment-type.json
+shared/presentation/HUMAN_EXPERIENCE_ARCHITECTURE_V1.md
+shared/presentation/HUMAN_OUTPUT_POLICY_V1.md
+shared/presentation/HUMAN_USABILITY_GATE_V1.md
+shared/presentation/MACHINE_OUTPUT_POLICY_V1.md
+shared/presentation/PRESENTATION_STANDARD_V1.md
 src/__init__.py
 src/doctor/__init__.py
+src/doctor/algorithm_impact/__init__.py
+src/doctor/algorithm_impact/engine.py
+src/doctor/algorithm_impact/models.py
+src/doctor/algorithm_impact/service.py
 src/doctor/api/__init__.py
 src/doctor/api/app.py
 src/doctor/api/audit.py
@@ -426,6 +443,8 @@ src/doctor/pipeline/orchestrator.py
 src/doctor/position_opportunity/__init__.py
 src/doctor/position_opportunity/engine.py
 src/doctor/position_opportunity/service.py
+src/doctor/presentation/__init__.py
+src/doctor/presentation/doctor_presentation.py
 src/doctor/receiver/__init__.py
 src/doctor/receiver/request_normalizer.py
 src/doctor/receiver/request_receiver.py
@@ -537,6 +556,7 @@ tests/fixtures/valid/single_case_request.json
 tests/fixtures/vital_score/medical_record.json
 tests/fixtures/vital_score/result.json
 tests/integration/test_acquisition_to_observation.py
+tests/integration/test_algorithm_impact_service.py
 tests/integration/test_article_snapshot_content_integrity.py
 tests/integration/test_batch_runner.py
 tests/integration/test_batch_scheduler_cli.py
@@ -585,6 +605,7 @@ tests/release/test_current_release_identity.py
 tests/release/test_release_candidate_integrity.py
 tests/test_catalog_importer.py
 tests/test_platform_rc13.py
+tests/unit/test_algorithm_impact_engine.py
 tests/unit/test_article_snapshot_models.py
 tests/unit/test_article_snapshot_service.py
 tests/unit/test_batch_models.py
@@ -621,6 +642,7 @@ tests/unit/test_output_builders.py
 tests/unit/test_position_opportunity_engine.py
 tests/unit/test_production_settings.py
 tests/unit/test_rc12_sbm_orchestration.py
+tests/unit/test_rc3_human_presentation.py
 tests/unit/test_rc4_clinical_review.py
 tests/unit/test_request_receiver.py
 tests/unit/test_sbm_batch_gateway.py
@@ -635,6 +657,7 @@ tests/unit/test_treatment_history_analyzer.py
 tests/unit/test_treatment_history_models.py
 tests/unit/test_treatment_recommendation_engine.py
 tests/unit/test_treatment_referral.py
+tests/unit/test_treatment_strategy_v120.py
 tests/unit/test_url_identity_v111.py
 tests/unit/test_user_facing_json_hidden_v104.py.legacy
 tests/unit/test_vital_score_engine.py
