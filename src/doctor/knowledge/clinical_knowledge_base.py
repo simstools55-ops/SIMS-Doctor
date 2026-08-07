@@ -58,6 +58,7 @@ class ClinicalKnowledgeBase:
         "treatment_recommendation_policy": "treatment_recommendation/treatment_recommendation_policy_v1.json",
         "doctor_report_policy": "reporting/doctor_report_policy_v1.json",
         "explainability_policy": "explainability/explainability_policy_v1.json",
+        "algorithm_impact_policy": "algorithm_impact/algorithm_impact_policy_v1.json",
     }
 
     def __init__(self, knowledge_root: Path) -> None:
@@ -318,6 +319,9 @@ class ClinicalKnowledgeBase:
 
     def explainability_policy(self) -> dict[str, Any]:
         return dict(self._documents["explainability_policy"])
+
+    def algorithm_impact_policy(self) -> dict[str, Any]:
+        return dict(self._documents["algorithm_impact_policy"])
 
     def classify_vital_score(self, score: int) -> str:
         if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:

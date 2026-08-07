@@ -11,5 +11,6 @@ def test_workflow_handoff_writer_request():
     result=CaseResultV2Builder().build(record)
     h=result["workflow_handoff"]
     assert h["treatment_class"] == "限定修正"
-    assert "内部リンク追加" in h["writer_request_text"]
+    assert h["writer_request_text"] is None
+    assert h["handoff_mode"] == "RETURN_TO_SBM_FOR_REFERRAL"
     assert h["creator_request_text"] is None

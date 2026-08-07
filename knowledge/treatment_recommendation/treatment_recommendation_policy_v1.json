@@ -91,5 +91,9 @@
     "creator_requires_new_article_allowed": true,
     "full_rewrite_requires_full_rewrite_allowed": true,
     "no_delete_noindex_redirect_execution": true
+  },
+  "wait_policy": {
+    "minimum_wait_days": 7,
+    "recommended_review_days": 14
   }
 }

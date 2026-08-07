@@ -1,8 +1,8 @@
-# SIMS Doctor v1.1.3
+# SIMS Doctor v1.2.0-RC1
 
 ## Current release
 
-`1.1.3`
+`1.2.0-RC1`
 
 ## v1.0.4
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.

@@ -23,6 +23,7 @@ class CompositeDiagnosisEngine:
         vital_score = self._latest_vital_score(medical_record)
         content_integrity = self._vital_sign_score(medical_record, "CONTENT_INTEGRITY")
         competition = self._vital_sign_score(medical_record, "COMPETITION_RESILIENCE")
+        algorithm = (medical_record.get("algorithm_impact_assessments") or [None])[-1]
 
         completed_count = sum(value is not None for value in latest.values())
         low_sample = any(
@@ -108,6 +109,19 @@ class CompositeDiagnosisEngine:
             severity = "INFO"
             reasons.insert(0, "重大な治療対象は確認されませんでした。")
 
+        content_integrity_severe = (
+            content_integrity is not None
+            and content_integrity < self.t["severe_content_integrity_max"]
+        )
+        algorithm_wait_recommended = bool(
+            algorithm
+            and algorithm.get("status") in {"LIKELY", "HIGH"}
+            and str((algorithm.get("update") or {}).get("rollout_status") or "").upper() == "IN_PROGRESS"
+            and not content_integrity_severe
+        )
+        if algorithm_wait_recommended:
+            reasons.insert(0, "Googleアップデート展開中の可能性が高いため、治療タイミングは経過観察を優先できます。")
+
         full_rewrite_allowed = not winner_protected and not recent_change and not low_sample
         new_article_allowed = (
             final == "NEW_ARTICLE_RECOMMENDED"
@@ -140,7 +154,10 @@ class CompositeDiagnosisEngine:
                 "merge_required": merge_required,
                 "new_article_allowed": new_article_allowed,
                 "full_rewrite_allowed": full_rewrite_allowed,
+                "content_integrity_severe": content_integrity_severe,
+                "algorithm_wait_recommended": algorithm_wait_recommended,
             },
+            "algorithm_assessment": algorithm,
             "supporting_assessments": [
                 {
                     "assessment_type": field,

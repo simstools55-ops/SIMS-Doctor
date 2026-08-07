@@ -13,6 +13,8 @@ _TARGET_MAP = {
     "SIMS_MERGE": "SIMS_MERGE",
     "OBSERVATION": "NONE",
     "MONITOR": "NONE",
+    "OBSERVE": "NONE",
+    "FOLLOW_UP": "NONE",
 }
 
 
@@ -65,6 +67,8 @@ class CaseResultV2Builder:
         recommendation = recommendations[-1] if recommendations else None
         referrals = medical_record.get("referrals", [])
         legacy_referral = referrals[-1] if referrals else None
+        algorithm_assessments = medical_record.get("algorithm_impact_assessments", [])
+        algorithm_assessment = algorithm_assessments[-1] if algorithm_assessments else None
 
         status = diagnosis.get("status") if diagnosis else "LIMITED"
         diagnosis_code = diagnosis.get("diagnosis_code") if diagnosis else None
@@ -134,6 +138,7 @@ class CaseResultV2Builder:
                 },
                 "summary": (diagnosis or {}).get("summary") or (diagnosis or {}).get("rationale"),
                 "evidence_ids": _list((diagnosis or {}).get("evidence_ids")),
+                "algorithm_assessment": algorithm_assessment,
             },
             "treatment_plan": {
                 "action": action,
@@ -143,6 +148,11 @@ class CaseResultV2Builder:
                 "objective": (recommendation or {}).get("objective") or (recommendation or {}).get("reason"),
                 "expected_impact": (recommendation or {}).get("expected_impact") or {"risk": (recommendation or {}).get("risk")},
                 "review_after_days": review_days,
+                "strategy": (recommendation or {}).get("strategy"),
+                "strategy_reason": (recommendation or {}).get("strategy_reason"),
+                "wait_plan": (recommendation or {}).get("wait_plan"),
+                "user_todo": _list((recommendation or {}).get("user_todo")),
+                "reassurance_comment": (recommendation or {}).get("reassurance_comment"),
             },
             "referral": {
                 "required": treatment_required,
