@@ -169,6 +169,14 @@ class CaseResultV2Builder:
                 "required_evidence": ["PUBLICATION_CONFIRMATION", "POST_TREATMENT_PERFORMANCE"] if treatment_required else ["UPDATED_PERFORMANCE"],
             },
             "workflow_handoff": {
+                "next_action": (
+                    "USER_CONFIRMATION" if action == "MANUAL_REVIEW"
+                    else "MONITOR" if locked or not treatment_required
+                    else "WRITER" if destination == "SIMS_WRITER"
+                    else "CREATOR" if destination == "SIMS_ARTICLE_CREATOR"
+                    else "MERGE" if destination == "SIMS_MERGE"
+                    else "USER_CONFIRMATION"
+                ),
                 "treatment_class": treatment_class,
                 "action_checklist": action_checklist,
                 "user_confirmation_text": user_confirmation_text,

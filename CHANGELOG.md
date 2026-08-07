@@ -1,3 +1,8 @@
+# v1.1.3
+
+- `workflow_handoff.next_action`を必須化。
+- 次担当を機械可読でSBMへ返し、紹介状本文はSBMが生成。
+
 # v1.1.2
 
 - Restore required Doctor result JSON registration to SBM.

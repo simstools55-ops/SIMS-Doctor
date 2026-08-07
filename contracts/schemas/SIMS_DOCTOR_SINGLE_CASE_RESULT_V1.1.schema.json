@@ -105,6 +105,16 @@
     "workflow_handoff": {
       "type": "object",
       "properties": {
+        "next_action": {
+          "type": "string",
+          "enum": [
+            "WRITER",
+            "CREATOR",
+            "MERGE",
+            "MONITOR",
+            "USER_CONFIRMATION"
+          ]
+        },
         "treatment_class": {
           "type": "string"
         },
@@ -154,7 +164,10 @@
           ]
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "required": [
+        "next_action"
+      ]
     }
   },
   "additionalProperties": true
