@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED = '1.2.0-RC1'
+EXPECTED = '1.2.0-RC2'
 
 
 def test_current_release_identity_is_consistent():
